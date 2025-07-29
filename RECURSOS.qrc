@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/IMAGENES">
+        <file>IMAGENES/LOGOS/Logo con fondo gris.png</file>
+        <file>IMAGENES/LOGOS/LOGO GRIS.jpg</file>
+        <file>IMAGENES/LOGOS/LOGO.png</file>
+    </qresource>
+    <qresource prefix="/FUENTES">
+        <file>FUENTES/Bebas Neue/BebasNeue-Regular.ttf</file>
+        <file>FUENTES/Lato/Lato-Thin.ttf</file>
+        <file>FUENTES/Montserrat/static/Montserrat-Italic.ttf</file>
+        <file>FUENTES/Playfair/static/Playfair_9pt_SemiCondensed-Bold.ttf</file>
+        <file>FUENTES/Raleway/static/Raleway-ExtraLight.ttf</file>
+        <file>FUENTES/Roboto_Condensed/static/RobotoCondensed-Regular.ttf</file>
+    </qresource>
+    <qresource prefix="/DATA">
+        <file>build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/USUARIOS.dat</file>
+    </qresource>
+</RCC>
