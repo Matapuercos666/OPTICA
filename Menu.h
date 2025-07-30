@@ -20,6 +20,7 @@ class Menu : public QMainWindow
 public:
     explicit Menu(QWidget *parent = nullptr);
     ~Menu();
+    void configurarInterfazSegunRol(const QString &Rol, const QString &Nombre);
 
 private slots:
     void Boton_Lista();

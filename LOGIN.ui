@@ -152,7 +152,7 @@
            </spacer>
           </item>
           <item row="2" column="1">
-           <widget class="QLineEdit" name="Contrasena">
+           <widget class="QLineEdit" name="password">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
               <horstretch>30</horstretch>
@@ -377,7 +377,7 @@
  </widget>
  <tabstops>
   <tabstop>Usuario</tabstop>
-  <tabstop>Contrasena</tabstop>
+  <tabstop>password</tabstop>
   <tabstop>ENTRAR</tabstop>
  </tabstops>
  <resources>

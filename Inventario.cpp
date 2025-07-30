@@ -13,6 +13,8 @@ Inventario::Inventario(QWidget *parent)
 Inventario::~Inventario()
 {
     delete ui;
+    if (parentWidget())
+        parentWidget()->show();
 }
 void Inventario::Boton_Regresar()
 {

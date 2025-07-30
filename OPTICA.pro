@@ -13,6 +13,7 @@ SOURCES += \
     Lista_Clientes.cpp \
     Menu.cpp \
     PuntoVenta.cpp \
+    USUARIOS.cpp \
     main.cpp \
     LOGIN.cpp
 
@@ -23,6 +24,7 @@ HEADERS += \
     Lista_Clientes.h \
     Menu.h \
     PuntoVenta.h \
+    USUARIOS.h \
     Utils.h
 
 FORMS += \
@@ -30,7 +32,8 @@ FORMS += \
     LOGIN.ui \
     Lista_Clientes.ui \
     Menu.ui \
-    PuntoVenta.ui
+    PuntoVenta.ui \
+    USUARIOS.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

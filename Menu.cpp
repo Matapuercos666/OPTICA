@@ -11,6 +11,7 @@ Menu::Menu(QWidget *parent)
 {
     ui->setupUi(this);
     Fuente::AplicarTodas(this);
+    ui->botones->setSpacing(20);
 
     //Conectar botones
     connect(ui->Lista, &QPushButton::clicked, this, &Menu::Boton_Lista);
@@ -21,6 +22,13 @@ Menu::Menu(QWidget *parent)
 Menu::~Menu()
 {
     delete ui;
+}
+
+void Menu::configurarInterfazSegunRol(const QString &Rol, const QString &Nombre)
+{
+    bool EsAdmin = (Rol == "Administrador");
+
+    ui->USUARIOS->setVisible(EsAdmin);
 }
 
 void Menu::Boton_Lista()

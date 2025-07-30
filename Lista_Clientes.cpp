@@ -14,6 +14,8 @@ Lista_Clientes::Lista_Clientes(QWidget *parent)
 Lista_Clientes::~Lista_Clientes()
 {
     delete ui;
+    if (parentWidget())
+        parentWidget()->show();
 }
 
 void Lista_Clientes::Boton_Regresar()

@@ -222,12 +222,12 @@ border-color: rgb(211, 211, 211);</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>:/Imagenes/IMAGENES/LOGOS/LOGO GRIS.jpg</normaloff>:/Imagenes/IMAGENES/LOGOS/LOGO GRIS.jpg</iconset>
+             <iconset resource="RECURSOS.qrc">
+              <normaloff>:/IMAGENES/IMAGENES/LOGOS/LOGO GRIS.jpg</normaloff>:/IMAGENES/IMAGENES/LOGOS/LOGO GRIS.jpg</iconset>
             </property>
             <property name="iconSize">
              <size>
-              <width>50</width>
+              <width>35</width>
               <height>35</height>
              </size>
             </property>
@@ -272,6 +272,8 @@ border-color: rgb(211, 211, 211);</string>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="RECURSOS.qrc"/>
+ </resources>
  <connections/>
 </ui>

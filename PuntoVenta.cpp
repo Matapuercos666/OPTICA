@@ -15,6 +15,8 @@ PuntoVenta::PuntoVenta(QWidget *parent)
 PuntoVenta::~PuntoVenta()
 {
     delete ui;
+    if (parentWidget())
+        parentWidget()->show();
 }
 
 void PuntoVenta::Boton_Regresar()

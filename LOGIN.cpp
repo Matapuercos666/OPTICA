@@ -8,6 +8,7 @@
 #include <QTextStream>
 #include <QMessageBox>
 #include <QDir>
+#include <Menu.h>
 
 struct Usuario {
     QString nombre;
@@ -32,48 +33,40 @@ LOGIN::~LOGIN()
 void LOGIN::Boton_ENTRAR()
 {
     QString usuarioIngresado = ui->Usuario->text().trimmed();
-    QString contrasenaIngresada = ui->Contrasena->text();
-
-    QString hashIngresado = encriptar(contrasenaIngresada);
+    QString contrasenaIngresada = encriptar(ui->password->text());
 
     QFile archivo("USUARIOS.dat");
     if (!archivo.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        QMessageBox::critical(this, "Error", QDir::currentPath());
+        QMessageBox::critical(this, "Error", "No se pudo abrir el archivo de usuarios.");
         return;
     }
 
     QTextStream in(&archivo);
-    Usuario usuarioValidado;
-    bool encontrado = false;
+    bool loginCorrecto = false;
+    QString Rol;
+    QString Nombre;
 
     while (!in.atEnd()) {
         QString linea = in.readLine().trimmed();
         QStringList partes = linea.split(';');
-        if (partes.size() != 3)
-            continue;
+        if (partes.size() != 3) continue;
 
-        QString usuarioArchivo = partes[0];
-        QString hashArchivo = partes[1];
-        QString rolArchivo = partes[2];
-
-        if (usuarioArchivo == usuarioIngresado && hashArchivo == hashIngresado) {
-            usuarioValidado.nombre = usuarioArchivo;
-            usuarioValidado.rol = rolArchivo;
-            encontrado = true;
+        if (partes[0] == usuarioIngresado && partes[1] == contrasenaIngresada) {
+            Nombre = partes[0];
+            Rol = partes[2];
+            loginCorrecto = true;
             break;
         }
     }
 
     archivo.close();
 
-    if (encontrado) {
-        QMessageBox::information(this, "Bienvenido", "Hola " + usuarioValidado.nombre + ", tu rol es: " + usuarioValidado.rol);
-
-        // Aquí puedes pasar el rol a tu ventana principal
-        MenuWindow = new Menu(this);
+    if (loginCorrecto) {
+        MenuWindow = new Menu();
+        MenuWindow->configurarInterfazSegunRol(Rol, Nombre);
         MenuWindow->show();
-        this->hide();
+        this->close();
     } else {
-        QMessageBox::warning(this, "Acceso denegado", "Usuario o contraseña incorrectos.");
+        QMessageBox::warning(this, "Acceso denegado", "Usuario o Contraseña incorrectos");
     }
 }
