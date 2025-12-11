@@ -383,5 +383,38 @@
  <resources>
   <include location="RECURSOS.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>Usuario</sender>
+   <signal>returnPressed()</signal>
+   <receiver>password</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>427</x>
+     <y>300</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>432</x>
+     <y>339</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>password</sender>
+   <signal>returnPressed()</signal>
+   <receiver>ENTRAR</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>341</x>
+     <y>345</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>348</x>
+     <y>391</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

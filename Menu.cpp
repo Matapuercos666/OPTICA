@@ -1,6 +1,8 @@
 #include "Menu.h"
 #include "ui_Menu.h"
 #include "ESTILOS.h"
+#include "Usuario_Actual.h"
+#include <QString>
 
 Menu::Menu(QWidget *parent)
     : QMainWindow(parent)
@@ -8,27 +10,30 @@ Menu::Menu(QWidget *parent)
     , ListaWindow(nullptr)
     , Punto_Venta_Window(nullptr)
     , InventarioWindow(nullptr)
+    , UsuariosWindow(nullptr)
 {
     ui->setupUi(this);
     Fuente::AplicarTodas(this);
-    ui->botones->setSpacing(20);
+
+    //Configurar la interfaz segun el rol
+    Usuario_Actual* Datos = Usuario_Actual::obtenerinstancia();
+    QString Nombre = Datos -> obtenernombre();
+
+    if(!Datos -> EsAdmin())
+    {
+        ui->USUARIOS->setVisible(false);
+    }
 
     //Conectar botones
     connect(ui->Lista, &QPushButton::clicked, this, &Menu::Boton_Lista);
     connect(ui->Punto, &QPushButton::clicked, this, &Menu::Boton_Punto);
     connect(ui->Inventario, &QPushButton::clicked, this, &Menu::Boton_Inventario);
+    connect(ui->USUARIOS, &QPushButton::clicked, this, &Menu::Boton_Usuarios);
 }
 
 Menu::~Menu()
 {
     delete ui;
-}
-
-void Menu::configurarInterfazSegunRol(const QString &Rol, const QString &Nombre)
-{
-    bool EsAdmin = (Rol == "Administrador");
-
-    ui->USUARIOS->setVisible(EsAdmin);
 }
 
 void Menu::Boton_Lista()
@@ -76,5 +81,21 @@ void Menu::Boton_Inventario()
         connect(InventarioWindow, &QObject::destroyed, this, [this]() { InventarioWindow = nullptr; });
     }
     InventarioWindow->show();
+    this->hide();
+}
+
+void Menu::Boton_Usuarios()
+{
+    if (!UsuariosWindow || UsuariosWindow->isHidden())
+    {
+        if(UsuariosWindow)
+        {
+            delete UsuariosWindow;
+        }
+        UsuariosWindow = new USUARIOS(this);
+        UsuariosWindow->setAttribute(Qt::WA_DeleteOnClose);
+        connect(UsuariosWindow, &QObject::destroyed, this, [this]() { UsuariosWindow = nullptr; });
+    }
+    UsuariosWindow->show();
     this->hide();
 }

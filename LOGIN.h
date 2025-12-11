@@ -27,3 +27,4 @@ private:
     Menu *MenuWindow; //puntero a la siguiente ventana
 };
 #endif // LOGIN_H
+

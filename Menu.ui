@@ -87,7 +87,7 @@
        </layout>
       </item>
       <item row="13" column="0" colspan="3">
-       <layout class="QGridLayout" name="layout" rowstretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0">
+       <layout class="QGridLayout" name="layout" rowstretch="0,0">
         <property name="topMargin">
          <number>0</number>
         </property>
@@ -254,6 +254,9 @@
               <family>Arial</family>
               <bold>true</bold>
              </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>OpenHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
              <string notr="true">padding: 12px 30px;</string>
