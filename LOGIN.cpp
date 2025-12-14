@@ -52,16 +52,18 @@ void LOGIN::Boton_ENTRAR()
         QString Rol;
         QString Nombre;
         QString Password;
+        QString ID;
 
         while (!in.atEnd()) {
             QString linea = in.readLine().trimmed();
             QStringList partes = linea.split(';');
-            if (partes.size() != 3) continue;
+            if (partes.size() != 4) continue;
 
-            if (partes[0] == usuarioIngresado && partes[1] == contrasenaIngresada) {
-                Nombre = partes[0];
-                Password = partes[1];
+            if ((partes[3] == contrasenaIngresada) && (partes[0] ==usuarioIngresado || partes[1] == usuarioIngresado)) {
+                ID = partes[0];
+                Nombre = partes[1];
                 Rol = partes[2];
+                Password = partes[3];
                 loginCorrecto = true;
                 break;
             }
@@ -70,8 +72,11 @@ void LOGIN::Boton_ENTRAR()
         archivo.close();
 
         if (loginCorrecto) {
-            Usuario_Actual::obtenerinstancia()->establecerusuario(Nombre, Rol, Password);
-            MenuWindow = new Menu();
+            Usuario_Actual::obtenerinstancia()->establecerusuario(Nombre, Rol, Password, ID);
+            ui->Usuario->clear();
+            ui->password->clear();
+            ui->Usuario->setFocus();
+            MenuWindow = new Menu(nullptr);
             MenuWindow->show();
             this->close();
         } else {

@@ -26,6 +26,7 @@ private slots:
     void Boton_CambiarNombre();
     void Boton_Eliminar();
     void Boton_AgregarUsuario();
+    void Boton_Regresar();
 
 private:
     Ui::USUARIOS *ui;

@@ -223,8 +223,14 @@
             <property name="cursor">
              <cursorShape>OpenHandCursor</cursorShape>
             </property>
+            <property name="mouseTracking">
+             <bool>false</bool>
+            </property>
             <property name="styleSheet">
              <string notr="true">padding: 12px 30px;</string>
+            </property>
+            <property name="inputMethodHints">
+             <set>Qt::InputMethodHint::ImhNone</set>
             </property>
             <property name="text">
              <string>PACIENTES</string>

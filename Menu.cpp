@@ -44,12 +44,11 @@ void Menu::Boton_Lista()
         {
             delete ListaWindow;
         }
-        ListaWindow = new Lista_Clientes(this);
+        ListaWindow = new Lista_Clientes(parentWidget());
         ListaWindow->setAttribute(Qt::WA_DeleteOnClose);
         connect(ListaWindow, &QObject::destroyed, this, [this]() { ListaWindow = nullptr; });
     }
     ListaWindow->show();
-    this->hide();
 }
 
 void Menu::Boton_Punto()
@@ -65,7 +64,6 @@ void Menu::Boton_Punto()
         connect(Punto_Venta_Window, &QObject::destroyed, this, [this]() { Punto_Venta_Window = nullptr; });
     }
     Punto_Venta_Window->show();
-    this->hide();
 }
 
 void Menu::Boton_Inventario()
@@ -81,7 +79,6 @@ void Menu::Boton_Inventario()
         connect(InventarioWindow, &QObject::destroyed, this, [this]() { InventarioWindow = nullptr; });
     }
     InventarioWindow->show();
-    this->hide();
 }
 
 void Menu::Boton_Usuarios()

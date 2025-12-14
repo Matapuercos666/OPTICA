@@ -2,7 +2,7 @@
 
 Usuario_Actual* Usuario_Actual::instancia = nullptr;
 
-Usuario_Actual::Usuario_Actual() : Nombre(""), Rol("")
+Usuario_Actual::Usuario_Actual() : Nombre(""), Rol(""), ID("")
 {
 
 }
@@ -16,11 +16,12 @@ Usuario_Actual* Usuario_Actual::obtenerinstancia()
     return instancia;
 }
 
-void Usuario_Actual::establecerusuario(const QString& nombre, const QString& rol, const QString& password)
+void Usuario_Actual::establecerusuario(const QString& nombre, const QString& rol, const QString& password, const QString &id)
 {
     Nombre = nombre;
     Rol = rol;
     Password = password;
+    ID = id;
 }
 
 void Usuario_Actual::establecernombre(const QString& nombre)
@@ -36,6 +37,11 @@ void Usuario_Actual::establecerrol(const QString& rol)
 void Usuario_Actual::establecerpassword(const QString& password)
 {
     Password = password;
+}
+
+void Usuario_Actual::establecerID(const QString& id)
+{
+    ID = id;
 }
 
 //getters
@@ -55,6 +61,10 @@ QString Usuario_Actual::obtenerpassword() const
     return Password;
 }
 
+QString Usuario_Actual::obtenerID() const
+{
+    return ID;
+}
 //Para configurar según el rol
 
 bool Usuario_Actual::EsAdmin() const
@@ -69,4 +79,5 @@ void Usuario_Actual::limpiar()
     Nombre = "";
     Rol = "";
     Password = "";
+    ID = "";
 }

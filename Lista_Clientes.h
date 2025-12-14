@@ -2,6 +2,9 @@
 #define LISTA_CLIENTES_H
 
 #include <QMainWindow>
+#include "Usuario_Actual.h"
+#include <QFile>
+#include <QMessageBox>
 
 namespace Ui {
 

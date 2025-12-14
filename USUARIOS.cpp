@@ -17,6 +17,7 @@ USUARIOS::USUARIOS(QWidget *parent)
     connect(ui->CambiarNombre, &QPushButton::clicked, this, &USUARIOS::Boton_CambiarNombre);
     connect(ui->Eliminar, &QPushButton::clicked, this, &USUARIOS::Boton_Eliminar);
     connect(ui->Agregar, &QPushButton::clicked, this, &USUARIOS::Boton_AgregarUsuario);
+    connect(ui->Regresar, &QPushButton::clicked, this, &USUARIOS::Boton_Regresar);
 }
 
 USUARIOS::~USUARIOS()
@@ -30,12 +31,13 @@ void USUARIOS::Boton_CambiarPassword()
     {
         if(CambiarContrasenaWindow)
         {
-            delete CambiarContrasenaWindow;
+            delete CambiarNombreWindow;
         }
         CambiarContrasenaWindow = new Cambiar_Password(this);
         CambiarContrasenaWindow->setAttribute(Qt::WA_DeleteOnClose);
         connect(CambiarContrasenaWindow, &QObject::destroyed, this, [this]() { CambiarContrasenaWindow = nullptr; });
         CambiarContrasenaWindow->show();
+
 
     }
 }
@@ -48,10 +50,12 @@ void USUARIOS::Boton_CambiarNombre()
         {
             delete CambiarNombreWindow;
         }
+
         CambiarNombreWindow = new Cambiar_Nombre(this);
         CambiarNombreWindow->setAttribute(Qt::WA_DeleteOnClose);
         connect(CambiarNombreWindow, &QObject::destroyed, this, [this]() { CambiarNombreWindow = nullptr; });
         CambiarNombreWindow->show();
+
 
     }
 }
@@ -84,4 +88,13 @@ void USUARIOS::Boton_AgregarUsuario()
         connect(AgregarWindow, &QObject::destroyed, this, [this](){AgregarWindow = nullptr;});
         AgregarWindow->show();
     }
+}
+
+
+void USUARIOS::Boton_Regresar()
+{
+    if (parentWidget()) {
+        parentWidget()->show();
+    }
+    this->close();
 }

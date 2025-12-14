@@ -29,16 +29,10 @@
       <property name="bottomMargin">
        <number>20</number>
       </property>
-      <item row="1" column="0">
-       <widget class="QTableWidget" name="Datos_Clientes">
-        <property name="editTriggers">
-         <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
-        </property>
-        <property name="selectionMode">
-         <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
-        </property>
-        <property name="selectionBehavior">
-         <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+      <item row="2" column="0">
+       <widget class="QGroupBox" name="Historial">
+        <property name="title">
+         <string>GroupBox</string>
         </property>
        </widget>
       </item>
@@ -167,11 +161,42 @@
         </item>
        </layout>
       </item>
-      <item row="2" column="0">
-       <widget class="QGroupBox" name="Historial">
-        <property name="title">
-         <string>GroupBox</string>
+      <item row="1" column="0">
+       <widget class="QTableWidget" name="Datos_Clientes">
+        <property name="editTriggers">
+         <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
         </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+        </property>
+        <column>
+         <property name="text">
+          <string>No. Paciente</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Nombre</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Ultima Valuación</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Fecha Ultima visita</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Edad</string>
+         </property>
+        </column>
        </widget>
       </item>
      </layout>

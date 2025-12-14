@@ -218,7 +218,7 @@
              <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
             <property name="placeholderText">
-             <string notr="true" extracomment="usuario">Ingresa tu usuario</string>
+             <string notr="true" extracomment="usuario">Ingresa tu usuario/No. Identificador</string>
             </property>
            </widget>
           </item>

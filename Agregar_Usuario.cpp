@@ -23,57 +23,76 @@ void Agregar_Usuario::BOTON_ACEPTAR()
 
     if(!ui->USUARIO->text().isEmpty() && !ui->PASSWORD1->text().isEmpty() && !ui->PASSWORD2->text().isEmpty())
     {
-        QString usuarioIngresado = ui->USUARIO->text().trimmed();
-        QString passwordIngresado = encriptar(ui->PASSWORD1->text());
-        QString confirmarPassword = encriptar(ui->PASSWORD2->text());
-        QString Rol;
-        if(ui->CheckAdmin->isChecked())
+        if(ui->USUARIO->text().size()>=3 && ui->PASSWORD1->text().size()>=6)
         {
-            Rol = "Administrador";
-        }else Rol = "Empleado";
-
-        QFile archivo("USUARIOS.dat");
-
-        if (!archivo.open(QIODevice::ReadWrite | QIODevice::Text))
-        {
-            QMessageBox::critical(this, "ERROR", "No se pudo abrir el archivo de usuarios");
-            return;
-        }
-
-        bool usuarioNuevo = true;
-        QTextStream in(&archivo);
-
-        while (!in.atEnd()) {
-            QString linea = in.readLine().trimmed();
-            QStringList partes = linea.split(';');
-            if (partes.size() != 3) continue;
-
-            if (partes[0] == usuarioIngresado) {
-
-                usuarioNuevo = false;
-                break;
-            }
-        }
-
-        if(usuarioNuevo)
-        {
-            if(passwordIngresado == confirmarPassword)
+            QString usuarioIngresado = ui->USUARIO->text().trimmed();
+            QString passwordIngresado = encriptar(ui->PASSWORD1->text());
+            QString confirmarPassword = encriptar(ui->PASSWORD2->text());
+            QString Rol;
+            int ID;
+            if(ui->CheckAdmin->isChecked())
             {
-                in << usuarioIngresado << ";" << passwordIngresado << ";" << Rol <<"\n";
-                QMessageBox::about(this, "EXITO", "Usuario Creado exitosamente.");
-                archivo.close();
-                this->close();
+                Rol = "Administrador";
+            }else Rol = "Empleado";
+
+            QFile archivo("USUARIOS.dat");
+
+            if (!archivo.open(QIODevice::ReadWrite | QIODevice::Text))
+            {
+                QMessageBox::critical(this, "ERROR", "No se pudo abrir el archivo de usuarios");
+                return;
+            }
+
+            bool usuarioNuevo = true;
+            QTextStream in(&archivo);
+
+            while (!in.atEnd()) {
+                QString linea = in.readLine().trimmed();
+                QStringList partes = linea.split(';');
+                ID = partes[0].toInt();
+                if (partes.size() != 3) continue;
+
+                if (partes[1] == usuarioIngresado) {
+
+                    usuarioNuevo = false;
+                    break;
+                }
+            }
+
+            if(usuarioNuevo)
+            {
+                if(passwordIngresado == confirmarPassword)
+                {
+                    in << ID+1 << ";" << usuarioIngresado << ";" << Rol << ";" << passwordIngresado <<"\n";
+                    QMessageBox::about(this, "EXITO", "Usuario: "+usuarioIngresado+" Creado exitosamente\nTu número unico de identificador es:\n"+QString::number(ID+1)
+                                       +". con el puedes iniciar sesión.");
+                    archivo.close();
+                    this->close();
+                }else{
+                    ui->PASSWORD1->clear();
+                    ui->PASSWORD2->clear();
+                    ui->PASSWORD1->setFocus();
+                    QMessageBox::critical(this, "ERROR", "Las contraseñas no coinciden");
+                }
             }else{
+                ui->USUARIO->setFocus();
+                QMessageBox::critical(this, "ERROR", "usuario ya existe");
+            }
+            archivo.close();
+        }else{
+            if(ui->USUARIO->text().size()<3)
+            {
+                ui->USUARIO->clear();
+                ui->USUARIO->setPlaceholderText("El usuario debe tener al menos 3 caracteres...");
+            }
+            if(ui->PASSWORD1->text().size()<6)
+            {
                 ui->PASSWORD1->clear();
                 ui->PASSWORD2->clear();
-                ui->PASSWORD1->setFocus();
-                QMessageBox::critical(this, "ERROR", "Las contraseñas no coinciden");
+                ui->PASSWORD1->setPlaceholderText("Al menos 6 caracteres...");
+                ui->PASSWORD2->setPlaceholderText("Al menos 6 caracteres...");
             }
-        }else{
-            ui->USUARIO->setFocus();
-            QMessageBox::critical(this, "ERROR", "usuario ya existe");
         }
-        archivo.close();
     }else{
         if(ui->USUARIO->text().isEmpty())
         {
