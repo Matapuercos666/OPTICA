@@ -1,4 +1,4 @@
-*#include "Lista_Clientes.h"
+#include "Lista_Clientes.h"
 #include "ui_Lista_Clientes.h"
 #include "ESTILOS.h"
 #include <QTableWidget>
