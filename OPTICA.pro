@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -15,6 +15,7 @@ SOURCES += \
     Eliminar_Usuarios.cpp \
     Inventario.cpp \
     Lista_Clientes.cpp \
+    ManejoDeData.cpp \
     Menu.cpp \
     PuntoVenta.cpp \
     USUARIOS.cpp \
@@ -32,6 +33,7 @@ HEADERS += \
     Inventario.h \
     LOGIN.h \
     Lista_Clientes.h \
+    ManejoDeData.h \
     Menu.h \
     PuntoVenta.h \
     USUARIOS.h \

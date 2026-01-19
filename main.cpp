@@ -1,3 +1,4 @@
+#include "ManejoDeData.h"
 #include "LOGIN.h"
 
 #include <QApplication>
@@ -9,6 +10,13 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    ManejoDeData& data = ManejoDeData::instance();
+    if(!data.abrir("BDJardines.dat"))
+    {
+        QMessageBox::critical(nullptr, "Error");
+        return -1;
+    }
 
     PaletaColores::inicializar(); //Precarga la paleta de colores
     Fuente::inicializar();        // <<--- Precarga las fuentes
@@ -61,5 +69,6 @@ int main(int argc, char *argv[])
                     );
     LOGIN w;
     w.show();
+    ManejoDeData::instance().cerrar();
     return a.exec();
 }
