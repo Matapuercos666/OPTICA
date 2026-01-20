@@ -12,9 +12,9 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     ManejoDeData& data = ManejoDeData::instance();
-    if(!data.abrir("BDJardines.dat"))
+    if(!data.abrir("DBJardines.db"))
     {
-        QMessageBox::critical(nullptr, "Error");
+        QMessageBox::critical(nullptr, "Error", "no se encontro");
         return -1;
     }
 
@@ -69,6 +69,7 @@ int main(int argc, char *argv[])
                     );
     LOGIN w;
     w.show();
+    int ret = a.exec();
     ManejoDeData::instance().cerrar();
-    return a.exec();
+    return ret;
 }

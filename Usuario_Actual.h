@@ -1,6 +1,7 @@
 #ifndef USUARIO_ACTUAL_H
 #define USUARIO_ACTUAL_H
 
+
 #include <QString>
 
 class Usuario_Actual

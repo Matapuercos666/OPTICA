@@ -9,11 +9,11 @@ class ManejoDeData
 public:
     static ManejoDeData& instance();//singelton
 
-    bool abrir(const QString& RutaArchivo = "BDJardines.sqlite");
+    bool abrir(const QString& RutaArchivo = "DBJardines.db");
 
     void cerrar();
 
-    QSqlDatabase BaseDeDatos() const();
+    QSqlDatabase BaseDeDatos() const;
 
 
 private:

@@ -10,11 +10,10 @@
 #include <QDir>
 #include <Menu.h>
 #include "Usuario_Actual.h"
+#include <QSqlQuery>
+#include <QSqlDatabase>
+#include <QSqlError>
 
-struct Usuario {
-    QString nombre;
-    QString rol;
-};
 
 LOGIN::LOGIN(QWidget *parent)
     : QMainWindow(parent)
@@ -36,60 +35,111 @@ LOGIN::~LOGIN()
 
 void LOGIN::Boton_ENTRAR()
 {
+    bool autorizacion;
+    Usuario Actual;
     if(!ui->Usuario->text().isEmpty() && !ui->password->text().isEmpty())
     {
         QString usuarioIngresado = ui->Usuario->text().trimmed();
         QString contrasenaIngresada = encriptar(ui->password->text());
 
-        QFile archivo("USUARIOS.dat");
-        if (!archivo.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            QMessageBox::critical(this, "Error", "No se pudo abrir el archivo de usuarios.");
-            return;
+        bool EsNumero;
+
+        int IDNumerico = usuarioIngresado.toInt(&EsNumero);
+
+        if(EsNumero)
+        {
+            Actual = BuscarID(IDNumerico);
+            autorizacion = (contrasenaIngresada == Actual.PASS);
+        }else
+        {
+            Actual = BuscarUsuario(usuarioIngresado);
+            autorizacion = (contrasenaIngresada == Actual.PASS);
         }
 
-        QTextStream in(&archivo);
-        bool loginCorrecto = false;
-        QString Rol;
-        QString Nombre;
-        QString Password;
-        QString ID;
-
-        while (!in.atEnd()) {
-            QString linea = in.readLine().trimmed();
-            QStringList partes = linea.split(';');
-            if (partes.size() != 4) continue;
-
-            if ((partes[3] == contrasenaIngresada) && (partes[0] ==usuarioIngresado || partes[1] == usuarioIngresado)) {
-                ID = partes[0];
-                Nombre = partes[1];
-                Rol = partes[2];
-                Password = partes[3];
-                loginCorrecto = true;
-                break;
-            }
-        }
-
-        archivo.close();
-
-        if (loginCorrecto) {
-            Usuario_Actual::obtenerinstancia()->establecerusuario(Nombre, Rol, Password, ID);
+        if(!autorizacion)
+        {
+            QMessageBox::critical(nullptr, "Error", "Algún campo o ambos son incorrectos");
             ui->Usuario->clear();
             ui->password->clear();
             ui->Usuario->setFocus();
-            MenuWindow = new Menu(nullptr);
-            MenuWindow->show();
-            this->close();
-        } else {
-            ui->Usuario->clear();
-            ui->password->clear();
-            ui->Usuario->setFocus();
-            QMessageBox::warning(this, "Acceso denegado", "Usuario o contrseña incorrecto...");
         }
-    }else{
-        if(ui->Usuario->text().isEmpty())
+    } else
+    {
+        if(ui->Usuario->text().isEmpty() && ui->Usuario->text().isEmpty())
         {
             ui->Usuario->setFocus();
-        }else ui->password->setFocus();
-        QMessageBox::information(this, "Campos vacíos", "Por Favor Rellena Los Campos Faltantes...");
+        }
+        else
+        {
+            if(ui->Usuario->text().isEmpty())
+            {
+                QMessageBox::critical(nullptr, "Error", "Por favor introduce tu nombre de usuario o numero de empleado");
+                ui->Usuario->setFocus();
+            }else{
+
+                QMessageBox::critical(nullptr, "Error", "Por favor introduce tu contraseña");
+                ui->password->setFocus();
+            }
+        }
+        QMessageBox::critical(nullptr, "campos vacíos", "Favor de llenar los campos por favor");
+        ui->Usuario->setFocus();
     }
+
+    if(autorizacion)
+    {
+        Usuario_Actual *actual = Usuario_Actual::obtenerinstancia();
+        actual->establecerusuario(Actual.nombre, Actual.rol, Actual.PASS, QString::number(Actual.ID));
+        if (!MenuWindow || MenuWindow->isHidden())
+        {
+            if(MenuWindow)
+            {
+                delete MenuWindow;
+            }
+            MenuWindow = new Menu(parentWidget());
+            MenuWindow->setAttribute(Qt::WA_DeleteOnClose);
+            connect(MenuWindow, &QObject::destroyed, this, [this]() { MenuWindow = nullptr; });
+        }
+        MenuWindow->show();
+        this->hide();
+    }
+}
+
+Usuario LOGIN::BuscarID(int IDNumero)
+{
+    Usuario Puntero;
+    QSqlQuery query;
+    query.clear();
+    query.prepare("SELECT PASS, USUARIO, PUESTO, ID FROM EMPLEADOS WHERE ID = ?");
+    query.addBindValue(IDNumero);
+
+    if(query.exec() && query.next())
+    {
+        Puntero.PASS = query.value(0).toString();
+        Puntero.nombre = query.value(1).toString();
+        Puntero.rol = query.value(2).toString();
+        Puntero.ID = query.value(3).toInt();
+        return Puntero;
+    }else{
+
+        return Usuario();
+    }
+}
+
+Usuario LOGIN::BuscarUsuario(const QString& NombreUsuario)
+{
+    Usuario Puntero;
+    QSqlQuery query;
+    query.clear();
+    query.prepare("SELECT PASS, USUARIO, PUESTO, ID FROM EMPLEADOS WHERE USUARIO = ?");
+    query.addBindValue(NombreUsuario);
+
+    if(query.exec() && query.next())
+    {
+        Puntero.PASS = query.value(0).toString();
+        Puntero.nombre = query.value(1).toString();
+        Puntero.rol = query.value(2).toString();
+        Puntero.ID = query.value(3).toInt();
+        return Puntero;
+    }
+    return Usuario();
 }

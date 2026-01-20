@@ -5,6 +5,12 @@
 #include "ESTILOS.H"
 #include "Menu.h"
 
+struct Usuario {
+    QString nombre;
+    QString rol;
+    QString PASS;
+    int ID;
+};
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class LOGIN;
@@ -17,6 +23,8 @@ class LOGIN : public QMainWindow
 
 public:
     LOGIN(QWidget *parent = nullptr);
+    Usuario BuscarID(int);
+    Usuario BuscarUsuario(const QString&);
     ~LOGIN();
 
 private slots:

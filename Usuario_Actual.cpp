@@ -69,7 +69,7 @@ QString Usuario_Actual::obtenerID() const
 
 bool Usuario_Actual::EsAdmin() const
 {
-    return Rol == "Administrador";
+    return Rol == "ADMINISTRADOR";
 }
 
 //Limpiar

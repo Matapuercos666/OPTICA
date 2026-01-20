@@ -24,6 +24,7 @@ private slots:
 
 private:
     Ui::Lista_Clientes *ui;
+    void LlenarDatos();
 };
 
 #endif // LISTA_CLIENTES_H
