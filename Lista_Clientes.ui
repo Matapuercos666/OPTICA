@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>764</width>
+    <height>676</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,13 +29,6 @@
       <property name="bottomMargin">
        <number>20</number>
       </property>
-      <item row="2" column="0">
-       <widget class="QGroupBox" name="Historial">
-        <property name="title">
-         <string>GroupBox</string>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="0">
        <layout class="QGridLayout" name="Barra_Superior">
         <item row="0" column="0">
@@ -121,6 +114,12 @@
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <property name="topMargin">
+             <number>20</number>
+            </property>
+            <property name="bottomMargin">
+             <number>20</number>
+            </property>
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout">
               <item>
@@ -161,8 +160,98 @@
         </item>
        </layout>
       </item>
-      <item row="1" column="0">
+      <item row="2" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0,0,0,0">
+        <property name="topMargin">
+         <number>25</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="Agregar">
+          <property name="text">
+           <string>AGREGAR</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="Eliminar">
+          <property name="text">
+           <string>ELIMINAR</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0" colspan="2">
        <widget class="QTableWidget" name="Datos_Clientes">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LayoutDirection::LeftToRight</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::WinPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <property name="lineWidth">
+         <number>4</number>
+        </property>
+        <property name="midLineWidth">
+         <number>4</number>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustIgnored</enum>
+        </property>
         <property name="editTriggers">
          <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
         </property>
@@ -172,9 +261,27 @@
         <property name="selectionBehavior">
          <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
         </property>
+        <property name="showGrid">
+         <bool>true</bool>
+        </property>
+        <property name="columnCount">
+         <number>7</number>
+        </property>
+        <attribute name="horizontalHeaderCascadingSectionResizes">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="horizontalHeaderMinimumSectionSize">
+         <number>100</number>
+        </attribute>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>100</number>
+        </attribute>
+        <attribute name="horizontalHeaderHighlightSections">
+         <bool>false</bool>
+        </attribute>
         <column>
          <property name="text">
-          <string>No. Paciente</string>
+          <string>N° Paciente</string>
          </property>
         </column>
         <column>
@@ -184,17 +291,27 @@
         </column>
         <column>
          <property name="text">
-          <string>Ultima Valuación</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Fecha Ultima visita</string>
+          <string>Antecedentes</string>
          </property>
         </column>
         <column>
          <property name="text">
           <string>Edad</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Telefono</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Email</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Nacimiento</string>
          </property>
         </column>
        </widget>
@@ -208,7 +325,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>764</width>
      <height>22</height>
     </rect>
    </property>

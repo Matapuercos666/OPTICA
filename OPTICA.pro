@@ -9,12 +9,15 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Agregar_Paciente.cpp \
     Agregar_Usuario.cpp \
     Cambiar_Nombre.cpp \
     Cambiar_Password.cpp \
     Eliminar_Usuarios.cpp \
+    Info_Paciente.cpp \
     Inventario.cpp \
     Lista_Clientes.cpp \
+    Llenar_Consulta.cpp \
     ManejoDeData.cpp \
     Menu.cpp \
     PuntoVenta.cpp \
@@ -25,14 +28,17 @@ SOURCES += \
     LOGIN.cpp
 
 HEADERS += \
+    Agregar_Paciente.h \
     Agregar_Usuario.h \
     Cambiar_Nombre.h \
     Cambiar_Password.h \
     ESTILOS.h \
     Eliminar_Usuarios.h \
+    Info_Paciente.h \
     Inventario.h \
     LOGIN.h \
     Lista_Clientes.h \
+    Llenar_Consulta.h \
     ManejoDeData.h \
     Menu.h \
     PuntoVenta.h \
@@ -42,13 +48,16 @@ HEADERS += \
     Validacion.h
 
 FORMS += \
+    Agregar_Paciente.ui \
     Agregar_Usuario.ui \
     Cambiar_Nombre.ui \
     Cambiar_Password.ui \
     Eliminar_Usuarios.ui \
+    Info_Paciente.ui \
     Inventario.ui \
     LOGIN.ui \
     Lista_Clientes.ui \
+    Llenar_Consulta.ui \
     Menu.ui \
     PuntoVenta.ui \
     USUARIOS.ui \

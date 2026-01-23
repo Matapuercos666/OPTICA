@@ -19,7 +19,12 @@ ManejoDeData& ManejoDeData::instance()
 bool ManejoDeData::abrir(const QString &RutaArchivo)
 {
     //conexion por defecto de qt
-    m_db = QSqlDatabase::addDatabase("QSQLITE");
+    const QString nombreconexion = "principal";
+    if(QSqlDatabase::contains(nombreconexion))
+    {
+        QSqlDatabase::removeDatabase(nombreconexion);
+    }
+    m_db = QSqlDatabase::addDatabase("QSQLITE", nombreconexion);
     m_db.setDatabaseName(RutaArchivo);
 
     if(!m_db.open())

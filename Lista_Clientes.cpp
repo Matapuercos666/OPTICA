@@ -4,6 +4,7 @@
 #include <QTableWidget>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QSqlError>
 
 struct Paciente
 {
@@ -19,10 +20,13 @@ struct Paciente
 Lista_Clientes::Lista_Clientes(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Lista_Clientes)
+    , Agregar_PacienteWindow(nullptr)
 {
     ui->setupUi(this);
     Fuente::AplicarTodas(this);
     connect(ui->Regresar, &QPushButton::clicked, this, &Lista_Clientes::Boton_Regresar);
+    connect(ui->Eliminar, &QPushButton::clicked, this, &Lista_Clientes::Boton_Eliminar);
+    connect(ui->Agregar, &QPushButton::clicked, this, &Lista_Clientes::Boton_Agregar);
 
     LlenarDatos();
 }
@@ -40,6 +44,58 @@ void Lista_Clientes::Boton_Regresar()
         parentWidget()->show();
     }
     this->close();
+}
+
+void Lista_Clientes::Boton_Eliminar()
+{
+    int fila = ui->Datos_Clientes->currentRow();
+    if(fila < 0) return;
+
+    QTableWidgetItem *itemid = ui->Datos_Clientes->item(fila,0);
+
+    if(!itemid)
+    {
+        QMessageBox::critical(this, "Error", "No se pudo borrar el paciente");
+    }
+    int idPaciente = itemid->text().toInt();
+
+    QString NombrePaciente = ui->Datos_Clientes->item(fila, 1)->text();
+
+    QMessageBox::StandardButton respuesta = QMessageBox::question(this, "Confirmar eliminación",
+    QString("¿Está seguro de eliminar al paciente '%1'?").arg(NombrePaciente),
+    QMessageBox::Yes | QMessageBox::No);
+
+    if(respuesta != QMessageBox::Yes) return;
+
+    QSqlQuery q;
+    q.prepare("DELETE FROM PACIENTES WHERE ID = ?");
+    q.addBindValue(idPaciente);
+
+    if(!q.exec())
+    {
+        QMessageBox::critical(this, "Error", "No se pudo eliminar\n" + q.lastError().text());
+        return;
+    }
+
+    ui->Datos_Clientes->removeRow(fila);
+
+    QMessageBox::information(this, "Eliminado", "Paciente eliminado correctamente");
+}
+
+void Lista_Clientes::Boton_Agregar()
+{
+    if (!Agregar_PacienteWindow || Agregar_PacienteWindow->isHidden())
+    {
+        if(Agregar_PacienteWindow)
+        {
+            delete Agregar_PacienteWindow;
+        }
+        Agregar_PacienteWindow = new Agregar_Paciente(this);
+        connect(Agregar_PacienteWindow, &Agregar_Paciente::Actualizar, this, &Lista_Clientes::LlenarDatos);
+        Agregar_PacienteWindow->setAttribute(Qt::WA_DeleteOnClose);
+        connect(Agregar_PacienteWindow, &QObject::destroyed, this, [this]() { Agregar_PacienteWindow = nullptr; });
+    }
+    Agregar_PacienteWindow->show();
 }
 
 void Lista_Clientes::LlenarDatos()

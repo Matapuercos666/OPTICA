@@ -13,6 +13,8 @@
 #include <QSqlQuery>
 #include <QSqlDatabase>
 #include <QSqlError>
+#include <QFile>
+#include "ManejoDeData.h"
 
 
 LOGIN::LOGIN(QWidget *parent)
@@ -35,7 +37,7 @@ LOGIN::~LOGIN()
 
 void LOGIN::Boton_ENTRAR()
 {
-    bool autorizacion;
+    bool autorizacion = false;
     Usuario Actual;
     if(!ui->Usuario->text().isEmpty() && !ui->password->text().isEmpty())
     {
@@ -107,8 +109,14 @@ void LOGIN::Boton_ENTRAR()
 Usuario LOGIN::BuscarID(int IDNumero)
 {
     Usuario Puntero;
-    QSqlQuery query;
-    query.clear();
+    QSqlDatabase db = ManejoDeData::instance().BaseDeDatos();
+    if(!db.isOpen())
+    {
+        qWarning()<<"Base no abierta en buscarid";
+        return Puntero;
+    }
+
+    QSqlQuery query(db);
     query.prepare("SELECT PASS, USUARIO, PUESTO, ID FROM EMPLEADOS WHERE ID = ?");
     query.addBindValue(IDNumero);
 
@@ -128,17 +136,24 @@ Usuario LOGIN::BuscarID(int IDNumero)
 Usuario LOGIN::BuscarUsuario(const QString& NombreUsuario)
 {
     Usuario Puntero;
-    QSqlQuery query;
-    query.clear();
-    query.prepare("SELECT PASS, USUARIO, PUESTO, ID FROM EMPLEADOS WHERE USUARIO = ?");
-    query.addBindValue(NombreUsuario);
 
-    if(query.exec() && query.next())
+    QSqlDatabase db = ManejoDeData::instance().BaseDeDatos();
+    if(!db.isOpen())
     {
-        Puntero.PASS = query.value(0).toString();
-        Puntero.nombre = query.value(1).toString();
-        Puntero.rol = query.value(2).toString();
-        Puntero.ID = query.value(3).toInt();
+        qWarning()<<"Base no abierta en buscarid";
+        return Puntero;
+    }
+
+    QSqlQuery q(db);
+    q.prepare("SELECT PASS, USUARIO, PUESTO, ID FROM EMPLEADOS");
+    q.addBindValue(NombreUsuario);
+
+    if(q.exec() && q.next())
+    {
+        Puntero.PASS = q.value(0).toString();
+        Puntero.nombre = q.value(1).toString();
+        Puntero.rol = q.value(2).toString();
+        Puntero.ID = q.value(3).toInt();
         return Puntero;
     }
     return Usuario();

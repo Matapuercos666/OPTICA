@@ -9,7 +9,7 @@ struct Usuario {
     QString nombre;
     QString rol;
     QString PASS;
-    int ID;
+    int ID = -1;
 };
 QT_BEGIN_NAMESPACE
 namespace Ui {

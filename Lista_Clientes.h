@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "Usuario_Actual.h"
+#include "Agregar_Paciente.h"
 #include <QFile>
 #include <QMessageBox>
 
@@ -21,9 +22,12 @@ public:
 
 private slots:
     void Boton_Regresar();
+    void Boton_Eliminar();
+    void Boton_Agregar();
 
 private:
     Ui::Lista_Clientes *ui;
+    Agregar_Paciente *Agregar_PacienteWindow;
     void LlenarDatos();
 };
 
