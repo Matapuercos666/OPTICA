@@ -109,14 +109,9 @@ void LOGIN::Boton_ENTRAR()
 Usuario LOGIN::BuscarID(int IDNumero)
 {
     Usuario Puntero;
-    QSqlDatabase db = ManejoDeData::instance().BaseDeDatos();
-    if(!db.isOpen())
-    {
-        qWarning()<<"Base no abierta en buscarid";
-        return Puntero;
-    }
 
-    QSqlQuery query(db);
+    QSqlQuery query;
+    query.clear();
     query.prepare("SELECT PASS, USUARIO, PUESTO, ID FROM EMPLEADOS WHERE ID = ?");
     query.addBindValue(IDNumero);
 
@@ -137,15 +132,9 @@ Usuario LOGIN::BuscarUsuario(const QString& NombreUsuario)
 {
     Usuario Puntero;
 
-    QSqlDatabase db = ManejoDeData::instance().BaseDeDatos();
-    if(!db.isOpen())
-    {
-        qWarning()<<"Base no abierta en buscarid";
-        return Puntero;
-    }
-
-    QSqlQuery q(db);
-    q.prepare("SELECT PASS, USUARIO, PUESTO, ID FROM EMPLEADOS");
+    QSqlQuery q;
+    q.clear();
+    q.prepare("SELECT PASS, USUARIO, PUESTO, ID FROM EMPLEADOS WHERE USUARIO = ?");
     q.addBindValue(NombreUsuario);
 
     if(q.exec() && q.next())

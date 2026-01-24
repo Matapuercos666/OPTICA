@@ -9,7 +9,7 @@ class ManejoDeData
 public:
     static ManejoDeData& instance();//singelton
 
-    bool abrir(const QString& RutaArchivo = "DBJardines.dat");
+    bool abrir(const QString& RutaArchivo = "DBJardines.db");
 
     void cerrar();
 

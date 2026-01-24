@@ -14,7 +14,7 @@ SOURCES += \
     Cambiar_Nombre.cpp \
     Cambiar_Password.cpp \
     Eliminar_Usuarios.cpp \
-    Info_Paciente.cpp \
+    Info_paciente.cpp \
     Inventario.cpp \
     Lista_Clientes.cpp \
     Llenar_Consulta.cpp \
@@ -34,7 +34,7 @@ HEADERS += \
     Cambiar_Password.h \
     ESTILOS.h \
     Eliminar_Usuarios.h \
-    Info_Paciente.h \
+    Info_paciente.h \
     Inventario.h \
     LOGIN.h \
     Lista_Clientes.h \
@@ -53,7 +53,7 @@ FORMS += \
     Cambiar_Nombre.ui \
     Cambiar_Password.ui \
     Eliminar_Usuarios.ui \
-    Info_Paciente.ui \
+    Info_paciente.ui \
     Inventario.ui \
     LOGIN.ui \
     Lista_Clientes.ui \

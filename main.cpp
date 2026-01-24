@@ -2,6 +2,7 @@
 #include "LOGIN.h"
 
 
+
 #include <QApplication>
 #include "ESTILOS.h"
 #include <QFontDatabase>
@@ -13,7 +14,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     ManejoDeData& data = ManejoDeData::instance();
-    if(!data.abrir("DBJardines.dat"))
+    if(!data.abrir("DBJardines.db"))
     {
         QMessageBox::critical(nullptr, "Error", "no se encontro");
         return -1;
