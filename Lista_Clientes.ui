@@ -202,7 +202,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="QPushButton" name="Eliminar">
+         <widget class="QPushButton" name="ELIMINAR">
           <property name="text">
            <string>ELIMINAR</string>
           </property>

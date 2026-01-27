@@ -1,5 +1,7 @@
 #include "Lista_Clientes.h"
 #include "ui_Lista_Clientes.h"
+
+
 #include "ESTILOS.h"
 #include <QTableWidget>
 #include <QSqlDatabase>
@@ -10,11 +12,15 @@ struct Paciente
 {
     int ID;
     QString Nombre;
-    QString Telefono;
-    QString Antecedentes;
-    int Edad;
-    QString Email;
+    QString Apellido1;
+    QString Apellido2;
     QString Nacimiento;
+    int Edad;
+    QString Telefono;
+    QString Email;
+    QString Sexo;
+    QString Antecedentesf;
+    QString Antecedenteso;
 }aux;
 
 Lista_Clientes::Lista_Clientes(QWidget *parent)
@@ -25,7 +31,7 @@ Lista_Clientes::Lista_Clientes(QWidget *parent)
     ui->setupUi(this);
     Fuente::AplicarTodas(this);
     connect(ui->Regresar, &QPushButton::clicked, this, &Lista_Clientes::Boton_Regresar);
-    connect(ui->Eliminar, &QPushButton::clicked, this, &Lista_Clientes::Boton_Eliminar);
+    connect(ui->ELIMINAR, &QPushButton::clicked, this, &Lista_Clientes::Boton_Eliminar);
     connect(ui->Agregar, &QPushButton::clicked, this, &Lista_Clientes::Boton_Agregar);
 
     LlenarDatos();
@@ -71,11 +77,7 @@ void Lista_Clientes::Boton_Eliminar()
     q.prepare("DELETE FROM PACIENTES WHERE ID = ?");
     q.addBindValue(idPaciente);
 
-    if(!q.exec())
-    {
-        QMessageBox::critical(this, "Error", "No se pudo eliminar\n" + q.lastError().text());
-        return;
-    }
+    q.exec();
 
     ui->Datos_Clientes->removeRow(fila);
 
@@ -100,38 +102,44 @@ void Lista_Clientes::Boton_Agregar()
 
 void Lista_Clientes::LlenarDatos()
 {
-    ui->Datos_Clientes->setColumnCount(7);
-    ui->Datos_Clientes->setHorizontalHeaderLabels({"N° Paciente", "Nombre", "Antecedentes", "Edad", "Telefono", "Email", "Nacimiento"});
-    /*ui->Datos_Clientes->setEditTriggers(QAbstractItemView::SelectRows);*/
+    ui->Datos_Clientes->setColumnCount(4);
+    ui->Datos_Clientes->setHorizontalHeaderLabels({"N° Paciente", "Nombre", "Edad", "Telefono"});
 
     ui->Datos_Clientes->setRowCount(0);//limpiamos
 
     QSqlQuery query;
-    query.prepare("SELECT ID, NOMBRE, ANTECEDENTES, EDAD, TELEFONO, EMAIL, NACIMIENTO FROM PACIENTES");
-    query.exec();
+    query.prepare("SELECT ID, NOMBRE, APELLIDO1, APELLIDO2, EDAD,"
+                  "TELEFONO FROM PACIENTES ");
+    if(!query.exec())
+    {
+        qDebug() << "Error" <<query.lastError().text();
+        QMessageBox::critical(this, "Error", "No se pudo Cargar la lista de pacientes");
+        return;
+    }
 
     while(query.next())
     {
         aux.ID = query.value(0).toInt();
         aux.Nombre = query.value(1).toString();
-        aux.Antecedentes = query.value(2).toString();
-        aux.Edad = query.value(3).toInt();
-        aux.Telefono = query.value(4).toString();
-        aux.Email = query.value(5).toString();
-        aux.Nacimiento = query.value(6).toString();
+        aux.Apellido1 = query.value(2).toString();
+        aux.Apellido2 = query.value(3).toString();
+        aux.Edad = query.value(4).toInt();
+        aux.Telefono = query.value(5).toString();
+        QStringList Nombre_Completo;
+        Nombre_Completo << aux.Nombre;
+        if(!aux.Apellido1.isEmpty()) Nombre_Completo << aux.Apellido1;
+        if(!aux.Apellido2.isEmpty()) Nombre_Completo << aux.Apellido2;
+        QString NOMBRE = Nombre_Completo.join(" ");
 
         int fila = ui->Datos_Clientes->rowCount();
         ui->Datos_Clientes->insertRow(fila);
 
         ui->Datos_Clientes->setItem(fila, 0, new QTableWidgetItem(QString::number(aux.ID)));
-        ui->Datos_Clientes->setItem(fila, 1, new QTableWidgetItem(aux.Nombre));
-        ui->Datos_Clientes->setItem(fila, 2, new QTableWidgetItem(aux.Antecedentes));
-        ui->Datos_Clientes->setItem(fila, 3, new QTableWidgetItem(QString::number(aux.Edad)));
-        ui->Datos_Clientes->setItem(fila, 4, new QTableWidgetItem(aux.Telefono));
-        ui->Datos_Clientes->setItem(fila, 5, new QTableWidgetItem(aux.Email));
-        ui->Datos_Clientes->setItem(fila, 6, new QTableWidgetItem(aux.Nacimiento));
-
+        ui->Datos_Clientes->setItem(fila, 1, new QTableWidgetItem(NOMBRE));
+        ui->Datos_Clientes->setItem(fila, 2, new QTableWidgetItem(QString::number(aux.Edad)));
+        ui->Datos_Clientes->setItem(fila, 3, new QTableWidgetItem(aux.Telefono));
     }
 
     ui->Datos_Clientes->resizeColumnsToContents();
 }
+

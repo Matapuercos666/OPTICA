@@ -24,6 +24,7 @@ SOURCES += \
     USUARIOS.cpp \
     Usuario_Actual.cpp \
     Validacion.cpp \
+    VentanaBase.cpp \
     main.cpp \
     LOGIN.cpp
 
@@ -45,7 +46,8 @@ HEADERS += \
     USUARIOS.h \
     Usuario_Actual.h \
     Utils.h \
-    Validacion.h
+    Validacion.h \
+    VentanaBase.h
 
 FORMS += \
     Agregar_Paciente.ui \
@@ -70,3 +72,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     RECURSOS.qrc
+
+DISTFILES +=

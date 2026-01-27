@@ -15,7 +15,7 @@ USUARIOS::USUARIOS(QWidget *parent)
     Fuente::AplicarTodas(this);
     connect(ui->CambiarContrasena, &QPushButton::clicked, this, &USUARIOS::Boton_CambiarPassword);
     connect(ui->CambiarNombre, &QPushButton::clicked, this, &USUARIOS::Boton_CambiarNombre);
-    connect(ui->Eliminar, &QPushButton::clicked, this, &USUARIOS::Boton_Eliminar);
+    connect(ui->ELIMINAR, &QPushButton::clicked, this, &USUARIOS::Boton_Eliminar);
     connect(ui->Agregar, &QPushButton::clicked, this, &USUARIOS::Boton_AgregarUsuario);
     connect(ui->Regresar, &QPushButton::clicked, this, &USUARIOS::Boton_Regresar);
 }

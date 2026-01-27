@@ -33,6 +33,11 @@ bool ManejoDeData::abrir(const QString &RutaArchivo)
     if(!query.exec("PRAGMA journal_mode=WAL;"))
     {
         qWarning() << "No se pudo activar wal:" << query.lastError().text();
+    }else{
+        if(!query.exec("PRAGMA foreign_keys = ON;"))
+        {
+            qDebug()<<"No se activaron las claves foraneas"<<query.lastError().text();
+        }
     }
 
     return true;

@@ -4,6 +4,7 @@
 #include "Usuario_Actual.h"
 #include <QString>
 
+
 Menu::Menu(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Menu)

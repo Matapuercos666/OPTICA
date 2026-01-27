@@ -1,0 +1,323 @@
+
+* {
+    background-color: %1;
+    color: %2;
+}
+
+QPushButton {
+    font: bold 10pt 'Arial Black';
+    background-color: %3;
+    color: %4;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+QPushButton:hover {
+    background-color: %15;
+}
+
+QPushButton:pressed {
+    background-color: %13;
+    color: %5;
+}
+
+QPushButton#CANCELAR,
+QPushButton#CERRAR,
+QPushButton#ELIMINAR {
+    background-color: %12;
+    color: %4;
+    border: none;
+    border-radius: 4px;
+    padding:5px;
+}
+
+QPushButton#CANCELAR:hover,
+QPushButton#CERRAR:hover,
+QPushButton#ELIMINAR:hover {
+    background-color: #d32f2f;
+}
+
+QPushButton#CANCELAR:pressed,
+QPushButton#CERRAR:pressed,
+QPushButton#ELIMINAR:pressed {
+    background-color: #b71c1c;
+}
+
+QLineEdit, QTextEdit, QPlainTextEdit {
+    background-color: %6;
+    color: %7;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 8px 10px;
+}
+
+#LOGIN QLineEdit {
+    min-height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/*Selectores Info_paciente, Agregar_Paciente, Agregar_consulta*/
+
+QLabel#Nombre,
+QLabel#ApellidoP,
+QLabel#ApellidoM,
+QLabel#Nacimiento,
+QLabel#Edad,
+QLabel#Sexo,
+QLabel#Telefono,
+QLabel#Email,
+QLabel#Observaciones_2,
+QLabel#Antecedentes,
+QLabel#AntecedentesO {
+    color: %8;
+    font-family: 'Roboto Condensed';
+    font-size: 12px;
+    font-weight: bold;
+}
+
+QLabel#OD,
+QLabel#OI,
+QLabel#OD_2,
+QLabel#OI_2,
+QLabel#OD_3,
+QLabel#OI_3,
+QLabel#OD_4,
+QLabel#OI_4,
+QLabel#OD_5,
+QLabel#OI_5,
+QLabel#OD_6,
+QLabel#OI_6,
+QLabel#OD_7,
+QLabel#OI_7 {
+    color: %11;
+    font-family: 'Roboto Condensed';
+    font-size: 11px;
+}
+
+/*Estilos Info_paciente*/
+
+#Info_paciente QLineEdit[readOnly="false"],
+#Info_paciente QTextEdit[readOnly="false"],
+#Info_paciente QPlainTextEdit[readOnly="false"] {
+    background-color: %9;
+    color: %2;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 8px 10px;
+    selection-background-color: %3;
+    selection-color: %4;
+}
+
+#Info_paciente QLineEdit[readOnly="true"],
+#Info_paciente QTextEdit[readOnly="true"],
+#Info_paciente QPlainTextEdit[readOnly="true"] {
+    background-color: transparent;
+    color: %2;
+    border: none;
+    padding: 0px;
+    font: inherit;
+}
+
+#Info_paciente QLineEdit:focus[readOnly="false"],
+#Info_paciente QTextEdit:focus[readOnly="false"],
+#Info_paciente QPlainTextEdit:focus[readOnly="false"] {
+    background-color: #fcfcfc;
+    border: 1px solid %1;
+    outline: none;
+}
+
+#Info_paciente QLineEdit::placeholder,
+#Info_paciente QTextEdit::placeholder {
+    color: #9ca3af;
+}
+
+
+
+
+QTableWidget, QTableView {
+    background-color: %9;
+    color: %10;
+    border: 1px solid %11;
+}
+
+
+#Historico_consulta {
+    background-color: %9;
+    alternate-background-color: #f9fafb;
+    gridline-color: #e5e7eb;
+    selection-background-color: %3;
+    selection-color: %4;
+    border: none;
+    border-radius: 8px;
+}
+
+#Historico_consulta QHeaderView::section{
+    background-color: %6;
+    color: %2;
+    padding: 10px;
+    border-bottom: 1px solid %11;
+    font-weight: bold;
+    border: none;
+    font-size: 10pt;
+}
+
+#Historico_consulta::item:hover {
+    background-color: rgba(69,123,157,0.1);
+}
+
+QToolButton {
+    background-color: %12;
+    color: %13;
+    border: 1px solid %14;
+}
+
+QLabel#Titulo {
+    color: %15;
+}
+
+QLabel#Titulo2 {
+    color: %13;
+    font-family: 'Roboto Condensed';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+QLabel#Titulo3 {
+    color: %13;
+    font-family: 'Roboto Condensed';
+    font-size: 16px;
+    font-weight: bold;
+}
+
+QLabel#Titulo4,
+QLabel#Titulo4_2,
+QLabel#Titulo4_3,
+QLabel#Titulo4_4,
+QLabel#Titulo4_5,
+QLabel#Titulo4_6,
+QLabel#Titulo4_7,
+QLabel#Titulo4_8
+{
+    color: %11;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/*Estilos Agregar_Paciente*/
+
+#Agregar_Paciente QLineEdit,
+#Agregar_Paciente QTextEdit,
+#Agregar_Paciente QPlainTextEdit {
+    background-color: %6;
+    color: %2;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 8px 10px;
+    selection-background-color: %3;
+    selection-color: %4;
+}
+
+#Agregar_Paciente QLineEdit:focus,
+#Agregar_Paciente QTextEdit:focus,
+#Agregar_Paciente QPlainTextEdit:focus {
+    background-color: #fcfcfc;
+    border: 1px solid %1;
+    outline: none;
+}
+
+#Agregar_Paciente QLineEdit:hover,
+#Agregar_Paciente QTextEdit:hover,
+#Agregar_Paciente QPlainTextEdit:hover {
+    border: 1px solid %13;
+}
+
+#Agregar_Paciente QLineEdit::placeholder,
+#Agregar_Paciente QTextEdit::placeholder {
+    color: #9ca3af;
+}
+
+/* Estilo QDateEdit*/
+
+QDateEdit {
+    background-color: %4;
+    color: %2;
+    border: 1 px solid: %1;
+    border-radius: 5px;
+    padding: 4px 8px;
+    selection-background-color: %3;
+}
+
+QDateEdit:focus {
+    border: 1px solid: %13;
+}
+
+QDateEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+    width: 15px;
+    border-left: 1px solid %11;
+}
+
+QDateEdit::down-arrow {
+    width: 10px;
+    height: 10px;
+}
+
+
+
+/* =========================================== */
+/* SCROLLBARS ELEGANTES (invisibles hasta hover) */
+/* =========================================== */
+
+/* Scrollbar vertical */
+
+
+QScrollArea > QScrollBar:vertical {
+    background: transparent;
+    width: 0px;
+    margin: 0px;
+}
+QScrollArea:hover > QScrollBar:vertical {
+    width: 8px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 4px;
+}
+QScrollArea > QScrollBar::handle:vertical {
+    background: rgba(0,0,0,0.3);
+    border-radius: 4px;
+    min-height: 30px;
+}
+QScrollArea:hover > QScrollBar::handle:vertical {
+    background: rgba(0,0,0,0.5);
+}
+QScrollArea > QScrollBar::add-line:vertical,
+QScrollArea > QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+/* Scrollbar horizontal */
+
+QScrollArea > QScrollBar:horizontal {
+    background: transparent;
+    height: 0px;
+}
+QScrollArea:hover > QScrollBar:horizontal {
+    height: 6px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 3px;
+}
+QScrollArea > QScrollBar::handle:horizontal {
+    background: rgba(0,0,0,0.3);
+    border-radius: 3px;
+    min-width: 30px;
+}
+QScrollArea:hover > QScrollBar::handle:horizontal {
+    background: rgba(0,0,0,0.5);
+}
+QScrollArea > QScrollBar::add-line:horizontal,
+QScrollArea > QScrollBar::sub-line:horizontal {
+    width: 0px;
+}

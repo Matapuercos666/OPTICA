@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>552</width>
-    <height>480</height>
+    <height>527</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,7 +28,7 @@
         <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
        </property>
        <property name="text">
-        <string>AGREGAR</string>
+        <string>GUARDAR</string>
        </property>
        <property name="autoDefault">
         <bool>false</bool>
@@ -88,6 +88,9 @@
    </item>
    <item row="0" column="0" rowspan="2" colspan="2">
     <layout class="QGridLayout" name="Info_gral">
+     <property name="topMargin">
+      <number>15</number>
+     </property>
      <property name="rightMargin">
       <number>0</number>
      </property>
@@ -114,47 +117,14 @@
        <property name="verticalSpacing">
         <number>8</number>
        </property>
-       <item row="2" column="3">
-        <spacer name="horizontalSpacer_18">
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="3" column="1">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>Apellido paterno</string>
+       <item row="7" column="5">
+        <widget class="QLineEdit" name="NACIMIENTO">
+         <property name="readOnly">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
-       <item row="5" column="2">
-        <widget class="QLineEdit" name="lineEdit_18"/>
-       </item>
-       <item row="4" column="2">
-        <widget class="QLineEdit" name="lineEdit_17"/>
-       </item>
-       <item row="3" column="4">
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>Apellido materno</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Edad</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
+       <item row="5" column="0">
         <spacer name="horizontalSpacer_19">
          <property name="orientation">
           <enum>Qt::Orientation::Horizontal</enum>
@@ -167,54 +137,35 @@
          </property>
         </spacer>
        </item>
-       <item row="3" column="2">
-        <widget class="QLineEdit" name="lineEdit_16"/>
-       </item>
-       <item row="3" column="5">
-        <widget class="QLineEdit" name="lineEdit_19"/>
-       </item>
-       <item row="1" column="4">
-        <widget class="QLabel" name="label_7">
+       <item row="4" column="4">
+        <widget class="QLabel" name="FECHA">
          <property name="text">
           <string>Fecha</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="1">
-        <widget class="QLabel" name="label_6">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="text">
-          <string>Nombre</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QLabel" name="label_26">
+       <item row="8" column="1">
+        <widget class="QLabel" name="Sexo">
          <property name="text">
           <string>Sexo</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="5">
-        <widget class="QLineEdit" name="lineEdit_20"/>
-       </item>
-       <item row="4" column="4">
-        <widget class="QLabel" name="label_2">
+       <item row="6" column="1">
+        <widget class="QLabel" name="ApellidoP">
          <property name="text">
-          <string>Fecha de nacimiento</string>
+          <string>Apellido paterno</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="2">
-        <widget class="QLineEdit" name="lineEdit_15">
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+       <item row="6" column="4">
+        <widget class="QLabel" name="ApellidoM">
+         <property name="text">
+          <string>Apellido materno</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="6">
+       <item row="5" column="6">
         <spacer name="horizontalSpacer_21">
          <property name="orientation">
           <enum>Qt::Orientation::Horizontal</enum>
@@ -227,6 +178,85 @@
          </property>
         </spacer>
        </item>
+       <item row="6" column="5">
+        <widget class="QLineEdit" name="APELLIDO_M"/>
+       </item>
+       <item row="5" column="2">
+        <widget class="QLineEdit" name="NOMBRE">
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="2">
+        <widget class="QLineEdit" name="SEXO"/>
+       </item>
+       <item row="6" column="2">
+        <widget class="QLineEdit" name="APELLIDO_P"/>
+       </item>
+       <item row="5" column="3">
+        <spacer name="horizontalSpacer_18">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="7" column="2">
+        <widget class="QLineEdit" name="EDAD"/>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLabel" name="Nombre">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string>Nombre</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QLabel" name="Telefono">
+         <property name="text">
+          <string>Teléfono</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="2">
+        <widget class="QLineEdit" name="TELEFONO"/>
+       </item>
+       <item row="9" column="4">
+        <widget class="QLabel" name="Email">
+         <property name="text">
+          <string>Email</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="5">
+        <widget class="QLineEdit" name="EMAIL"/>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLabel" name="Nacimiento">
+         <property name="text">
+          <string>Fecha de nacimiento</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="4">
+        <widget class="QLabel" name="Edad">
+         <property name="text">
+          <string>Edad</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="5">
+        <widget class="QDateEdit" name="dateEdit"/>
+       </item>
       </layout>
      </item>
      <item row="3" column="0">
@@ -235,7 +265,7 @@
         <number>15</number>
        </property>
        <item row="1" column="1">
-        <widget class="QTextEdit" name="textEdit">
+        <widget class="QTextEdit" name="ANTECEDENTES_O">
          <property name="verticalScrollBarPolicy">
           <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
          </property>
@@ -264,7 +294,7 @@
         </spacer>
        </item>
        <item row="0" column="1">
-        <widget class="QLabel" name="label_8">
+        <widget class="QLabel" name="AntecedentesO">
          <property name="text">
           <string>Antecedentes oculares</string>
          </property>
@@ -304,14 +334,14 @@
         </spacer>
        </item>
        <item row="0" column="1">
-        <widget class="QLabel" name="label_9">
+        <widget class="QLabel" name="Antecedentes">
          <property name="text">
           <string>Antecedentes familiares</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QTextEdit" name="textEdit_2">
+        <widget class="QTextEdit" name="ANTECEDENTES">
          <property name="verticalScrollBarPolicy">
           <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
          </property>
@@ -339,7 +369,7 @@
       </layout>
      </item>
      <item row="0" column="0">
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="Titulo2">
        <property name="text">
         <string>Agregar paciente</string>
        </property>
@@ -353,14 +383,16 @@
   </layout>
  </widget>
  <tabstops>
-  <tabstop>lineEdit_15</tabstop>
-  <tabstop>lineEdit_16</tabstop>
-  <tabstop>lineEdit_19</tabstop>
-  <tabstop>lineEdit_17</tabstop>
-  <tabstop>lineEdit_20</tabstop>
-  <tabstop>lineEdit_18</tabstop>
-  <tabstop>textEdit_2</tabstop>
-  <tabstop>textEdit</tabstop>
+  <tabstop>NOMBRE</tabstop>
+  <tabstop>APELLIDO_P</tabstop>
+  <tabstop>APELLIDO_M</tabstop>
+  <tabstop>EDAD</tabstop>
+  <tabstop>NACIMIENTO</tabstop>
+  <tabstop>SEXO</tabstop>
+  <tabstop>TELEFONO</tabstop>
+  <tabstop>EMAIL</tabstop>
+  <tabstop>ANTECEDENTES</tabstop>
+  <tabstop>ANTECEDENTES_O</tabstop>
   <tabstop>AGREGAR</tabstop>
   <tabstop>CANCELAR</tabstop>
  </tabstops>
