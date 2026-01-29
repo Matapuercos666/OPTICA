@@ -7,14 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>688</width>
-    <height>572</height>
+    <height>575</height>
    </rect>
   </property>
   <property name="cursor">
    <cursorShape>ArrowCursor</cursorShape>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Agregar Usuario</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_6" rowstretch="2,0,0">
    <item row="1" column="0">

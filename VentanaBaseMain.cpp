@@ -5,8 +5,8 @@
 
 VentanaBaseMain::VentanaBaseMain(QWidget *parent)
     : QMainWindow(parent)
-    , m_ancho(900)
-    , m_alto(700)
+    , m_ancho(800)
+    , m_alto(650)
 
 {
 
@@ -34,4 +34,6 @@ void VentanaBaseMain::showEvent(QShowEvent *event)
         move(x, y);
 
     }
+
+
 }

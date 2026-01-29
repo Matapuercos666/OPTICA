@@ -9,9 +9,12 @@
 #include <QLabel>
 #include <QFile>
 #include <QMessageBox>
+#include <QIcon>
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
+
+    a.setWindowIcon(QIcon(":/IMAGENES/IMAGENES/LOGOS/LOGO.png"));
 
     // Inicialización de la base de datos
     ManejoDeData& data = ManejoDeData::instance();

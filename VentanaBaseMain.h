@@ -8,15 +8,17 @@ class VentanaBaseMain : public QMainWindow
     Q_OBJECT
 
 public:
+
     explicit VentanaBaseMain(QWidget *parent = nullptr);
     void setTamanoPredeterminado(int ancho, int alto);
 
-protected:
+    protected:
     void showEvent(QShowEvent *event) override;
 
-private:
+    private:
     int m_ancho;
     int m_alto;
+
 };
 
 #endif // VENTANABASEMAIN_H

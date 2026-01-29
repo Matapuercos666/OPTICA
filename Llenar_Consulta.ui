@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Nueva Consulta</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
@@ -26,7 +26,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-20</y>
+        <y>0</y>
         <width>664</width>
         <height>836</height>
        </rect>
@@ -374,7 +374,7 @@
                 </font>
                </property>
                <property name="text">
-                <string>LLENAR CONSULTA</string>
+                <string>CONSULTA</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignmentFlag::AlignCenter</set>

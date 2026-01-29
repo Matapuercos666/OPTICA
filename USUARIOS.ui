@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Menu Usuario</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -39,7 +39,7 @@
           <number>35</number>
          </property>
          <item row="1" column="0">
-          <layout class="QGridLayout" name="MenuUsuario" rowstretch="1,5,1,5,1,5,1,5,1,5,1" columnstretch="5,4,5">
+          <layout class="QGridLayout" name="MenuUsuario" rowstretch="1,5,1,5,1,5,1,5,1,5" columnstretch="5,4,5">
            <property name="topMargin">
             <number>35</number>
            </property>

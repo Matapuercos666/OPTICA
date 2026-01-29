@@ -6,10 +6,10 @@
 
 VentanaBase::VentanaBase(QWidget *parent)
     :QDialog(parent)
-    , m_ancho(800)
-    , m_alto(650)
+    , m_ancho(700)
+    , m_alto(550)
 {
-    //disponible para configurar propiedades futuras
+
 }
 void VentanaBase::setTamanoPredeterminado(int ancho, int alto)
 {
@@ -33,6 +33,7 @@ void VentanaBase::showEvent(QShowEvent *event) {
         int y = available.y() + (available.height() - height()) / 2;
         move(x, y);
     }
-
 }
+
+
 

@@ -6,7 +6,9 @@
 class VentanaBase : public QDialog
 {
     Q_OBJECT
+
 public:
+
    explicit VentanaBase(QWidget *parent = nullptr);
     void setTamanoPredeterminado(int ancho, int alto);
 
@@ -16,6 +18,7 @@ public:
    private:
     int m_ancho;
     int m_alto;
+
 };
 
 #endif // VENTANABASE_H
