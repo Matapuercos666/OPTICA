@@ -1,6 +1,6 @@
 #include "Lista_Clientes.h"
 #include "ui_Lista_Clientes.h"
-
+#include "VentanaBaseMain.h"
 
 #include "ESTILOS.h"
 #include <QTableWidget>
@@ -24,12 +24,15 @@ struct Paciente
 }aux;
 
 Lista_Clientes::Lista_Clientes(QWidget *parent)
-    : QMainWindow(parent)
+    : VentanaBaseMain(parent)
     , ui(new Ui::Lista_Clientes)
     , Agregar_PacienteWindow(nullptr)
 {
     ui->setupUi(this);
+    ui->Datos_Clientes->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->Datos_Clientes->setAlternatingRowColors(true);
     Fuente::AplicarTodas(this);
+    connect(ui->Datos_Clientes, &QTableWidget::cellDoubleClicked, this, &Lista_Clientes::INFO);
     connect(ui->Regresar, &QPushButton::clicked, this, &Lista_Clientes::Boton_Regresar);
     connect(ui->ELIMINAR, &QPushButton::clicked, this, &Lista_Clientes::Boton_Eliminar);
     connect(ui->Agregar, &QPushButton::clicked, this, &Lista_Clientes::Boton_Agregar);
@@ -140,6 +143,14 @@ void Lista_Clientes::LlenarDatos()
         ui->Datos_Clientes->setItem(fila, 3, new QTableWidgetItem(aux.Telefono));
     }
 
-    ui->Datos_Clientes->resizeColumnsToContents();
+    //ui->Datos_Clientes->resizeColumnsToContents(); queda como comentario hasta saberlo usar porque somos pendejos
 }
 
+void Lista_Clientes::INFO(int row, int column)
+{
+    QTableWidgetItem *Item = ui->Datos_Clientes->item(row, 0);
+    int PACIENTEID = Item->text().toInt();
+    Info_paciente *INFOWINDOW = new Info_paciente(PACIENTEID, this);
+    INFOWINDOW->setAttribute(Qt::WA_DeleteOnClose);
+    INFOWINDOW->show();
+}

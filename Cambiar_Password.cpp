@@ -3,9 +3,10 @@
 #include "Utils.h"
 #include <QMessageBox>
 #include <QFile>
+#include "VentanaBase.h"
 
 Cambiar_Password::Cambiar_Password(QWidget *parent)
-    : QDialog(parent)
+    : VentanaBase(parent)
     , ui(new Ui::Cambiar_Password)
 {
     ui->setupUi(this);

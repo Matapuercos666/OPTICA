@@ -2,9 +2,10 @@
 #include "ui_PuntoVenta.h"
 #include "ESTILOS.h"
 #include "QPushButton"
+#include "VentanaBaseMain.h"
 
 PuntoVenta::PuntoVenta(QWidget *parent)
-    : QMainWindow(parent)
+    : VentanaBaseMain(parent)
     , ui(new Ui::PuntoVenta)
 {
     ui->setupUi(this);

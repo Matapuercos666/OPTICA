@@ -1,13 +1,13 @@
 #ifndef INVENTARIO_H
 #define INVENTARIO_H
 
-#include <QMainWindow>
+#include "VentanaBaseMain.h"
 
 namespace Ui {
 class Inventario;
 }
 
-class Inventario : public QMainWindow
+class Inventario : public VentanaBaseMain
 {
     Q_OBJECT
 

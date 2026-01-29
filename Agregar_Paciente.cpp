@@ -5,13 +5,13 @@
 #include <QSqlQuery>
 #include <QSqlDatabase>
 #include <QSqlError>
-#include <QDialog>
+
 
 //tamaño ventana
-/*#include "VentanaBase.h"*/
+#include "VentanaBase.h"
 
 Agregar_Paciente::Agregar_Paciente(QWidget *parent)
-    : QDialog(parent)
+    : VentanaBase(parent)
     , ui(new Ui::Agregar_Paciente)
 {
     ui->setupUi(this);

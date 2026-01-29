@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>635</width>
+    <height>439</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,31 @@
   <layout class="QGridLayout" name="gridLayout_6">
    <item row="0" column="0">
     <layout class="QGridLayout" name="gridLayout">
+     <property name="leftMargin">
+      <number>40</number>
+     </property>
+     <property name="topMargin">
+      <number>50</number>
+     </property>
+     <property name="rightMargin">
+      <number>40</number>
+     </property>
+     <property name="bottomMargin">
+      <number>40</number>
+     </property>
      <item row="3" column="0">
       <layout class="QGridLayout" name="gridLayout_7">
        <item row="1" column="1">
         <layout class="QGridLayout" name="gridLayout_3">
+         <property name="topMargin">
+          <number>20</number>
+         </property>
+         <property name="bottomMargin">
+          <number>20</number>
+         </property>
+         <property name="verticalSpacing">
+          <number>15</number>
+         </property>
          <item row="1" column="0">
           <widget class="QLineEdit" name="Nombre2">
            <property name="inputMethodHints">
@@ -34,7 +55,7 @@
           </widget>
          </item>
          <item row="0" column="0">
-          <widget class="QLabel" name="label_3">
+          <widget class="QLabel" name="Titulo5_2">
            <property name="text">
             <string>Confirma tu nuevo nombre</string>
            </property>
@@ -47,8 +68,14 @@
        </item>
        <item row="0" column="1">
         <layout class="QGridLayout" name="gridLayout_4">
+         <property name="topMargin">
+          <number>30</number>
+         </property>
+         <property name="verticalSpacing">
+          <number>15</number>
+         </property>
          <item row="2" column="0">
-          <widget class="QLabel" name="label_4">
+          <widget class="QLabel" name="Titulo5">
            <property name="text">
             <string>Introduce tu nuevo nombre de usuario</string>
            </property>
@@ -128,20 +155,23 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QLabel" name="NombreUsuario">
+        <widget class="QLabel" name="UsuarioActual">
          <property name="text">
-          <string>NOMBRE</string>
+          <string/>
          </property>
         </widget>
        </item>
       </layout>
      </item>
      <item row="4" column="0">
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="1">
-        <widget class="QPushButton" name="ACEPTAR">
+      <layout class="QGridLayout" name="gridLayout_2" columnstretch="4,5,2,5,4">
+       <property name="topMargin">
+        <number>25</number>
+       </property>
+       <item row="0" column="3">
+        <widget class="QPushButton" name="CANCELAR">
          <property name="text">
-          <string>ACEPTAR</string>
+          <string>CANCELAR</string>
          </property>
          <property name="autoDefault">
           <bool>false</bool>
@@ -161,18 +191,15 @@
          </property>
         </spacer>
        </item>
-       <item row="0" column="3">
-        <spacer name="horizontalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="ACEPTAR">
+         <property name="text">
+          <string>ACEPTAR</string>
          </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
+         <property name="autoDefault">
+          <bool>false</bool>
          </property>
-        </spacer>
+        </widget>
        </item>
        <item row="1" column="1">
         <spacer name="verticalSpacer">
@@ -187,15 +214,31 @@
          </property>
         </spacer>
        </item>
+       <item row="0" column="4">
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
        <item row="0" column="2">
-        <widget class="QPushButton" name="CANCELAR">
-         <property name="text">
-          <string>CANCELAR</string>
+        <spacer name="horizontalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
          </property>
-         <property name="autoDefault">
-          <bool>false</bool>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
          </property>
-        </widget>
+        </spacer>
        </item>
       </layout>
      </item>

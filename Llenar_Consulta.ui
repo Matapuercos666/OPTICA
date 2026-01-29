@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>675</width>
-    <height>684</height>
+    <width>701</width>
+    <height>804</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,620 +15,636 @@
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
-    <layout class="QGridLayout" name="Llenar_cita">
-     <property name="leftMargin">
-      <number>15</number>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="focusPolicy">
+      <enum>Qt::FocusPolicy::ClickFocus</enum>
      </property>
-     <property name="rightMargin">
-      <number>25</number>
+     <property name="widgetResizable">
+      <bool>true</bool>
      </property>
-     <item row="5" column="1">
-      <layout class="QGridLayout" name="gridLayout_36">
-       <property name="topMargin">
-        <number>10</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
-       </property>
-       <item row="1" column="1">
-        <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="2,4">
-         <item>
-          <widget class="QLabel" name="Titulo4_3">
-           <property name="text">
-            <string>AV</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <layout class="QGridLayout" name="gridLayout_37">
-           <property name="horizontalSpacing">
-            <number>10</number>
-           </property>
-           <property name="verticalSpacing">
-            <number>8</number>
-           </property>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_48">
-             <property name="text">
-              <string>O.D.</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLineEdit" name="AVOD"/>
-           </item>
-           <item row="1" column="1">
-            <widget class="QLineEdit" name="AVOI"/>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="label_49">
-             <property name="text">
-              <string>O.I.</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item row="1" column="0">
-        <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="2,4">
-         <property name="spacing">
-          <number>0</number>
-         </property>
-         <property name="topMargin">
-          <number>10</number>
-         </property>
-         <property name="bottomMargin">
-          <number>10</number>
-         </property>
-         <item>
-          <widget class="QLabel" name="Titulo4_4">
-           <property name="text">
-            <string>Rx anterior</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <layout class="QGridLayout" name="gridLayout_38">
-           <property name="horizontalSpacing">
-            <number>10</number>
-           </property>
-           <property name="verticalSpacing">
-            <number>8</number>
-           </property>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_51">
-             <property name="text">
-              <string>O.D.</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="label_52">
-             <property name="text">
-              <string>O.I.</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLineEdit" name="RxAntOD"/>
-           </item>
-           <item row="1" column="1">
-            <widget class="QLineEdit" name="RxAntOI"/>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-     <item row="6" column="1">
-      <layout class="QGridLayout" name="gridLayout_8" columnstretch="0,0">
-       <property name="topMargin">
-        <number>0</number>
-       </property>
-       <item row="1" column="0">
-        <layout class="QGridLayout" name="gridLayout_26" columnstretch="2,4">
-         <property name="topMargin">
-          <number>10</number>
-         </property>
-         <property name="bottomMargin">
-          <number>10</number>
-         </property>
-         <item row="1" column="1">
-          <layout class="QHBoxLayout" name="horizontalLayout_8">
-           <item>
-            <layout class="QGridLayout" name="gridLayout_27">
-             <property name="horizontalSpacing">
-              <number>10</number>
-             </property>
-             <property name="verticalSpacing">
-              <number>8</number>
-             </property>
-             <item row="1" column="1">
-              <widget class="QLineEdit" name="RetinoOI"/>
-             </item>
-             <item row="0" column="1">
-              <widget class="QLineEdit" name="RetinoOD"/>
-             </item>
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_34">
-               <property name="text">
-                <string>O.D.</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="0">
-              <widget class="QLabel" name="label_25">
-               <property name="text">
-                <string>O.I.</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="Titulo4_5">
-           <property name="text">
-            <string>Retinoscopía</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="3" column="0">
-        <layout class="QGridLayout" name="gridLayout_28">
-         <property name="topMargin">
-          <number>10</number>
-         </property>
-         <property name="bottomMargin">
-          <number>10</number>
-         </property>
-         <item row="0" column="0">
-          <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="2,4">
-           <item>
-            <widget class="QLabel" name="Titulo4_6">
-             <property name="text">
-              <string>Ambulatorio</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <layout class="QGridLayout" name="gridLayout_29" columnstretch="0,0">
-             <property name="horizontalSpacing">
-              <number>10</number>
-             </property>
-             <property name="verticalSpacing">
-              <number>8</number>
-             </property>
-             <item row="0" column="1">
-              <widget class="QLineEdit" name="AmbulaOD"/>
-             </item>
-             <item row="1" column="1">
-              <widget class="QLineEdit" name="AmbulaOI"/>
-             </item>
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_36">
-               <property name="text">
-                <string>O.D.</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="0">
-              <widget class="QLabel" name="label_37">
-               <property name="text">
-                <string>O.I.</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item row="2" column="0">
-        <layout class="QGridLayout" name="gridLayout_30">
-         <property name="topMargin">
-          <number>10</number>
-         </property>
-         <property name="bottomMargin">
-          <number>10</number>
-         </property>
-         <item row="0" column="0">
-          <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="2,4">
-           <item>
-            <widget class="QLabel" name="Titulo4_7">
-             <property name="text">
-              <string>Rx total</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <layout class="QGridLayout" name="gridLayout_31">
-             <property name="horizontalSpacing">
-              <number>10</number>
-             </property>
-             <property name="verticalSpacing">
-              <number>8</number>
-             </property>
-             <item row="1" column="1">
-              <widget class="QLineEdit" name="RxTotalOI"/>
-             </item>
-             <item row="0" column="1">
-              <widget class="QLineEdit" name="RxTotalOD"/>
-             </item>
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_39">
-               <property name="text">
-                <string>O.D.</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="0">
-              <widget class="QLabel" name="label_40">
-               <property name="text">
-                <string>O.I.</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item row="1" column="1">
-        <spacer name="horizontalSpacer_11">
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </item>
-     <item row="2" column="1">
-      <layout class="QGridLayout" name="gridLayout">
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-20</y>
+        <width>664</width>
+        <height>836</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
-        <layout class="QHBoxLayout" name="horizontalLayout_16" stretch="3,1,1,2">
+        <layout class="QGridLayout" name="Llenar_cita">
+         <property name="leftMargin">
+          <number>35</number>
+         </property>
          <property name="topMargin">
-          <number>15</number>
+          <number>35</number>
+         </property>
+         <property name="rightMargin">
+          <number>35</number>
          </property>
          <property name="bottomMargin">
+          <number>35</number>
+         </property>
+         <property name="verticalSpacing">
           <number>15</number>
          </property>
-         <item>
-          <widget class="QLabel" name="Titulo2">
-           <property name="font">
-            <font>
-             <pointsize>14</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>LLENAR CONSULTA</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="Fecha">
-           <property name="text">
-            <string>Fecha</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QDateEdit" name="dateEdit"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="IdConsulta">
-           <property name="text">
-            <string>ID consulta</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-     <item row="4" column="1">
-      <layout class="QGridLayout" name="gridLayout_32">
-       <item row="0" column="2">
-        <layout class="QGridLayout" name="gridLayout_33">
-         <item row="0" column="0">
-          <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="2,4">
+         <item row="5" column="1">
+          <layout class="QGridLayout" name="gridLayout_36">
            <property name="topMargin">
             <number>10</number>
            </property>
            <property name="bottomMargin">
-            <number>10</number>
+            <number>0</number>
            </property>
-           <item>
-            <widget class="QLabel" name="Titulo4">
-             <property name="text">
-              <string>AV s/c</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
-            </widget>
+           <item row="1" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="2,4">
+             <item>
+              <widget class="QLabel" name="Titulo4_3">
+               <property name="text">
+                <string>AV</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QGridLayout" name="gridLayout_37">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QLabel" name="OD_3">
+                 <property name="text">
+                  <string>O.D.</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="AVOD"/>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="AVOI"/>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="OI_3">
+                 <property name="text">
+                  <string>O.I.</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
            </item>
-           <item>
-            <layout class="QGridLayout" name="gridLayout_34">
-             <property name="horizontalSpacing">
+           <item row="1" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="2,4">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
               <number>10</number>
              </property>
-             <property name="verticalSpacing">
-              <number>8</number>
+             <property name="bottomMargin">
+              <number>15</number>
              </property>
-             <item row="0" column="1">
-              <widget class="QLineEdit" name="AVscOD"/>
-             </item>
-             <item row="3" column="1">
-              <widget class="QLineEdit" name="AVscOI"/>
-             </item>
-             <item row="3" column="0">
-              <widget class="QLabel" name="label_42">
+             <item>
+              <widget class="QLabel" name="Titulo4_4">
                <property name="text">
-                <string>O.I.</string>
+                <string>Rx anterior</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignmentFlag::AlignCenter</set>
                </property>
               </widget>
              </item>
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_43">
-               <property name="text">
-                <string>O.D.</string>
+             <item>
+              <layout class="QGridLayout" name="gridLayout_38">
+               <property name="spacing">
+                <number>10</number>
                </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
+               <item row="0" column="0">
+                <widget class="QLabel" name="OD_4">
+                 <property name="text">
+                  <string>O.D.</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="OI_4">
+                 <property name="text">
+                  <string>O.I.</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="RxAntOD"/>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="RxAntOI"/>
+               </item>
+              </layout>
              </item>
             </layout>
            </item>
           </layout>
          </item>
-         <item row="0" column="1">
-          <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="2,4">
+         <item row="6" column="1">
+          <layout class="QGridLayout" name="gridLayout_8" columnstretch="0,0">
            <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="verticalSpacing">
             <number>10</number>
            </property>
-           <property name="bottomMargin">
-            <number>10</number>
-           </property>
-           <item>
-            <widget class="QLabel" name="Titulo4_2">
-             <property name="text">
-              <string>AV c/c</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <layout class="QGridLayout" name="gridLayout_35">
-             <property name="horizontalSpacing">
+           <item row="1" column="0">
+            <layout class="QGridLayout" name="gridLayout_26" columnstretch="2,4">
+             <property name="topMargin">
               <number>10</number>
              </property>
-             <property name="verticalSpacing">
-              <number>8</number>
+             <property name="bottomMargin">
+              <number>10</number>
              </property>
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_45">
-               <property name="text">
-                <string>O.D</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
+             <item row="1" column="1">
+              <layout class="QHBoxLayout" name="horizontalLayout_8">
+               <item>
+                <layout class="QGridLayout" name="gridLayout_27">
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <item row="1" column="1">
+                  <widget class="QLineEdit" name="RetinoOI"/>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLineEdit" name="RetinoOD"/>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="OD_5">
+                   <property name="text">
+                    <string>O.D.</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="OI_5">
+                   <property name="text">
+                    <string>O.I.</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
              </item>
              <item row="1" column="0">
-              <widget class="QLabel" name="label_46">
+              <widget class="QLabel" name="Titulo4_5">
                <property name="text">
-                <string>O.I.</string>
+                <string>Retinoscopía</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignmentFlag::AlignCenter</set>
                </property>
               </widget>
              </item>
-             <item row="0" column="1">
-              <widget class="QLineEdit" name="AVccOD"/>
-             </item>
-             <item row="1" column="1">
-              <widget class="QLineEdit" name="AVccOI"/>
+            </layout>
+           </item>
+           <item row="3" column="0">
+            <layout class="QGridLayout" name="gridLayout_28">
+             <property name="topMargin">
+              <number>10</number>
+             </property>
+             <property name="bottomMargin">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="2,4">
+               <item>
+                <widget class="QLabel" name="Titulo4_6">
+                 <property name="text">
+                  <string>Ambulatorio</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QGridLayout" name="gridLayout_29" columnstretch="0,0">
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <item row="0" column="1">
+                  <widget class="QLineEdit" name="AmbulaOD"/>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLineEdit" name="AmbulaOI"/>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="OD_6">
+                   <property name="text">
+                    <string>O.D.</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="OI_6">
+                   <property name="text">
+                    <string>O.I.</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
              </item>
             </layout>
+           </item>
+           <item row="2" column="0">
+            <layout class="QGridLayout" name="gridLayout_30">
+             <property name="topMargin">
+              <number>10</number>
+             </property>
+             <property name="bottomMargin">
+              <number>10</number>
+             </property>
+             <item row="0" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="2,4">
+               <item>
+                <widget class="QLabel" name="Titulo4_7">
+                 <property name="text">
+                  <string>Rx total</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QGridLayout" name="gridLayout_31">
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <item row="1" column="1">
+                  <widget class="QLineEdit" name="RxTotalOI"/>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLineEdit" name="RxTotalOD"/>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="OD_7">
+                   <property name="text">
+                    <string>O.D.</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="OI_7">
+                   <property name="text">
+                    <string>O.I.</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="1">
+            <spacer name="horizontalSpacer_11">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item row="2" column="1">
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_16" stretch="3,1,1,2">
+             <property name="topMargin">
+              <number>15</number>
+             </property>
+             <property name="bottomMargin">
+              <number>15</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="Titulo2">
+               <property name="font">
+                <font>
+                 <pointsize>14</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>LLENAR CONSULTA</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="FECHA">
+               <property name="text">
+                <string>Fecha</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDateEdit" name="dateEdit"/>
+             </item>
+             <item>
+              <widget class="QLabel" name="IdConsulta">
+               <property name="text">
+                <string>ID consulta</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="7" column="1">
+          <layout class="QGridLayout" name="Observaciones" columnstretch="1,7,1">
+           <property name="topMargin">
+            <number>15</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>15</number>
+           </property>
+           <item row="1" column="1">
+            <widget class="QTextEdit" name="OBSERVACIONES"/>
+           </item>
+           <item row="1" column="2">
+            <spacer name="horizontalSpacer_9">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="Observaciones_2">
+             <property name="text">
+              <string>Observaciones</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <spacer name="horizontalSpacer_8">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item row="4" column="1">
+          <layout class="QGridLayout" name="gridLayout_32">
+           <item row="0" column="2">
+            <layout class="QGridLayout" name="gridLayout_33">
+             <item row="0" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="2,4">
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
+                <number>10</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="Titulo4">
+                 <property name="text">
+                  <string>AV s/c</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QGridLayout" name="gridLayout_34">
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <item row="0" column="1">
+                  <widget class="QLineEdit" name="AVscOD"/>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QLineEdit" name="AVscOI"/>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="QLabel" name="OI">
+                   <property name="text">
+                    <string>O.I.</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="OD">
+                   <property name="text">
+                    <string>O.D.</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item row="0" column="1">
+              <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="2,4">
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
+                <number>10</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="Titulo4_2">
+                 <property name="text">
+                  <string>AV c/c</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QGridLayout" name="gridLayout_35">
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="OD_2">
+                   <property name="text">
+                    <string>O.D</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="OI_2">
+                   <property name="text">
+                    <string>O.I.</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLineEdit" name="AVccOD"/>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLineEdit" name="AVccOI"/>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="8" column="1">
+          <layout class="QGridLayout" name="Botones" columnstretch="4,5,2,5,4">
+           <property name="topMargin">
+            <number>25</number>
+           </property>
+           <property name="bottomMargin">
+            <number>20</number>
+           </property>
+           <item row="1" column="4">
+            <spacer name="horizontalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="AGREGAR">
+             <property name="contextMenuPolicy">
+              <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+             </property>
+             <property name="text">
+              <string>GUARDAR</string>
+             </property>
+             <property name="autoDefault">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="1" column="3">
+            <widget class="QPushButton" name="CERRAR">
+             <property name="text">
+              <string>SALIR</string>
+             </property>
+             <property name="autoDefault">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <spacer name="horizontalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
            </item>
           </layout>
          </item>
         </layout>
        </item>
       </layout>
-     </item>
-     <item row="7" column="1">
-      <layout class="QGridLayout" name="Observaciones" columnstretch="1,7,1">
-       <property name="topMargin">
-        <number>15</number>
-       </property>
-       <item row="1" column="1">
-        <widget class="QTextEdit" name="OBSERVACIONES"/>
-       </item>
-       <item row="1" column="2">
-        <spacer name="horizontalSpacer_9">
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="0">
-        <spacer name="horizontalSpacer_8">
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="label_53">
-         <property name="text">
-          <string>Observaciones</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <layout class="QGridLayout" name="Botones" columnstretch="0,0,0,0,0">
-         <property name="topMargin">
-          <number>15</number>
-         </property>
-         <property name="bottomMargin">
-          <number>20</number>
-         </property>
-         <item row="1" column="4">
-          <spacer name="horizontalSpacer_4">
-           <property name="orientation">
-            <enum>Qt::Orientation::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="1" column="1">
-          <widget class="QPushButton" name="AGREGAR">
-           <property name="contextMenuPolicy">
-            <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
-           </property>
-           <property name="text">
-            <string>GUARDAR</string>
-           </property>
-           <property name="autoDefault">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="2">
-          <spacer name="horizontalSpacer_3">
-           <property name="orientation">
-            <enum>Qt::Orientation::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="1" column="3">
-          <widget class="QPushButton" name="SALIR">
-           <property name="text">
-            <string>SALIR</string>
-           </property>
-           <property name="autoDefault">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <spacer name="horizontalSpacer_5">
-           <property name="orientation">
-            <enum>Qt::Orientation::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-    </layout>
+     </widget>
+    </widget>
    </item>
   </layout>
  </widget>
@@ -649,7 +665,8 @@
   <tabstop>AmbulaOI</tabstop>
   <tabstop>OBSERVACIONES</tabstop>
   <tabstop>AGREGAR</tabstop>
-  <tabstop>SALIR</tabstop>
+  <tabstop>CERRAR</tabstop>
+  <tabstop>dateEdit</tabstop>
  </tabstops>
  <resources/>
  <connections/>

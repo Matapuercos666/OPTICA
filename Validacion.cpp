@@ -2,9 +2,10 @@
 #include "ui_Validacion.h"
 #include "Utils.h"
 #include <QPushButton>
+#include "VentanaBase.h"
 
 Validacion::Validacion(QWidget *parent)
-    : QDialog(parent),
+    : VentanaBase(parent),
     ui(new Ui::Validacion),
     m_passwordValidado(false)
 {
@@ -23,7 +24,7 @@ void Validacion::inicializar()
     //obtener instancia
     Usuario_Actual* Usuario = Usuario_Actual::obtenerinstancia();
     //configurar modo modal
-    ui->NombreUsuario->setText(Usuario->obtenernombre());
+    ui->UsuarioActual->setText(Usuario->obtenernombre());
     setModal(true);
 
     //conexión de señales

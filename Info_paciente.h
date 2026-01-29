@@ -1,18 +1,18 @@
 #ifndef INFO_PACIENTE_H
 #define INFO_PACIENTE_H
 
-#include <QDialog>
+#include "VentanaBase.h"
 
 namespace Ui {
 class Info_paciente;
 }
 
-class Info_paciente : public QDialog
+class Info_paciente : public VentanaBase
 {
     Q_OBJECT
 
 public:
-    explicit Info_paciente(QWidget *parent = nullptr);
+    explicit Info_paciente(int PACIENTEID, QWidget *parent = nullptr);
     ~Info_paciente();
 
 private:

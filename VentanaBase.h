@@ -1,4 +1,4 @@
-/*#ifndef VENTANABASE_H
+#ifndef VENTANABASE_H
 #define VENTANABASE_H
 
 #include <QDialog>
@@ -18,4 +18,4 @@ public:
     int m_alto;
 };
 
-#endif // VENTANABASE_H*/
+#endif // VENTANABASE_H

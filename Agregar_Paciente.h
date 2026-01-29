@@ -1,13 +1,13 @@
 #ifndef AGREGAR_PACIENTE_H
 #define AGREGAR_PACIENTE_H
 
-#include <QDialog>
+#include "VentanaBase.h"
 
 namespace Ui {
 class Agregar_Paciente;
 }
 
-class Agregar_Paciente : public QDialog
+class Agregar_Paciente : public VentanaBase
 {
     Q_OBJECT
 

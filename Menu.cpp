@@ -3,10 +3,11 @@
 #include "ESTILOS.h"
 #include "Usuario_Actual.h"
 #include <QString>
+#include "VentanaBaseMain.h"
 
 
 Menu::Menu(QWidget *parent)
-    : QMainWindow(parent)
+    : VentanaBaseMain(parent)
     , ui(new Ui::Menu)
     , ListaWindow(nullptr)
     , Punto_Venta_Window(nullptr)

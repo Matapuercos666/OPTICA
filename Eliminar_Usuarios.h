@@ -1,7 +1,7 @@
 #ifndef ELIMINAR_USUARIOS_H
 #define ELIMINAR_USUARIOS_H
 
-#include <QMainWindow>
+#include "VentanaBaseMain.h"
 #include <QTableWidget>
 #include <QFile>
 #include <QMessageBox>
@@ -10,7 +10,7 @@ namespace Ui {
 class Eliminar_Usuarios;
 }
 
-class Eliminar_Usuarios : public QMainWindow
+class Eliminar_Usuarios : public VentanaBaseMain
 {
     Q_OBJECT
 

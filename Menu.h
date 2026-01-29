@@ -1,7 +1,7 @@
 #ifndef MENU_H
 #define MENU_H
 
-#include <QMainWindow>
+#include "VentanaBaseMain.h"
 #include <QPointer>
 #include "Lista_Clientes.h"
 #include "PuntoVenta.h"
@@ -14,7 +14,7 @@ class Menu;
 }
 QT_END_NAMESPACE
 
-class Menu : public QMainWindow
+class Menu : public VentanaBaseMain
 {
     Q_OBJECT
 

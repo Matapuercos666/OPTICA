@@ -1,6 +1,6 @@
 #ifndef VALIDACION_H
 #define VALIDACION_H
-#include <QDialog>
+#include "VentanaBase.h"
 #include <QMessageBox>
 #include "Usuario_Actual.h"
 #include "ESTILOS.h"
@@ -9,7 +9,7 @@ namespace Ui{
 class Validacion;
 }
 
-class Validacion : public QDialog
+class Validacion : public VentanaBase
 {
     Q_OBJECT
 

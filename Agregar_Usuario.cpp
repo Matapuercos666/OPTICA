@@ -2,9 +2,10 @@
 #include "ui_Agregar_Usuario.h"
 #include <QDir>
 #include <QMessageBox>
+#include "VentanaBase.h"
 
 Agregar_Usuario::Agregar_Usuario(QWidget *parent)
-    : QDialog(parent)
+    : VentanaBase(parent)
     , ui(new Ui::Agregar_Usuario)
 {
     ui->setupUi(this);

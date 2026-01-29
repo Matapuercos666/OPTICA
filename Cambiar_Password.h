@@ -1,7 +1,7 @@
 #ifndef CAMBIAR_PASSWORD_H
 #define CAMBIAR_PASSWORD_H
 
-#include <QDialog>
+#include "VentanaBase.h"
 #include "ESTILOS.h"
 #include <QFile>
 
@@ -9,7 +9,7 @@ namespace Ui {
 class Cambiar_Password;
 }
 
-class Cambiar_Password : public QDialog
+class Cambiar_Password : public VentanaBase
 {
     Q_OBJECT
 

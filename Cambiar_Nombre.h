@@ -1,13 +1,13 @@
 #ifndef CAMBIAR_NOMBRE_H
 #define CAMBIAR_NOMBRE_H
 
-#include <QDialog>
+#include "VentanaBase.h"
 
 namespace Ui {
 class Cambiar_Nombre;
 }
 
-class Cambiar_Nombre : public QDialog
+class Cambiar_Nombre : public VentanaBase
 {
     Q_OBJECT
 

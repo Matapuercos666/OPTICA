@@ -1,7 +1,7 @@
 #ifndef USUARIOS_H
 #define USUARIOS_H
 
-#include <QMainWindow>
+#include "VentanaBaseMain.h"
 #include "Validacion.h"
 #include <QPointer>
 #include "Cambiar_Password.h"
@@ -13,7 +13,7 @@ namespace Ui {
 class USUARIOS;
 }
 
-class USUARIOS : public QMainWindow
+class USUARIOS : public VentanaBaseMain
 {
     Q_OBJECT
 

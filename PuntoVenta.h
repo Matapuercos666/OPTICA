@@ -1,13 +1,13 @@
 #ifndef PUNTOVENTA_H
 #define PUNTOVENTA_H
 
-#include <QMainWindow>
+#include "VentanaBaseMain.h"
 
 namespace Ui {
 class PuntoVenta;
 }
 
-class PuntoVenta : public QMainWindow
+class PuntoVenta : public VentanaBaseMain
 {
     Q_OBJECT
 

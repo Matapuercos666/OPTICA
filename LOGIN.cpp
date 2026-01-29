@@ -15,10 +15,11 @@
 #include <QSqlError>
 #include <QFile>
 #include "ManejoDeData.h"
+#include "VentanaBaseMain.h"
 
 
 LOGIN::LOGIN(QWidget *parent)
-    : QMainWindow(parent)
+    : VentanaBaseMain(parent)
     , ui(new Ui::LOGIN)
     , MenuWindow(nullptr)
 {

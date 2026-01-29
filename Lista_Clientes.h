@@ -1,9 +1,10 @@
 #ifndef LISTA_CLIENTES_H
 #define LISTA_CLIENTES_H
 
-#include <QMainWindow>
+#include "VentanaBaseMain.h"
 #include "Usuario_Actual.h"
 #include "Agregar_Paciente.h"
+#include "Info_paciente.h"
 #include <QFile>
 #include <QMessageBox>
 
@@ -12,7 +13,7 @@ namespace Ui {
 class Lista_Clientes;
 }
 
-class Lista_Clientes : public QMainWindow
+class Lista_Clientes : public VentanaBaseMain
 {
     Q_OBJECT
 
@@ -28,7 +29,9 @@ private slots:
 private:
     Ui::Lista_Clientes *ui;
     Agregar_Paciente *Agregar_PacienteWindow;
+    Info_paciente *INFOWINDOW;
     void LlenarDatos();
+    void INFO(int row, int column);
 };
 
 #endif // LISTA_CLIENTES_H

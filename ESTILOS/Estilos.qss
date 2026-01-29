@@ -102,7 +102,7 @@ QLabel#OI_7 {
 #Info_paciente QTextEdit[readOnly="false"],
 #Info_paciente QPlainTextEdit[readOnly="false"] {
     background-color: %9;
-    color: %2;
+    color: %14;
     border: 1px solid #d1d5db;
     border-radius: 8px;
     padding: 8px 10px;
@@ -136,11 +136,11 @@ QLabel#OI_7 {
 
 
 
-QTableWidget, QTableView {
+/*QTableWidget, QTableView {
     background-color: %9;
     color: %10;
     border: 1px solid %11;
-}
+}*/
 
 
 #Historico_consulta {
@@ -167,20 +167,16 @@ QTableWidget, QTableView {
     background-color: rgba(69,123,157,0.1);
 }
 
-QToolButton {
-    background-color: %12;
-    color: %13;
-    border: 1px solid %14;
-}
 
 QLabel#Titulo {
     color: %15;
+    font-weight: bold;
 }
 
 QLabel#Titulo2 {
     color: %13;
     font-family: 'Roboto Condensed';
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
 }
 
@@ -204,6 +200,24 @@ QLabel#Titulo4_8
     font-family: 'Montserrat';
     font-size: 12px;
     font-weight: bold;
+}
+
+
+QLabel#Titulo5,
+QLabel#Titulo5_2,
+QLabel#Titulo5_3,
+QLabel#Titulo5_4,
+QLabel#Titulo5_5,
+QLabel#Titulo5_6 {
+    font: bold 12pt 'Arial Black';
+    color: %2;
+}
+
+QLabel#UsuarioActual,
+QLabel#IdConsulta {
+    font-family: Montserrat;
+    color: %2;
+    font-size: 9pt;
 }
 
 /*Estilos Agregar_Paciente*/
@@ -239,19 +253,54 @@ QLabel#Titulo4_8
     color: #9ca3af;
 }
 
+/*Estilos Llenar_Consulta*/
+
+#Llenar_Consulta QLineEdit,
+#Llenar_Consulta QTextEdit,
+#Llenar_Consulta QPlainTextEdit {
+    background-color: %6;
+    color: %2;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 8px 10px;
+    selection-background-color: %15;
+    selection-color: %4;
+}
+
+#Llenar_Consulta QLineEdit:focus,
+#Llenar_Consulta QTextEdit:focus,
+#Llenar_Consulta QPlainTextEdit:focus {
+    background-color: #d4edee;
+    border: 1px solid %1;
+    outline: none;
+}
+
+#Llenar_Consulta QLineEdit:hover,
+#Llenar_Consulta QTextEdit:hover,
+#Llenar_Consulta QPlainTextEdit:hover {
+    border: 1px solid %11;
+}
+
+#Llenar_Consulta QLineEdit::placeholder,
+#Llenar_Consulta QTextEdit::placeholder {
+    color: #9ca3af;
+}
+
+
+
 /* Estilo QDateEdit*/
 
 QDateEdit {
     background-color: %4;
     color: %2;
-    border: 1 px solid: %1;
+    border: 1px solid %1;
     border-radius: 5px;
-    padding: 4px 8px;
+    padding: 2px 4px;
     selection-background-color: %3;
 }
 
 QDateEdit:focus {
-    border: 1px solid: %13;
+    border: 1px solid %13;
 }
 
 QDateEdit::drop-down {
@@ -266,58 +315,214 @@ QDateEdit::down-arrow {
     height: 10px;
 }
 
+/*ESTILOS QTABLEWIDGET*/
+
+QTableWidget#Datos_Clientes {
+    background-color: %9;                /* fondo blanco */
+    alternate-background-color: %6;      /* filas alternas azul claro */
+    gridline-color: %11;                 /* líneas de grilla negras suaves */
+    selection-background-color: %3;      /* selección azul fuerte */
+    selection-color: %4;                 /* texto selección blanco */
+    border: none;
+    border-radius: 6px;
+    aligment
+}
+
+QTableWidget#Datos_Clientes QHeaderView::section:horizontal {
+    background-color: %3;                /* cabecera azul fuerte */
+    color: %4;                           /* texto blanco */
+    padding: 8px;
+    border: none;
+    border-right: 1px solid %5;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+QTableWidget#Datos_Clientes::item:hover {
+    background-color: rgba(69, 123, 157, 0.2); /* hover sutil (azul medio transparente) */
+}
 
 
-/* =========================================== */
-/* SCROLLBARS ELEGANTES (invisibles hasta hover) */
-/* =========================================== */
+QTableWidget#Inventario2 {
+    background-color: #ffffff;
+    alternate-background-color: #e8f5e9;    /* verde muy claro */
+    gridline-color: #c8e6c9;
+    selection-background-color: #2e7d32;    /* verde oscuro */
+    selection-color: white;
+    border: 1px solid #a5d6a7;
+    border-radius: 6px;
+}
+
+QTableWidget#Inventario2 QHeaderView::section:horizontal {
+    background-color: #388e3c;              /* verde medio */
+    color: white;
+    padding: 8px;
+    border: none;
+    border-right: 1px solid #4caf50;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+QTableWidget#Inventario2::item:hover {
+    background-color: #c8e6c9;
+}
+
+QTableWidget#Datos_Empleados {
+    background-color: %9;
+    alternate-background-color: %1;         /* gris claro */
+    gridline-color: %11;
+    selection-background-color: %15;        /* azul medio */
+    selection-color: %4;
+    border: none;
+    border-radius: 6px;
+}
+
+QTableWidget#Datos_Empleados QHeaderView::section:horizontal {
+    background-color: %15;                  /* azul medio */
+    color: %4;
+    padding: 8px;
+    border: none;
+    border-right: 1px solid %5;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+QTableWidget#Datos_Empleados::item:hover {
+    background-color: rgba(168, 218, 220, 0.3); /* azul claro transparente */
+}
+
+
+QToolButton {
+    background-color: %3;           /* azul fuerte */
+    color: %4;                      /* blanco */
+    border: none;
+    border-radius: 4px;
+    min-width: 20px;
+    min-height: 8px;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 9pt;
+}
+
+QToolButton:hover {
+    background-color: %15;          /* azul medio */
+}
+
+QToolButton:pressed {
+    background-color: %1;           /* gris */
+    padding: 6px 10px 4px 10px;    /* efecto de presión */
+}
+
+
+QToolButton#Regresar {
+    background-color: %12;          /* rojo, para diferenciar */
+}
+QToolButton#Regresar:hover {
+    background-color: #c62828;
+}
+QToolButton#MENOS {
+    background-color: %12;
+}
+QToolButton#MAS {
+    background-color: %6;
+}
+
+QToolButton#LOGO {
+    border: none;
+    background-color: transparent;
+}
+
+
+QCheckBox {
+    spacing: 8px;
+    font-family: 'Roboto Condensed';
+    font-size: 10pt;
+    color: %2;
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    border: 1px solid %11;
+    background-color: %9;
+}
+
+QCheckBox::indicator:checked {
+    background-color: %3;
+    border-color: %3;
+}
+
+QCheckBox::indicator:hover {
+    border: 1px solid %15;
+}
+
+QMessageBox {
+    font-family: Montserrat;
+    font-size: 10pt;
+    color: %3;
+}
+
 
 /* Scrollbar vertical */
 
+QScrollArea {
+    border: none;
+    background: transparent;
+}
 
-QScrollArea > QScrollBar:vertical {
+QAbstractScrollArea::verticalScrollBar {
     background: transparent;
     width: 0px;
     margin: 0px;
 }
-QScrollArea:hover > QScrollBar:vertical {
+
+QAbstractScrollArea::verticalScrollBar:hover {
     width: 8px;
     background: rgba(0,0,0,0.05);
     border-radius: 4px;
 }
-QScrollArea > QScrollBar::handle:vertical {
+
+QAbstractScrollArea::verticalScrollBar::handle {
     background: rgba(0,0,0,0.3);
     border-radius: 4px;
     min-height: 30px;
 }
-QScrollArea:hover > QScrollBar::handle:vertical {
+
+QAbstractScrollArea::verticalScrollBar::handle:hover {
     background: rgba(0,0,0,0.5);
 }
-QScrollArea > QScrollBar::add-line:vertical,
-QScrollArea > QScrollBar::sub-line:vertical {
+
+
+QAbstractScrollArea::verticalScrollBar::add-line,
+QAbstractScrollArea::verticalScrollBar::sub-line {
     height: 0px;
 }
 
 /* Scrollbar horizontal */
 
-QScrollArea > QScrollBar:horizontal {
+QAbstractScrollArea::horizontalScrollBar {
     background: transparent;
     height: 0px;
 }
-QScrollArea:hover > QScrollBar:horizontal {
+
+QAbstractScrollArea::horizontalScrollBar:hover {
     height: 6px;
     background: rgba(0,0,0,0.05);
     border-radius: 3px;
 }
-QScrollArea > QScrollBar::handle:horizontal {
+
+QAbstractScrollArea::horizontalScrollBar::handle {
     background: rgba(0,0,0,0.3);
     border-radius: 3px;
     min-width: 30px;
 }
-QScrollArea:hover > QScrollBar::handle:horizontal {
+
+QAbstractScrollArea::horizontalScrollBar::handle:hover {
     background: rgba(0,0,0,0.5);
 }
-QScrollArea > QScrollBar::add-line:horizontal,
-QScrollArea > QScrollBar::sub-line:horizontal {
+
+QAbstractScrollArea::horizontalScrollBar::add-line,
+QAbstractScrollArea::horizontalScrollBar::sub-line {
     width: 0px;
 }

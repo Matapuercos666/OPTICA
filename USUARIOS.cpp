@@ -2,9 +2,10 @@
 #include "ui_USUARIOS.h"
 #include "ESTILOS.h"
 #include "Validacion.h"
+#include "VentanaBaseMain.h"
 
 USUARIOS::USUARIOS(QWidget *parent)
-    : QMainWindow(parent)
+    : VentanaBaseMain(parent)
     , ui(new Ui::USUARIOS)
     , CambiarContrasenaWindow(nullptr)
     , CambiarNombreWindow(nullptr)

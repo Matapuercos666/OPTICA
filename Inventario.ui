@@ -18,19 +18,19 @@
     <item row="0" column="0">
      <layout class="QGridLayout" name="gridLayout_2">
       <property name="leftMargin">
-       <number>20</number>
+       <number>35</number>
       </property>
       <property name="topMargin">
-       <number>20</number>
+       <number>35</number>
       </property>
       <property name="rightMargin">
-       <number>20</number>
+       <number>35</number>
       </property>
       <property name="bottomMargin">
-       <number>20</number>
+       <number>35</number>
       </property>
       <item row="1" column="0">
-       <widget class="QTableWidget" name="Datos_Clientes">
+       <widget class="QTableWidget" name="Inventario2">
         <property name="editTriggers">
          <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
         </property>
@@ -131,7 +131,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QLabel" name="Titulo">
+           <widget class="QLabel" name="Titulo2">
             <property name="text">
              <string>Lista De Productos</string>
             </property>
@@ -166,13 +166,6 @@
          </layout>
         </item>
        </layout>
-      </item>
-      <item row="2" column="0">
-       <widget class="QGroupBox" name="Historial">
-        <property name="title">
-         <string>GroupBox</string>
-        </property>
-       </widget>
       </item>
      </layout>
     </item>

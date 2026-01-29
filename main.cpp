@@ -1,6 +1,6 @@
 #include "ManejoDeData.h"
 #include "LOGIN.h"
-#include "Info_paciente.h"
+
 
 #include <QApplication>
 #include "ESTILOS.h"
@@ -23,12 +23,6 @@ int main(int argc, char *argv[]) {
     // Inicializar paleta de colores y fuentes (ESTILOS.h)
     PaletaColores::inicializar();
     Fuente::inicializar();
-
-    qDebug() << "Fuente Titulo:" << Fuente::titulo().family();
-    qDebug() << "Fuente Subtitulo:" << Fuente::subtitulo().family();
-    qDebug() << "Fuente Etiqueta:" << Fuente::etiqueta().family();
-    qDebug() << "Fuente Descripcion:" << Fuente::descripcion().family();
-    qDebug() << "Fuente Pie:" << Fuente::pie().family();
 
 
     // Cargar y aplicar la hoja de estilos global desde recursos

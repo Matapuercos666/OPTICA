@@ -1,7 +1,7 @@
 #ifndef LOGIN_H
 #define LOGIN_H
 #include <Qdebug>
-#include <QMainWindow>
+#include "VentanaBaseMain.h"
 #include "ESTILOS.H"
 #include "Menu.h"
 
@@ -17,7 +17,7 @@ class LOGIN;
 }
 QT_END_NAMESPACE
 
-class LOGIN : public QMainWindow
+class LOGIN : public VentanaBaseMain
 {
     Q_OBJECT
 

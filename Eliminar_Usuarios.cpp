@@ -1,11 +1,14 @@
 #include "Eliminar_Usuarios.h"
 #include "ui_Eliminar_Usuarios.h"
+#include "VentanaBaseMain.h"
 
 Eliminar_Usuarios::Eliminar_Usuarios(QWidget *parent)
-    : QMainWindow(parent)
+    : VentanaBaseMain(parent)
     , ui(new Ui::Eliminar_Usuarios)
 {
     ui->setupUi(this);
+    ui->Datos_Empleados->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->Datos_Empleados->setAlternatingRowColors(true);
     int contador = 0;
     connect(ui->Regresar, &QPushButton::clicked, this, &Eliminar_Usuarios::Boton_Regresar);
 
