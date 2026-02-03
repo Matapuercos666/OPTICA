@@ -15,7 +15,7 @@ struct Paciente
     QString Apellido1;
     QString Apellido2;
     QString Nacimiento;
-    int Edad;
+    QString Edad;
     QString Telefono;
     QString Email;
     QString Sexo;
@@ -32,6 +32,8 @@ Lista_Clientes::Lista_Clientes(QWidget *parent)
     ui->Datos_Clientes->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->Datos_Clientes->setAlternatingRowColors(true);
     Fuente::AplicarTodas(this);
+    connect(this, &VentanaBaseMain::perfilClicked, this, &Lista_Clientes::abrirPerfil);
+    connect(this, &VentanaBaseMain::cerrarSesionClicked, this, &Lista_Clientes::cerrarSesion);
     connect(ui->Datos_Clientes, &QTableWidget::cellDoubleClicked, this, &Lista_Clientes::INFO);
     connect(ui->Regresar, &QPushButton::clicked, this, &Lista_Clientes::Boton_Regresar);
     connect(ui->ELIMINAR, &QPushButton::clicked, this, &Lista_Clientes::Boton_Eliminar);
@@ -126,7 +128,7 @@ void Lista_Clientes::LlenarDatos()
         aux.Nombre = query.value(1).toString();
         aux.Apellido1 = query.value(2).toString();
         aux.Apellido2 = query.value(3).toString();
-        aux.Edad = query.value(4).toInt();
+        aux.Edad = query.value(4).toString();
         aux.Telefono = query.value(5).toString();
         QStringList Nombre_Completo;
         Nombre_Completo << aux.Nombre;
@@ -139,8 +141,9 @@ void Lista_Clientes::LlenarDatos()
 
         ui->Datos_Clientes->setItem(fila, 0, new QTableWidgetItem(QString::number(aux.ID)));
         ui->Datos_Clientes->setItem(fila, 1, new QTableWidgetItem(NOMBRE));
-        ui->Datos_Clientes->setItem(fila, 2, new QTableWidgetItem(QString::number(aux.Edad)));
+        ui->Datos_Clientes->setItem(fila, 2, new QTableWidgetItem(aux.Edad));
         ui->Datos_Clientes->setItem(fila, 3, new QTableWidgetItem(aux.Telefono));
+
     }
 
     //ui->Datos_Clientes->resizeColumnsToContents(); queda como comentario hasta saberlo usar porque somos pendejos
@@ -151,6 +154,16 @@ void Lista_Clientes::INFO(int row, int column)
     QTableWidgetItem *Item = ui->Datos_Clientes->item(row, 0);
     int PACIENTEID = Item->text().toInt();
     Info_paciente *INFOWINDOW = new Info_paciente(PACIENTEID, this);
+    connect(INFOWINDOW, &Info_paciente::Actualizar, this, &Lista_Clientes::LlenarDatos);
     INFOWINDOW->setAttribute(Qt::WA_DeleteOnClose);
     INFOWINDOW->show();
+}
+
+void Lista_Clientes::abrirPerfil(){
+    qDebug() << "Abrir perfil desde ICON";
+}
+
+void Lista_Clientes::cerrarSesion(){
+    qDebug() << "Cerrar sesion desde ICON";
+    this->close();
 }

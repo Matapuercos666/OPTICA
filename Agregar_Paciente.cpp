@@ -1,6 +1,7 @@
 #include "Agregar_Paciente.h"
 #include "ui_Agregar_Paciente.h"
 #include "Usuario_Actual.h"
+#include "Llenar_Consulta.h"
 #include <QMessageBox>
 #include <QSqlQuery>
 #include <QSqlDatabase>
@@ -37,13 +38,12 @@ void Agregar_Paciente::Boton_Agregar()
     QString Apellido1 = ui->APELLIDO_P->text().trimmed();
     QString Apellido2 = ui->APELLIDO_M->text().trimmed();
     QString Nacimiento = ui->NACIMIENTO->text().trimmed();
-    int Edad = ui->EDAD->text().toInt();
+    QString Edad = ui->EDAD->text().trimmed();
     QString Sexo = ui->SEXO->text().trimmed();
     QString Telefono = ui->TELEFONO->text().trimmed();
     QString Email = ui->EMAIL->text().trimmed();
     QString Antecedentes = ui->ANTECEDENTES->toPlainText();
     QString Antecedentes_Oculares = ui->ANTECEDENTES_O->toPlainText();
-    //sabado hacer una clase con estructura usuario para generalizar datos
 
     QSqlQuery query;
     query.clear();
@@ -71,6 +71,18 @@ void Agregar_Paciente::Boton_Agregar()
         QMessageBox::critical(this, "Error", "No se pudo agregar al nuevo usuario");
     }else{
         int NuevoId = query.lastInsertId().toInt();
+        QMessageBox::StandardButton respuesta = QMessageBox::question(
+            this,
+            "Consulta",
+            "Deseas agregar una consulta?",
+            QMessageBox::Yes | QMessageBox::No);
+
+        if(respuesta == QMessageBox::Yes)
+        {
+            Llenar_Consulta ConsultaDialog(NuevoId, this);
+            this->hide();
+            ConsultaDialog.exec();
+        }
         QMessageBox::information(this, "EXITO", "Agregado con exito, el paciente con ID: " + QString::number(NuevoId));
         emit Actualizar();
     }

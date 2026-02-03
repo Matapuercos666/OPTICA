@@ -27,6 +27,8 @@ private slots:
     void Boton_Eliminar();
     void Boton_AgregarUsuario();
     void Boton_Regresar();
+    void abrirPerfil();
+    void cerrarSesion();
 
 private:
     Ui::USUARIOS *ui;

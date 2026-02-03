@@ -28,7 +28,7 @@
         <x>0</x>
         <y>0</y>
         <width>664</width>
-        <height>836</height>
+        <height>813</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_3">
@@ -104,61 +104,18 @@
              </item>
             </layout>
            </item>
-           <item row="1" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="2,4">
-             <property name="spacing">
-              <number>0</number>
+           <item row="1" column="2">
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
-             <property name="topMargin">
-              <number>10</number>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
              </property>
-             <property name="bottomMargin">
-              <number>15</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="Titulo4_4">
-               <property name="text">
-                <string>Rx anterior</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <layout class="QGridLayout" name="gridLayout_38">
-               <property name="spacing">
-                <number>10</number>
-               </property>
-               <item row="0" column="0">
-                <widget class="QLabel" name="OD_4">
-                 <property name="text">
-                  <string>O.D.</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignmentFlag::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="OI_4">
-                 <property name="text">
-                  <string>O.I.</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignmentFlag::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLineEdit" name="RxAntOD"/>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLineEdit" name="RxAntOI"/>
-               </item>
-              </layout>
-             </item>
-            </layout>
+            </spacer>
            </item>
           </layout>
          </item>
@@ -189,7 +146,11 @@
                   <widget class="QLineEdit" name="RetinoOI"/>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QLineEdit" name="RetinoOD"/>
+                  <widget class="QLineEdit" name="RetinoOD">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
                  </item>
                  <item row="0" column="0">
                   <widget class="QLabel" name="OD_5">
@@ -382,7 +343,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="FECHA">
+              <widget class="QLabel" name="label">
                <property name="text">
                 <string>Fecha</string>
                </property>
@@ -392,7 +353,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QDateEdit" name="dateEdit"/>
+              <widget class="QDateEdit" name="FECHA"/>
              </item>
              <item>
               <widget class="QLabel" name="IdConsulta">
@@ -653,8 +614,6 @@
   <tabstop>AVscOI</tabstop>
   <tabstop>AVccOD</tabstop>
   <tabstop>AVccOI</tabstop>
-  <tabstop>RxAntOD</tabstop>
-  <tabstop>RxAntOI</tabstop>
   <tabstop>AVOD</tabstop>
   <tabstop>AVOI</tabstop>
   <tabstop>RetinoOD</tabstop>
@@ -666,7 +625,7 @@
   <tabstop>OBSERVACIONES</tabstop>
   <tabstop>AGREGAR</tabstop>
   <tabstop>CERRAR</tabstop>
-  <tabstop>dateEdit</tabstop>
+  <tabstop>FECHA</tabstop>
  </tabstops>
  <resources/>
  <connections/>

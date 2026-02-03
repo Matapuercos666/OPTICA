@@ -44,6 +44,24 @@ QPushButton#ELIMINAR:pressed {
     background-color: #b71c1c;
 }
 
+QPushButton#GUARDAR:disabled {
+    font: bold 10pt 'Arial Black';
+    background-color: %1;
+    color: %1;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+QPushButton#GUARDAR:enabled:hover {
+    background-color: %15;
+}
+
+QPushButton#GUARDAR:enabled:pressed {
+    background-color: %13;
+    color: %5;
+}
+
 QLineEdit, QTextEdit, QPlainTextEdit {
     background-color: %6;
     color: %7;
@@ -98,21 +116,21 @@ QLabel#OI_7 {
 
 /*Estilos Info_paciente*/
 
-#Info_paciente QLineEdit[readOnly="false"],
-#Info_paciente QTextEdit[readOnly="false"],
-#Info_paciente QPlainTextEdit[readOnly="false"] {
+#Info_paciente QLineEdit:!read-only,
+#Info_paciente QTextEdit:!read-only,
+#Info_paciente QPlainTextEdit:!read-only {
     background-color: %9;
     color: %14;
     border: 1px solid #d1d5db;
-    border-radius: 8px;
-    padding: 8px 10px;
+    border-radius: 6px;
+    padding: 6px 8px;
     selection-background-color: %3;
     selection-color: %4;
 }
 
-#Info_paciente QLineEdit[readOnly="true"],
-#Info_paciente QTextEdit[readOnly="true"],
-#Info_paciente QPlainTextEdit[readOnly="true"] {
+#Info_paciente QLineEdit:read-only,
+#Info_paciente QTextEdit:read-only,
+#Info_paciente QPlainTextEdit:read-only {
     background-color: transparent;
     color: %2;
     border: none;
@@ -120,19 +138,13 @@ QLabel#OI_7 {
     font: inherit;
 }
 
-#Info_paciente QLineEdit:focus[readOnly="false"],
-#Info_paciente QTextEdit:focus[readOnly="false"],
-#Info_paciente QPlainTextEdit:focus[readOnly="false"] {
+#Info_paciente QLineEdit:focus:!read-only,
+#Info_paciente QTextEdit:focus:!read-only,
+#Info_paciente QPlainTextEdit:focus:!read-only {
     background-color: #fcfcfc;
     border: 1px solid %1;
     outline: none;
 }
-
-#Info_paciente QLineEdit::placeholder,
-#Info_paciente QTextEdit::placeholder {
-    color: #9ca3af;
-}
-
 
 
 
@@ -194,7 +206,9 @@ QLabel#Titulo4_4,
 QLabel#Titulo4_5,
 QLabel#Titulo4_6,
 QLabel#Titulo4_7,
-QLabel#Titulo4_8
+QLabel#Titulo4_8,
+QLabel#Titulo4_9,
+QLabel#Titulo4_10
 {
     color: %11;
     font-family: 'Montserrat';
@@ -392,8 +406,8 @@ QTableWidget#Datos_Empleados::item:hover {
 }
 
 
-QToolButton {
-    background-color: %3;           /* azul fuerte */
+QToolButton#Icon {
+    background-color: transparent;
     color: %4;                      /* blanco */
     border: none;
     border-radius: 4px;
@@ -404,13 +418,17 @@ QToolButton {
     font-size: 9pt;
 }
 
-QToolButton:hover {
-    background-color: %15;          /* azul medio */
+QToolButton#Icon:hover {
+    background-color: transparent;
 }
 
-QToolButton:pressed {
+QToolButton#Icon:pressed {
     background-color: %1;           /* gris */
     padding: 6px 10px 4px 10px;    /* efecto de presión */
+}
+
+QMenu {
+    background-color: %3;
 }
 
 

@@ -20,6 +20,8 @@ public:
 
 private slots:
     void Boton_Regresar();
+    void abrirPerfil();
+    void cerrarSesion();
 
 
 private:

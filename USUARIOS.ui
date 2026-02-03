@@ -228,6 +228,9 @@
              <property name="icon">
               <iconset theme="QIcon::ThemeIcon::GoPrevious"/>
              </property>
+             <property name="autoRaise">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
            <item>
@@ -267,12 +270,37 @@
             </spacer>
            </item>
            <item>
-            <widget class="QToolButton" name="toolButton">
+            <widget class="QToolButton" name="Icon">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="text">
               <string/>
              </property>
              <property name="icon">
-              <iconset theme="QIcon::ThemeIcon::UserAvailable"/>
+              <iconset resource="RECURSOS.qrc">
+               <normaloff>:/IMAGENES/IMAGENES/LOGOS/Logo con fondo gris.png</normaloff>:/IMAGENES/IMAGENES/LOGOS/Logo con fondo gris.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="popupMode">
+              <enum>QToolButton::ToolButtonPopupMode::MenuButtonPopup</enum>
+             </property>
+             <property name="toolButtonStyle">
+              <enum>Qt::ToolButtonStyle::ToolButtonFollowStyle</enum>
+             </property>
+             <property name="autoRaise">
+              <bool>true</bool>
+             </property>
+             <property name="arrowType">
+              <enum>Qt::ArrowType::NoArrow</enum>
              </property>
             </widget>
            </item>
@@ -286,6 +314,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="RECURSOS.qrc"/>
+ </resources>
  <connections/>
 </ui>

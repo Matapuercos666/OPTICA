@@ -29,7 +29,7 @@
       <property name="bottomMargin">
        <number>35</number>
       </property>
-      <item row="1" column="0">
+      <item row="2" column="0">
        <widget class="QTableWidget" name="Inventario2">
         <property name="editTriggers">
          <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
@@ -115,6 +115,9 @@
             <property name="icon">
              <iconset theme="QIcon::ThemeIcon::GoPrevious"/>
             </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
            </widget>
           </item>
           <item>
@@ -154,12 +157,25 @@
            </spacer>
           </item>
           <item>
-           <widget class="QToolButton" name="toolButton_2">
+           <widget class="QToolButton" name="Icon">
             <property name="text">
-             <string>nombre</string>
+             <string>...</string>
             </property>
             <property name="icon">
-             <iconset theme="QIcon::ThemeIcon::UserAvailable"/>
+             <iconset resource="RECURSOS.qrc">
+              <normaloff>:/IMAGENES/IMAGENES/LOGOS/Logo con fondo gris.png</normaloff>:/IMAGENES/IMAGENES/LOGOS/Logo con fondo gris.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="popupMode">
+             <enum>QToolButton::ToolButtonPopupMode::MenuButtonPopup</enum>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -180,9 +196,14 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="defaultUp">
+    <bool>false</bool>
+   </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="RECURSOS.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -11,6 +11,8 @@ Eliminar_Usuarios::Eliminar_Usuarios(QWidget *parent)
     ui->Datos_Empleados->setAlternatingRowColors(true);
     int contador = 0;
     connect(ui->Regresar, &QPushButton::clicked, this, &Eliminar_Usuarios::Boton_Regresar);
+    connect(this, &VentanaBaseMain::perfilClicked, this, &Eliminar_Usuarios::abrirPerfil);
+    connect(this, &VentanaBaseMain::cerrarSesionClicked, this, &Eliminar_Usuarios::cerrarSesion);
 
     QFile archivo("USUARIOS.dat");
     if (!archivo.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -46,5 +48,14 @@ void Eliminar_Usuarios::Boton_Regresar()
     if (parentWidget()) {
         parentWidget()->show();
     }
+    this->close();
+}
+
+void Eliminar_Usuarios::abrirPerfil(){
+    qDebug() << "Abrir perfil desde ICON";
+}
+
+void Eliminar_Usuarios::cerrarSesion(){
+    qDebug() << "Cerrar sesion desde ICON";
     this->close();
 }

@@ -25,6 +25,8 @@ private slots:
     void Boton_Regresar();
     void Boton_Eliminar();
     void Boton_Agregar();
+    void abrirPerfil();
+    void cerrarSesion();
 
 private:
     Ui::Lista_Clientes *ui;

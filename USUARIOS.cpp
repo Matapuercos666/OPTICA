@@ -14,6 +14,8 @@ USUARIOS::USUARIOS(QWidget *parent)
 {
     ui->setupUi(this);
     Fuente::AplicarTodas(this);
+    connect(this, &VentanaBaseMain::perfilClicked, this, &USUARIOS::abrirPerfil);
+    connect(this, &VentanaBaseMain::cerrarSesionClicked, this, &USUARIOS::cerrarSesion);
     connect(ui->CambiarContrasena, &QPushButton::clicked, this, &USUARIOS::Boton_CambiarPassword);
     connect(ui->CambiarNombre, &QPushButton::clicked, this, &USUARIOS::Boton_CambiarNombre);
     connect(ui->ELIMINAR, &QPushButton::clicked, this, &USUARIOS::Boton_Eliminar);
@@ -97,5 +99,14 @@ void USUARIOS::Boton_Regresar()
     if (parentWidget()) {
         parentWidget()->show();
     }
+    this->close();
+}
+
+void USUARIOS::abrirPerfil(){
+    qDebug() << "Abrir perfil desde ICON";
+}
+
+void USUARIOS::cerrarSesion(){
+    qDebug() << "Cerrar sesion desde ICON";
     this->close();
 }

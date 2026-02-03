@@ -11,7 +11,12 @@ Inventario::Inventario(QWidget *parent)
     ui->Inventario2->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->Inventario2->setAlternatingRowColors(true);
     Fuente::AplicarTodas(this);
-    connect(ui->Regresar, &QPushButton::clicked, this, &Inventario::Boton_Regresar);}
+    connect(ui->Regresar, &QPushButton::clicked, this, &Inventario::Boton_Regresar);
+    connect(this, &VentanaBaseMain::perfilClicked, this, &Inventario::abrirPerfil);
+    connect(this, &VentanaBaseMain::cerrarSesionClicked, this, &Inventario::cerrarSesion);
+
+
+}
 
 Inventario::~Inventario()
 {
@@ -24,5 +29,14 @@ void Inventario::Boton_Regresar()
     if (parentWidget()) {
         parentWidget()->show();
     }
+    this->close();
+}
+
+void Inventario::abrirPerfil(){
+    qDebug() << "Abrir perfil desde ICON";
+}
+
+void Inventario::cerrarSesion(){
+    qDebug() << "Cerrar sesion desde ICON";
     this->close();
 }

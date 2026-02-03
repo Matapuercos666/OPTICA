@@ -11,6 +11,8 @@ PuntoVenta::PuntoVenta(QWidget *parent)
     ui->setupUi(this);
     Fuente::AplicarTodas(this);
     connect(ui->Regresar, &QPushButton::clicked, this, &PuntoVenta::Boton_Regresar);
+    connect(this, &VentanaBaseMain::perfilClicked, this, &PuntoVenta::abrirPerfil);
+    connect(this, &VentanaBaseMain::cerrarSesionClicked, this, &PuntoVenta::cerrarSesion);
 }
 
 PuntoVenta::~PuntoVenta()
@@ -25,5 +27,14 @@ void PuntoVenta::Boton_Regresar()
     if (parentWidget()) {
         parentWidget()->show();
     }
+    this->close();
+}
+
+void PuntoVenta::abrirPerfil(){
+    qDebug() << "Abrir perfil desde ICON";
+}
+
+void PuntoVenta::cerrarSesion(){
+    qDebug() << "Cerrar sesion desde ICON";
     this->close();
 }

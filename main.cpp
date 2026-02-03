@@ -1,7 +1,6 @@
 #include "ManejoDeData.h"
 #include "LOGIN.h"
 
-
 #include <QApplication>
 #include "ESTILOS.h"
 #include <QFontDatabase>

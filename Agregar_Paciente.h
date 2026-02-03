@@ -2,6 +2,7 @@
 #define AGREGAR_PACIENTE_H
 
 #include "VentanaBase.h"
+#include "Llenar_Consulta.h"
 
 namespace Ui {
 class Agregar_Paciente;

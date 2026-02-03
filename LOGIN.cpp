@@ -68,7 +68,7 @@ void LOGIN::Boton_ENTRAR()
         }
     } else
     {
-        if(ui->Usuario->text().isEmpty() && ui->Usuario->text().isEmpty())
+        if(ui->Usuario->text().isEmpty() && ui->password->text().isEmpty())
         {
             ui->Usuario->setFocus();
         }
@@ -84,8 +84,6 @@ void LOGIN::Boton_ENTRAR()
                 ui->password->setFocus();
             }
         }
-        QMessageBox::critical(nullptr, "campos vacíos", "Favor de llenar los campos por favor");
-        ui->Usuario->setFocus();
     }
 
     if(autorizacion)

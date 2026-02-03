@@ -35,6 +35,15 @@
          <layout class="QHBoxLayout" name="horizontalLayout_5">
           <item>
            <widget class="QToolButton" name="Regresar">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="font">
+             <font>
+              <underline>false</underline>
+              <kerning>true</kerning>
+             </font>
+            </property>
             <property name="layoutDirection">
              <enum>Qt::LayoutDirection::LeftToRight</enum>
             </property>
@@ -43,6 +52,9 @@
             </property>
             <property name="icon">
              <iconset theme="QIcon::ThemeIcon::GoPrevious"/>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -83,12 +95,22 @@
            </spacer>
           </item>
           <item>
-           <widget class="QToolButton" name="toolButton">
+           <widget class="QToolButton" name="Icon">
             <property name="text">
              <string/>
             </property>
             <property name="icon">
-             <iconset theme="QIcon::ThemeIcon::UserAvailable"/>
+             <iconset resource="RECURSOS.qrc">
+              <normaloff>:/IMAGENES/IMAGENES/LOGOS/Logo con fondo gris.png</normaloff>:/IMAGENES/IMAGENES/LOGOS/Logo con fondo gris.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="popupMode">
+             <enum>QToolButton::ToolButtonPopupMode::MenuButtonPopup</enum>
             </property>
            </widget>
           </item>
@@ -299,6 +321,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="RECURSOS.qrc"/>
+ </resources>
  <connections/>
 </ui>
