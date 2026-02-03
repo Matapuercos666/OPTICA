@@ -1,12 +1,12 @@
 #ifndef MENU_H
 #define MENU_H
 
-#include "VentanaBaseMain.h"
 #include <QPointer>
 #include "Lista_Clientes.h"
 #include "PuntoVenta.h"
 #include "Inventario.h"
 #include "USUARIOS.h"
+#include <QWidget>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -14,13 +14,19 @@ class Menu;
 }
 QT_END_NAMESPACE
 
-class Menu : public VentanaBaseMain
+class Menu : public QWidget
 {
     Q_OBJECT
 
 public:
     explicit Menu(QWidget *parent = nullptr);
     ~Menu();
+
+signals:
+    void goToLista();
+    void goToVenta();
+    void goToInventario();
+    void goToUsuarios();
 
 private slots:
     void Boton_Lista();
@@ -30,11 +36,6 @@ private slots:
 
 private:
     Ui::Menu *ui;
-    //punteros a nuevas ventanas
-    Lista_Clientes *ListaWindow;
-    PuntoVenta *Punto_Venta_Window;
-    Inventario *InventarioWindow;
-    USUARIOS *UsuariosWindow;
 };
 
 #endif // MENU_H

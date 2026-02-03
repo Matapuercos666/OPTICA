@@ -2,6 +2,7 @@
 * {
     background-color: %1;
     color: %2;
+    font-size: 10pt;
 }
 
 QPushButton {
@@ -9,8 +10,8 @@ QPushButton {
     background-color: %3;
     color: %4;
     border: none;
-    border-radius: 4px;
-    padding: 5px;
+    border-radius: 0.4em;
+    padding: 0.5 em 1em;
 }
 
 QPushButton:hover {
@@ -28,8 +29,8 @@ QPushButton#ELIMINAR {
     background-color: %12;
     color: %4;
     border: none;
-    border-radius: 4px;
-    padding:5px;
+    border-radius: 0.4em;
+    padding: 0.5em;
 }
 
 QPushButton#CANCELAR:hover,
@@ -49,8 +50,8 @@ QPushButton#GUARDAR:disabled {
     background-color: %1;
     color: %1;
     border: none;
-    border-radius: 4px;
-    padding: 5px;
+    border-radius: 0.4em;
+    padding: 0.5em;
 }
 
 QPushButton#GUARDAR:enabled:hover {
@@ -66,14 +67,14 @@ QLineEdit, QTextEdit, QPlainTextEdit {
     background-color: %6;
     color: %7;
     border: 1px solid #d1d5db;
-    border-radius: 8px;
-    padding: 8px 10px;
+    border-radius: 0.8em;
+    padding: 0.8em 1em;
 }
 
 #LOGIN QLineEdit {
     min-height: 30px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 
 /*Selectores Info_paciente, Agregar_Paciente, Agregar_consulta*/
@@ -91,7 +92,7 @@ QLabel#Antecedentes,
 QLabel#AntecedentesO {
     color: %8;
     font-family: 'Roboto Condensed';
-    font-size: 12px;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
@@ -111,7 +112,7 @@ QLabel#OD_7,
 QLabel#OI_7 {
     color: %11;
     font-family: 'Roboto Condensed';
-    font-size: 11px;
+    font-size: 1.1em;
 }
 
 /*Estilos Info_paciente*/
@@ -122,8 +123,8 @@ QLabel#OI_7 {
     background-color: %9;
     color: %14;
     border: 1px solid #d1d5db;
-    border-radius: 6px;
-    padding: 6px 8px;
+    border-radius: 0.6em;
+    padding: 0.6em 0.8em;
     selection-background-color: %3;
     selection-color: %4;
 }
@@ -134,7 +135,7 @@ QLabel#OI_7 {
     background-color: transparent;
     color: %2;
     border: none;
-    padding: 0px;
+    padding: 0em;
     font: inherit;
 }
 
@@ -142,7 +143,7 @@ QLabel#OI_7 {
 #Info_paciente QTextEdit:focus:!read-only,
 #Info_paciente QPlainTextEdit:focus:!read-only {
     background-color: #fcfcfc;
-    border: 1px solid %1;
+    border: 0.1em solid %1;
     outline: none;
 }
 
@@ -151,7 +152,7 @@ QLabel#OI_7 {
 /*QTableWidget, QTableView {
     background-color: %9;
     color: %10;
-    border: 1px solid %11;
+    border: 0.1em solid %11;
 }*/
 
 
@@ -162,13 +163,13 @@ QLabel#OI_7 {
     selection-background-color: %3;
     selection-color: %4;
     border: none;
-    border-radius: 8px;
+    border-radius: 0.8em;
 }
 
 #Historico_consulta QHeaderView::section{
     background-color: %6;
     color: %2;
-    padding: 10px;
+    padding: 1em;
     border-bottom: 1px solid %11;
     font-weight: bold;
     border: none;
@@ -188,14 +189,14 @@ QLabel#Titulo {
 QLabel#Titulo2 {
     color: %13;
     font-family: 'Roboto Condensed';
-    font-size: 30px;
+    font-size: 30pt;
     font-weight: bold;
 }
 
 QLabel#Titulo3 {
     color: %13;
     font-family: 'Roboto Condensed';
-    font-size: 16px;
+    font-size: 16pt;
     font-weight: bold;
 }
 
@@ -212,7 +213,7 @@ QLabel#Titulo4_10
 {
     color: %11;
     font-family: 'Montserrat';
-    font-size: 12px;
+    font-size: 12pt;
     font-weight: bold;
 }
 
@@ -242,8 +243,8 @@ QLabel#IdConsulta {
     background-color: %6;
     color: %2;
     border: 1px solid #d1d5db;
-    border-radius: 8px;
-    padding: 8px 10px;
+    border-radius: 0.8em;
+    padding: 0.8em 1em;
     selection-background-color: %3;
     selection-color: %4;
 }
@@ -252,14 +253,14 @@ QLabel#IdConsulta {
 #Agregar_Paciente QTextEdit:focus,
 #Agregar_Paciente QPlainTextEdit:focus {
     background-color: #fcfcfc;
-    border: 1px solid %1;
+    border: 0.1em solid %1;
     outline: none;
 }
 
 #Agregar_Paciente QLineEdit:hover,
 #Agregar_Paciente QTextEdit:hover,
 #Agregar_Paciente QPlainTextEdit:hover {
-    border: 1px solid %13;
+    border: 0.1em solid %13;
 }
 
 #Agregar_Paciente QLineEdit::placeholder,
@@ -275,8 +276,8 @@ QLabel#IdConsulta {
     background-color: %6;
     color: %2;
     border: 1px solid #d1d5db;
-    border-radius: 8px;
-    padding: 8px 10px;
+    border-radius: 0.8em;
+    padding: 0.8em 1em;
     selection-background-color: %15;
     selection-color: %4;
 }
@@ -285,14 +286,14 @@ QLabel#IdConsulta {
 #Llenar_Consulta QTextEdit:focus,
 #Llenar_Consulta QPlainTextEdit:focus {
     background-color: #d4edee;
-    border: 1px solid %1;
+    border: 0.1em solid %1;
     outline: none;
 }
 
 #Llenar_Consulta QLineEdit:hover,
 #Llenar_Consulta QTextEdit:hover,
 #Llenar_Consulta QPlainTextEdit:hover {
-    border: 1px solid %11;
+    border: 0.1em solid %11;
 }
 
 #Llenar_Consulta QLineEdit::placeholder,
@@ -307,26 +308,28 @@ QLabel#IdConsulta {
 QDateEdit {
     background-color: %4;
     color: %2;
-    border: 1px solid %1;
-    border-radius: 5px;
-    padding: 2px 4px;
+    border: 0.1em solid %1;
+    border-radius: 0.5em;
+    padding: 0.2em 0.4em;
     selection-background-color: %3;
 }
 
 QDateEdit:focus {
-    border: 1px solid %13;
+    border: 0.1em solid %13;
 }
 
 QDateEdit::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: center right;
-    width: 15px;
-    border-left: 1px solid %11;
+    width: 0px;
+    border: none;
 }
 
 QDateEdit::down-arrow {
-    width: 10px;
-    height: 10px;
+    image: none;
+}
+
+QDateEdit::up-button, QDateEdit::down-button {
+    width: 0px;
+    height: 0px;
 }
 
 /*ESTILOS QTABLEWIDGET*/
@@ -338,16 +341,15 @@ QTableWidget#Datos_Clientes {
     selection-background-color: %3;      /* selección azul fuerte */
     selection-color: %4;                 /* texto selección blanco */
     border: none;
-    border-radius: 6px;
-    aligment
+    border-radius: 0.6em;
 }
 
 QTableWidget#Datos_Clientes QHeaderView::section:horizontal {
     background-color: %3;                /* cabecera azul fuerte */
     color: %4;                           /* texto blanco */
-    padding: 8px;
+    padding: 0.8em;
     border: none;
-    border-right: 1px solid %5;
+    border-right: 0.1em solid %5;
     font-weight: bold;
     font-size: 10pt;
 }
@@ -363,16 +365,16 @@ QTableWidget#Inventario2 {
     gridline-color: #c8e6c9;
     selection-background-color: #2e7d32;    /* verde oscuro */
     selection-color: white;
-    border: 1px solid #a5d6a7;
-    border-radius: 6px;
+    border: 0.1em solid #a5d6a7;
+    border-radius: 0.6em;
 }
 
 QTableWidget#Inventario2 QHeaderView::section:horizontal {
     background-color: #388e3c;              /* verde medio */
     color: white;
-    padding: 8px;
+    padding: 0.8em;
     border: none;
-    border-right: 1px solid #4caf50;
+    border-right: 0.1em solid #4caf50;
     font-weight: bold;
     font-size: 10pt;
 }
@@ -388,15 +390,15 @@ QTableWidget#Datos_Empleados {
     selection-background-color: %15;        /* azul medio */
     selection-color: %4;
     border: none;
-    border-radius: 6px;
+    border-radius: 0.6em;
 }
 
 QTableWidget#Datos_Empleados QHeaderView::section:horizontal {
     background-color: %15;                  /* azul medio */
     color: %4;
-    padding: 8px;
+    padding: 0.8em;
     border: none;
-    border-right: 1px solid %5;
+    border-right: 0.1em solid %5;
     font-weight: bold;
     font-size: 10pt;
 }
@@ -412,8 +414,8 @@ QToolButton#Icon {
     border: none;
     border-radius: 4px;
     min-width: 20px;
-    min-height: 8px;
-    padding: 5px 10px;
+    min-height: 0.8em;
+    padding: 0.5em 1em;
     font-weight: bold;
     font-size: 9pt;
 }
@@ -424,12 +426,41 @@ QToolButton#Icon:hover {
 
 QToolButton#Icon:pressed {
     background-color: %1;           /* gris */
-    padding: 6px 10px 4px 10px;    /* efecto de presión */
+    padding: 0.6em 1em 0.4em 1em;    /* efecto de presión */
+}
+
+QToolButton::menu-indicator {
+    image: none;
+    width: 0px;
+    height: 0px;
 }
 
 QMenu {
-    background-color: %3;
+    background-color: %1;
+    color: %3;
+    border: 1px solid #cccccc;
+    border-radius 0.5em;
+    padding: 0.5em 0em;
+    font-family: 'Raleway';
 }
+
+QMenu::item {
+    padding: 0.6em 3em 0.6em 2em;
+    color: %3;
+}
+
+QMenu::item:select {
+    background-color: #e0e0e0;
+    color: #000000;
+}
+
+QMenu::separator {
+    height: 0.1em;
+    background: #dddddd;
+    margin 0.4em 1em;
+}
+
+
 
 
 QToolButton#Regresar {
@@ -452,17 +483,17 @@ QToolButton#LOGO {
 
 
 QCheckBox {
-    spacing: 8px;
+    spacing: 0.8em;
     font-family: 'Roboto Condensed';
     font-size: 10pt;
     color: %2;
 }
 
 QCheckBox::indicator {
-    width: 18px;
-    height: 18px;
-    border-radius: 3px;
-    border: 1px solid %11;
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 0.3em;
+    border: 0.1em solid %11;
     background-color: %9;
 }
 
@@ -472,7 +503,7 @@ QCheckBox::indicator:checked {
 }
 
 QCheckBox::indicator:hover {
-    border: 1px solid %15;
+    border: 0.1em solid %15;
 }
 
 QMessageBox {
@@ -496,15 +527,15 @@ QAbstractScrollArea::verticalScrollBar {
 }
 
 QAbstractScrollArea::verticalScrollBar:hover {
-    width: 8px;
+    width: 0.8em;
     background: rgba(0,0,0,0.05);
-    border-radius: 4px;
+    border-radius: 0.8em;
 }
 
 QAbstractScrollArea::verticalScrollBar::handle {
     background: rgba(0,0,0,0.3);
-    border-radius: 4px;
-    min-height: 30px;
+    border-radius: 0.4em;
+    min-height: 3em;
 }
 
 QAbstractScrollArea::verticalScrollBar::handle:hover {
@@ -525,15 +556,15 @@ QAbstractScrollArea::horizontalScrollBar {
 }
 
 QAbstractScrollArea::horizontalScrollBar:hover {
-    height: 6px;
+    height: 0.6em;
     background: rgba(0,0,0,0.05);
-    border-radius: 3px;
+    border-radius: 0.3em;
 }
 
 QAbstractScrollArea::horizontalScrollBar::handle {
     background: rgba(0,0,0,0.3);
-    border-radius: 3px;
-    min-width: 30px;
+    border-radius: 0.3em;
+    min-width: 3em;
 }
 
 QAbstractScrollArea::horizontalScrollBar::handle:hover {
@@ -543,4 +574,59 @@ QAbstractScrollArea::horizontalScrollBar::handle:hover {
 QAbstractScrollArea::horizontalScrollBar::add-line,
 QAbstractScrollArea::horizontalScrollBar::sub-line {
     width: 0px;
+}
+
+
+/* Barra superior */
+#topBar {
+    background-color: %3;               /* azul fuerte */
+    border-bottom: 1px solid %11;       /* borde inferior sutil (negro o gris) */
+}
+
+/* Etiquetas de la barra superior */
+#appTitle {
+    color: %4;                          /* blanco */
+    font-weight: bold;
+    font-size: 14px;
+}
+#viewTitle {
+    color: %4;                          /* blanco */
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* Botones generales de la barra superior */
+#topBar QToolButton {
+    background: transparent;
+    color: %4;                          /* blanco */
+    border: none;
+    border-radius: 4px;
+    padding: 4px;
+    font-weight: bold;
+}
+#topBar QToolButton:hover {
+    background-color: %15;              /* azul medio */
+}
+#topBar QToolButton:pressed {
+    background-color: %13;              /* azul fuerte más oscuro o el que uses para pressed */
+}
+
+/* Botón regresar */
+#btnBack {
+    font-weight: bold;
+}
+#btnBack:disabled {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Botones de ventana (minimizar, maximizar, cerrar) */
+#btnMinimize, #btnMaximize, #btnClose {
+    font-size: 14px;
+    font-weight: bold;
+}
+#btnClose:hover {
+    background-color: %12;              /* rojo para cerrar (opcional) */
+}
+#btnClose:pressed {
+    background-color: #b71c1c;          /* rojo más oscuro */
 }

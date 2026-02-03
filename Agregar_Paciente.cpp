@@ -1,18 +1,14 @@
 #include "Agregar_Paciente.h"
 #include "ui_Agregar_Paciente.h"
 #include "Usuario_Actual.h"
-#include "Llenar_Consulta.h"
 #include <QMessageBox>
 #include <QSqlQuery>
 #include <QSqlDatabase>
 #include <QSqlError>
 
 
-//tamaño ventana
-#include "VentanaBase.h"
-
 Agregar_Paciente::Agregar_Paciente(QWidget *parent)
-    : VentanaBase(parent)
+    : QWidget(parent)
     , ui(new Ui::Agregar_Paciente)
 {
     ui->setupUi(this);
@@ -79,24 +75,14 @@ void Agregar_Paciente::Boton_Agregar()
 
         if(respuesta == QMessageBox::Yes)
         {
-            Llenar_Consulta ConsultaDialog(NuevoId, this);
-            this->hide();
-            ConsultaDialog.exec();
+            emit goToLLenarConsulta(NuevoId);
         }
         QMessageBox::information(this, "EXITO", "Agregado con exito, el paciente con ID: " + QString::number(NuevoId));
-        emit Actualizar();
+        emit pacienteAgregado();
     }
 
-    if (parentWidget()) {
-        parentWidget()->show();
-    }
-    this->close();
-}
 
 void Agregar_Paciente::Boton_Cancelar()
 {
-    if (parentWidget()) {
-        parentWidget()->show();
-    }
-    this->close();
+    emit pacienteAgregado();
 }

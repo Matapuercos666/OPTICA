@@ -2,20 +2,14 @@
 #include "ui_USUARIOS.h"
 #include "ESTILOS.h"
 #include "Validacion.h"
-#include "VentanaBaseMain.h"
 
 USUARIOS::USUARIOS(QWidget *parent)
-    : VentanaBaseMain(parent)
+    : QWidget(parent)
     , ui(new Ui::USUARIOS)
-    , CambiarContrasenaWindow(nullptr)
-    , CambiarNombreWindow(nullptr)
-    , EliminarWindow(nullptr)
-    , AgregarWindow(nullptr)
 {
     ui->setupUi(this);
     Fuente::AplicarTodas(this);
-    connect(this, &VentanaBaseMain::perfilClicked, this, &USUARIOS::abrirPerfil);
-    connect(this, &VentanaBaseMain::cerrarSesionClicked, this, &USUARIOS::cerrarSesion);
+
     connect(ui->CambiarContrasena, &QPushButton::clicked, this, &USUARIOS::Boton_CambiarPassword);
     connect(ui->CambiarNombre, &QPushButton::clicked, this, &USUARIOS::Boton_CambiarNombre);
     connect(ui->ELIMINAR, &QPushButton::clicked, this, &USUARIOS::Boton_Eliminar);
@@ -102,11 +96,3 @@ void USUARIOS::Boton_Regresar()
     this->close();
 }
 
-void USUARIOS::abrirPerfil(){
-    qDebug() << "Abrir perfil desde ICON";
-}
-
-void USUARIOS::cerrarSesion(){
-    qDebug() << "Cerrar sesion desde ICON";
-    this->close();
-}

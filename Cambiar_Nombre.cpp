@@ -1,9 +1,8 @@
 #include "Cambiar_Nombre.h"
 #include "ui_Cambiar_Nombre.h"
-#include "VentanaBase.h"
 
 Cambiar_Nombre::Cambiar_Nombre(QWidget *parent)
-    : VentanaBase(parent)
+    : QWidget(parent)
     , ui(new Ui::Cambiar_Nombre)
 {
     ui->setupUi(this);

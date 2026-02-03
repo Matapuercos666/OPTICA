@@ -1,13 +1,13 @@
 #ifndef CAMBIAR_NOMBRE_H
 #define CAMBIAR_NOMBRE_H
 
-#include "VentanaBase.h"
+#include <QWidget>
 
 namespace Ui {
 class Cambiar_Nombre;
 }
 
-class Cambiar_Nombre : public VentanaBase
+class Cambiar_Nombre : public QWidget
 {
     Q_OBJECT
 

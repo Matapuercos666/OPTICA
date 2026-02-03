@@ -1,10 +1,9 @@
 #include "Inventario.h"
 #include "ui_Inventario.h"
 #include "ESTILOS.h"
-#include "VentanaBaseMain.h"
 
 Inventario::Inventario(QWidget *parent)
-    : VentanaBaseMain(parent)
+    : QWidget(parent)
     , ui(new Ui::Inventario)
 {
     ui->setupUi(this);
@@ -12,9 +11,6 @@ Inventario::Inventario(QWidget *parent)
     ui->Inventario2->setAlternatingRowColors(true);
     Fuente::AplicarTodas(this);
     connect(ui->Regresar, &QPushButton::clicked, this, &Inventario::Boton_Regresar);
-    connect(this, &VentanaBaseMain::perfilClicked, this, &Inventario::abrirPerfil);
-    connect(this, &VentanaBaseMain::cerrarSesionClicked, this, &Inventario::cerrarSesion);
-
 
 }
 
@@ -32,11 +28,3 @@ void Inventario::Boton_Regresar()
     this->close();
 }
 
-void Inventario::abrirPerfil(){
-    qDebug() << "Abrir perfil desde ICON";
-}
-
-void Inventario::cerrarSesion(){
-    qDebug() << "Cerrar sesion desde ICON";
-    this->close();
-}

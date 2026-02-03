@@ -1,13 +1,13 @@
 #ifndef LLENAR_CONSULTA_H
 #define LLENAR_CONSULTA_H
 
-#include "VentanaBase.h"
+#include <QWidget>
 
 namespace Ui {
 class Llenar_Consulta;
 }
 
-class Llenar_Consulta : public VentanaBase
+class Llenar_Consulta : public QWidget
 {
     Q_OBJECT
 

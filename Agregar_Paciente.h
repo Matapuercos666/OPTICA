@@ -1,14 +1,14 @@
 #ifndef AGREGAR_PACIENTE_H
 #define AGREGAR_PACIENTE_H
 
-#include "VentanaBase.h"
+#include <QWidget>
 #include "Llenar_Consulta.h"
 
 namespace Ui {
 class Agregar_Paciente;
 }
 
-class Agregar_Paciente : public VentanaBase
+class Agregar_Paciente : public QWidget
 {
     Q_OBJECT
 
@@ -17,7 +17,8 @@ public:
     ~Agregar_Paciente();
 
 signals:
-    void Actualizar();
+    void pacienteAgregado();
+    void goToLLenarConsulta(int idPaciente);
 
 private slots:
     void Boton_Agregar();

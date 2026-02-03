@@ -1,7 +1,7 @@
 #ifndef ELIMINAR_USUARIOS_H
 #define ELIMINAR_USUARIOS_H
 
-#include "VentanaBaseMain.h"
+#include <QWidget>
 #include <QTableWidget>
 #include <QFile>
 #include <QMessageBox>
@@ -10,7 +10,7 @@ namespace Ui {
 class Eliminar_Usuarios;
 }
 
-class Eliminar_Usuarios : public VentanaBaseMain
+class Eliminar_Usuarios : public QWidget
 {
     Q_OBJECT
 
@@ -20,9 +20,6 @@ public:
 
 private slots:
     void Boton_Regresar();
-    void abrirPerfil();
-    void cerrarSesion();
-
 
 private:
     Ui::Eliminar_Usuarios *ui;

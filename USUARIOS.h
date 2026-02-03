@@ -1,7 +1,7 @@
 #ifndef USUARIOS_H
 #define USUARIOS_H
 
-#include "VentanaBaseMain.h"
+#include <QWidget>
 #include "Validacion.h"
 #include <QPointer>
 #include "Cambiar_Password.h"
@@ -13,7 +13,7 @@ namespace Ui {
 class USUARIOS;
 }
 
-class USUARIOS : public VentanaBaseMain
+class USUARIOS : public QWidget
 {
     Q_OBJECT
 
@@ -27,8 +27,8 @@ private slots:
     void Boton_Eliminar();
     void Boton_AgregarUsuario();
     void Boton_Regresar();
-    void abrirPerfil();
-    void cerrarSesion();
+
+
 
 private:
     Ui::USUARIOS *ui;

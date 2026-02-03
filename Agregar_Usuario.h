@@ -1,7 +1,7 @@
 #ifndef AGREGAR_USUARIO_H
 #define AGREGAR_USUARIO_H
 
-#include "VentanaBase.h"
+#include <QWidget>
 #include <QDebug>
 #include "ESTILOS.h"
 #include <QFile>
@@ -11,7 +11,7 @@ namespace Ui {
 class Agregar_Usuario;
 }
 
-class Agregar_Usuario : public VentanaBase
+class Agregar_Usuario : public Qwidget
 {
     Q_OBJECT
 

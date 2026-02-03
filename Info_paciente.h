@@ -1,13 +1,13 @@
 #ifndef INFO_PACIENTE_H
 #define INFO_PACIENTE_H
 
-#include "VentanaBase.h"
+#include <QWidget>
 
 namespace Ui {
 class Info_paciente;
 }
 
-class Info_paciente : public VentanaBase
+class Info_paciente : public QWidget
 {
     Q_OBJECT
 

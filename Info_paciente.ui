@@ -29,7 +29,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>-138</y>
         <width>689</width>
         <height>1399</height>
        </rect>
@@ -109,13 +109,6 @@
                </property>
               </widget>
              </item>
-             <item row="5" column="4">
-              <widget class="QLabel" name="Nacimiento">
-               <property name="text">
-                <string>Fecha nacimiento</string>
-               </property>
-              </widget>
-             </item>
              <item row="4" column="4">
               <widget class="QLabel" name="ApellidoM">
                <property name="text">
@@ -163,13 +156,6 @@
                </property>
               </spacer>
              </item>
-             <item row="5" column="1">
-              <widget class="QLabel" name="Edad">
-               <property name="text">
-                <string>Edad</string>
-               </property>
-              </widget>
-             </item>
              <item row="1" column="5">
               <widget class="QLabel" name="IDPACIENTE">
                <property name="text">
@@ -179,19 +165,6 @@
              </item>
              <item row="6" column="2">
               <widget class="QLineEdit" name="SEXO">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>30</height>
-                </size>
-               </property>
-               <property name="readOnly">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item row="5" column="2">
-              <widget class="QLineEdit" name="EDAD">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -296,7 +269,7 @@
               </widget>
              </item>
              <item row="5" column="5">
-              <widget class="QLineEdit" name="NACIMIENTO">
+              <widget class="QLineEdit" name="EDAD">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -307,6 +280,23 @@
                 <bool>true</bool>
                </property>
               </widget>
+             </item>
+             <item row="5" column="4">
+              <widget class="QLabel" name="Edad">
+               <property name="text">
+                <string>Edad</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QLabel" name="Nacimiento">
+               <property name="text">
+                <string>Fecha nacimiento</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="2">
+              <widget class="QDateEdit" name="dateEdit"/>
              </item>
             </layout>
            </item>
@@ -381,7 +371,7 @@
             </layout>
            </item>
            <item row="6" column="0">
-            <layout class="QGridLayout" name="gridLayout_11" rowstretch="1,5,0,0" columnstretch="1,7,1">
+            <layout class="QGridLayout" name="gridLayout_11" rowstretch="1,5" columnstretch="1,7,1">
              <property name="topMargin">
               <number>15</number>
              </property>
@@ -1177,20 +1167,23 @@
                 </layout>
                </item>
                <item row="0" column="1">
-                <layout class="QHBoxLayout" name="horizontalLayout_8"/>
-               </item>
-               <item row="1" column="1">
-                <layout class="QGridLayout" name="gridLayout_3">
-                 <property name="leftMargin">
-                  <number>25</number>
-                 </property>
-                 <item row="0" column="0">
+                <layout class="QHBoxLayout" name="horizontalLayout_8">
+                 <item>
                   <widget class="QTableWidget" name="Historico_consulta">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="alternatingRowColors">
+                    <bool>true</bool>
                    </property>
                    <attribute name="horizontalHeaderVisible">
                     <bool>true</bool>
@@ -1200,6 +1193,9 @@
                    </attribute>
                    <attribute name="horizontalHeaderDefaultSectionSize">
                     <number>125</number>
+                   </attribute>
+                   <attribute name="verticalHeaderVisible">
+                    <bool>false</bool>
                    </attribute>
                    <column>
                     <property name="text">
@@ -1294,8 +1290,6 @@
   <tabstop>NOMBRE</tabstop>
   <tabstop>APELLIDO_P</tabstop>
   <tabstop>APELLIDO_M</tabstop>
-  <tabstop>EDAD</tabstop>
-  <tabstop>NACIMIENTO</tabstop>
   <tabstop>SEXO</tabstop>
   <tabstop>ANTECEDENTES</tabstop>
   <tabstop>ANTECEDENTES_O</tabstop>

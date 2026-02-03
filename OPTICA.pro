@@ -24,10 +24,9 @@ SOURCES += \
     USUARIOS.cpp \
     Usuario_Actual.cpp \
     Validacion.cpp \
-    VentanaBase.cpp \
-    VentanaBaseMain.cpp \
     main.cpp \
-    LOGIN.cpp
+    LOGIN.cpp \
+    mainshell.cpp
 
 HEADERS += \
     Agregar_Paciente.h \
@@ -48,8 +47,7 @@ HEADERS += \
     Usuario_Actual.h \
     Utils.h \
     Validacion.h \
-    VentanaBase.h \
-    VentanaBaseMain.h
+    mainshell.h
 
 FORMS += \
     Agregar_Paciente.ui \

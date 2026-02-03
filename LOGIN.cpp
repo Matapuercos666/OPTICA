@@ -15,15 +15,15 @@
 #include <QSqlError>
 #include <QFile>
 #include "ManejoDeData.h"
-#include "VentanaBaseMain.h"
+
 
 
 LOGIN::LOGIN(QWidget *parent)
-    : VentanaBaseMain(parent)
+    : QWidget(parent)
     , ui(new Ui::LOGIN)
-    , MenuWindow(nullptr)
 {
     ui->setupUi(this);
+
     Fuente::AplicarTodas(this);
 
     ui->Usuario->setFocus();
@@ -90,18 +90,9 @@ void LOGIN::Boton_ENTRAR()
     {
         Usuario_Actual *actual = Usuario_Actual::obtenerinstancia();
         actual->establecerusuario(Actual.nombre, Actual.rol, Actual.PASS, QString::number(Actual.ID));
-        if (!MenuWindow || MenuWindow->isHidden())
-        {
-            if(MenuWindow)
-            {
-                delete MenuWindow;
-            }
-            MenuWindow = new Menu(parentWidget());
-            MenuWindow->setAttribute(Qt::WA_DeleteOnClose);
-            connect(MenuWindow, &QObject::destroyed, this, [this]() { MenuWindow = nullptr; });
-        }
-        MenuWindow->show();
-        this->hide();
+       emit loginSuccessful();
+        ui->Usuario->clear();
+       ui->password->clear();
     }
 }
 

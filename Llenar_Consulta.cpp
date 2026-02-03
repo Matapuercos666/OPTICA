@@ -9,7 +9,7 @@
 // cambiar db para guardar al empleado que hizo el examen
 
 Llenar_Consulta::Llenar_Consulta(int PACIENTEID, QWidget *parent)
-    : VentanaBase(parent)
+    : QWidget(parent)
     , ui(new Ui::Llenar_Consulta)
     , ID(PACIENTEID)
 {

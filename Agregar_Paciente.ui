@@ -144,7 +144,7 @@
         </spacer>
        </item>
        <item row="4" column="4">
-        <widget class="QLabel" name="FECHA">
+        <widget class="QLabel" name="Titulo5">
          <property name="text">
           <string>Fecha</string>
          </property>
@@ -213,9 +213,6 @@
          </property>
         </spacer>
        </item>
-       <item row="7" column="2">
-        <widget class="QLineEdit" name="NACIMIENTO"/>
-       </item>
        <item row="5" column="1">
         <widget class="QLabel" name="Nombre">
          <property name="enabled">
@@ -261,7 +258,10 @@
         </widget>
        </item>
        <item row="4" column="5">
-        <widget class="QDateEdit" name="dateEdit"/>
+        <widget class="QDateEdit" name="FECHA"/>
+       </item>
+       <item row="7" column="2">
+        <widget class="QDateEdit" name="NACIMIENTO"/>
        </item>
       </layout>
      </item>
@@ -402,7 +402,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <tabstop>NOMBRE</tabstop>
   <tabstop>APELLIDO_P</tabstop>
   <tabstop>APELLIDO_M</tabstop>
-  <tabstop>NACIMIENTO</tabstop>
   <tabstop>EDAD</tabstop>
   <tabstop>SEXO</tabstop>
   <tabstop>TELEFONO</tabstop>

@@ -1,13 +1,13 @@
 #ifndef PUNTOVENTA_H
 #define PUNTOVENTA_H
 
-#include "VentanaBaseMain.h"
+#include <QWidget>
 
 namespace Ui {
 class PuntoVenta;
 }
 
-class PuntoVenta : public VentanaBaseMain
+class PuntoVenta : public QWidget
 {
     Q_OBJECT
 
@@ -17,8 +17,6 @@ public:
 
 private slots:
     void Boton_Regresar();
-    void abrirPerfil();
-    void cerrarSesion();
 
 private:
     Ui::PuntoVenta *ui;

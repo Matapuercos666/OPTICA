@@ -1,9 +1,12 @@
 #ifndef LOGIN_H
 #define LOGIN_H
+#include "ui_LOGIN.h"
 #include <Qdebug>
-#include "VentanaBaseMain.h"
+#include <QWidget>
+#include <QSqlQuery>
 #include "ESTILOS.H"
 #include "Menu.h"
+#include "USUARIOS.h"
 
 struct Usuario {
     QString nombre;
@@ -17,22 +20,25 @@ class LOGIN;
 }
 QT_END_NAMESPACE
 
-class LOGIN : public VentanaBaseMain
+class LOGIN : public QWidget
 {
     Q_OBJECT
 
 public:
-    LOGIN(QWidget *parent = nullptr);
+   explicit LOGIN(QWidget *parent = nullptr);
     Usuario BuscarID(int);
     Usuario BuscarUsuario(const QString&);
     ~LOGIN();
+
+signals:
+    void loginSuccessful();
 
 private slots:
     void Boton_ENTRAR();
 
 private:
     Ui::LOGIN *ui;
-    Menu *MenuWindow; //puntero a la siguiente ventana
+
 };
 #endif // LOGIN_H
 
