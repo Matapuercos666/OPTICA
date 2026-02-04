@@ -1,11 +1,7 @@
 #ifndef MENU_H
 #define MENU_H
-
+#include "ui_Menu.h"
 #include <QPointer>
-#include "Lista_Clientes.h"
-#include "PuntoVenta.h"
-#include "Inventario.h"
-#include "USUARIOS.h"
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE

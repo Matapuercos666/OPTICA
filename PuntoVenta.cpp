@@ -9,21 +9,12 @@ PuntoVenta::PuntoVenta(QWidget *parent)
 {
     ui->setupUi(this);
     Fuente::AplicarTodas(this);
-    connect(ui->Regresar, &QPushButton::clicked, this, &PuntoVenta::Boton_Regresar);
 }
 
 PuntoVenta::~PuntoVenta()
 {
     delete ui;
-    if (parentWidget())
-        parentWidget()->show();
 }
 
-void PuntoVenta::Boton_Regresar()
-{
-    if (parentWidget()) {
-        parentWidget()->show();
-    }
-    this->close();
-}
+
 

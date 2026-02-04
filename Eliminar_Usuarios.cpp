@@ -1,5 +1,6 @@
 #include "Eliminar_Usuarios.h"
 #include "ui_Eliminar_Usuarios.h"
+#include <QHeaderView>
 
 Eliminar_Usuarios::Eliminar_Usuarios(QWidget *parent)
     : QWidget(parent)
@@ -9,7 +10,6 @@ Eliminar_Usuarios::Eliminar_Usuarios(QWidget *parent)
     ui->Datos_Empleados->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->Datos_Empleados->setAlternatingRowColors(true);
     int contador = 0;
-    connect(ui->Regresar, &QPushButton::clicked, this, &Eliminar_Usuarios::Boton_Regresar);
 
     QFile archivo("USUARIOS.dat");
     if (!archivo.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -40,10 +40,3 @@ Eliminar_Usuarios::~Eliminar_Usuarios()
     delete ui;
 }
 
-void Eliminar_Usuarios::Boton_Regresar()
-{
-    if (parentWidget()) {
-        parentWidget()->show();
-    }
-    this->close();
-}

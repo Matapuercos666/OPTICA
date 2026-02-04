@@ -1,7 +1,9 @@
 #include "Agregar_Usuario.h"
 #include "ui_Agregar_Usuario.h"
+#include "ESTILOS.h"
 #include <QDir>
 #include <QMessageBox>
+
 
 Agregar_Usuario::Agregar_Usuario(QWidget *parent)
     : QWidget(parent)
@@ -67,7 +69,7 @@ void Agregar_Usuario::BOTON_ACEPTAR()
                     QMessageBox::about(this, "EXITO", "Usuario: "+usuarioIngresado+" Creado exitosamente\nTu número unico de identificador es:\n"+QString::number(ID+1)
                                        +". con el puedes iniciar sesión.");
                     archivo.close();
-                    this->close();
+                    emit usuarioAgregado();
                 }else{
                     ui->PASSWORD1->clear();
                     ui->PASSWORD2->clear();
@@ -112,5 +114,5 @@ void Agregar_Usuario::BOTON_ACEPTAR()
 
 void Agregar_Usuario::BOTON_CANCELAR()
 {
-    reject();
+    emit cancelar();
 }

@@ -18,9 +18,6 @@ public:
     explicit Eliminar_Usuarios(QWidget *parent = nullptr);
     ~Eliminar_Usuarios();
 
-private slots:
-    void Boton_Regresar();
-
 private:
     Ui::Eliminar_Usuarios *ui;
 };

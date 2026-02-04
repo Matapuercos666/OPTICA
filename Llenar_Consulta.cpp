@@ -100,7 +100,7 @@ void Llenar_Consulta::Boton_Aceptar()
         }
 
         QMessageBox::information(this, "EXITO", "Examen guardado correctamente");
-        accept();
+        emit señalAceptar();
 
     }
 }

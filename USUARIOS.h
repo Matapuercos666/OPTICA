@@ -2,12 +2,8 @@
 #define USUARIOS_H
 
 #include <QWidget>
-#include "Validacion.h"
 #include <QPointer>
-#include "Cambiar_Password.h"
-#include "Cambiar_Nombre.h"
-#include "Eliminar_Usuarios.h"
-#include "Agregar_Usuario.h"
+
 
 namespace Ui {
 class USUARIOS;
@@ -21,22 +17,21 @@ public:
     explicit USUARIOS(QWidget *parent = nullptr);
     ~USUARIOS();
 
+signals:
+    void cambiarPassword();
+    void cambiarNombre();
+    void eliminarUsuario();
+    void agregarUsuario();
+
 private slots:
     void Boton_CambiarPassword();
     void Boton_CambiarNombre();
     void Boton_Eliminar();
     void Boton_AgregarUsuario();
-    void Boton_Regresar();
-
-
 
 private:
     Ui::USUARIOS *ui;
-    //Punteros a siguientes ventanas(no sin antes pasar por validación)
-    Cambiar_Password *CambiarContrasenaWindow;
-    Cambiar_Nombre *CambiarNombreWindow;
-    Eliminar_Usuarios *EliminarWindow;
-    Agregar_Usuario *AgregarWindow;
+
 };
 
 #endif // USUARIOS_H

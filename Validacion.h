@@ -1,6 +1,6 @@
 #ifndef VALIDACION_H
 #define VALIDACION_H
-#include "VentanaBase.h"
+#include <QDialog>
 #include <QMessageBox>
 #include "Usuario_Actual.h"
 #include "ESTILOS.h"
@@ -9,17 +9,17 @@ namespace Ui{
 class Validacion;
 }
 
-class Validacion : public VentanaBase
+class Validacion : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Validacion(QWidget *parent = nullptr);
+    explicit Validacion(QDialog *parent = nullptr);
 
     ~Validacion();
 
     //Metodo estatico para facilitar su uso
-    static bool ConfirmarPassword(QWidget *parent = nullptr);
+    static bool ConfirmarPassword(QDialog *parent = nullptr);
 
     //Método para saber si fue validada correctamente
     bool passwordValidado() const {return m_passwordValidado;}

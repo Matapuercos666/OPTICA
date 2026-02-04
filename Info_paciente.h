@@ -12,7 +12,8 @@ class Info_paciente : public QWidget
     Q_OBJECT
 
 public:
-    explicit Info_paciente(int PACIENTEID, QWidget *parent = nullptr);
+    explicit Info_paciente(QWidget *parent = nullptr);
+    void LLENAR_TODO(int idpaciente);
     ~Info_paciente();
 
 private slots:
@@ -24,12 +25,13 @@ private slots:
 
 signals:
     void Actualizar();
+    void goToLlenarConsulta(int idPaciente);
 
 private:
     Ui::Info_paciente *ui;
     int ID;
 
-    void LLenarDatos();
+    void LLenarDatos(int id);
     void LlenarConsultas();
     void LlenarDetalles(int CONSULTAID);
 

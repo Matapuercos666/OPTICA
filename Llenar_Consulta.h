@@ -18,6 +18,8 @@ public:
 private slots:
     void Boton_Cancelar();
     void Boton_Aceptar();
+signals:
+    void señalAceptar();
 private:
     Ui::Llenar_Consulta *ui;
     bool Campo_Lleno();

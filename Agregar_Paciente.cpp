@@ -75,12 +75,12 @@ void Agregar_Paciente::Boton_Agregar()
 
         if(respuesta == QMessageBox::Yes)
         {
-            emit goToLLenarConsulta(NuevoId);
+            emit goToLlenarConsulta(NuevoId);
         }
         QMessageBox::information(this, "EXITO", "Agregado con exito, el paciente con ID: " + QString::number(NuevoId));
         emit pacienteAgregado();
     }
-
+}
 
 void Agregar_Paciente::Boton_Cancelar()
 {

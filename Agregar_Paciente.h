@@ -18,7 +18,7 @@ public:
 
 signals:
     void pacienteAgregado();
-    void goToLLenarConsulta(int idPaciente);
+    void goToLlenarConsulta(int idPaciente);
 
 private slots:
     void Boton_Agregar();

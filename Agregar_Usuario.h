@@ -11,13 +11,17 @@ namespace Ui {
 class Agregar_Usuario;
 }
 
-class Agregar_Usuario : public Qwidget
+class Agregar_Usuario : public QWidget
 {
     Q_OBJECT
 
 public:
     explicit Agregar_Usuario(QWidget *parent = nullptr);
     ~Agregar_Usuario();
+
+signals:
+    void usuarioAgregado();
+    void cancelar();
 
 private slots:
     void BOTON_ACEPTAR();

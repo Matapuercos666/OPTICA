@@ -4,9 +4,7 @@
 #include <Qdebug>
 #include <QWidget>
 #include <QSqlQuery>
-#include "ESTILOS.H"
-#include "Menu.h"
-#include "USUARIOS.h"
+#include "ESTILOS.h"
 
 struct Usuario {
     QString nombre;

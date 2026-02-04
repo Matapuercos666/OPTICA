@@ -2,10 +2,9 @@
 #include "ui_Validacion.h"
 #include "Utils.h"
 #include <QPushButton>
-#include "VentanaBase.h"
 
-Validacion::Validacion(QWidget *parent)
-    : VentanaBase(parent),
+Validacion::Validacion(QDialog *parent)
+    : QDialog(parent),
     ui(new Ui::Validacion),
     m_passwordValidado(false)
 {
@@ -77,10 +76,10 @@ void Validacion::BOTON_CANCELAR()
     reject();//cierra el dialogo con resultado reject
 }
 
-bool Validacion::ConfirmarPassword(QWidget *parent)
+bool Validacion::ConfirmarPassword(QDialog *parent)
 {
     Validacion Val_Actual(parent);
     //ejecutar dialogo modal
-    int resultado=Val_Actual.exec();
+    int resultado = Val_Actual.exec();
     return (resultado == QDialog::Accepted && Val_Actual.passwordValidado());
 }

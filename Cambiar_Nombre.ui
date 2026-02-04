@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>Cambiar_Nombre</class>
- <widget class="QDialog" name="Cambiar_Nombre">
+ <widget class="QWidget" name="Cambiar_Nombre">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -28,7 +28,7 @@
      <property name="bottomMargin">
       <number>40</number>
      </property>
-     <item row="3" column="0">
+     <item row="2" column="0">
       <layout class="QGridLayout" name="gridLayout_7">
        <item row="1" column="1">
         <layout class="QGridLayout" name="gridLayout_3">
@@ -127,43 +127,7 @@
        </item>
       </layout>
      </item>
-     <item row="0" column="0">
-      <layout class="QGridLayout" name="gridLayout_5">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>50</width>
-           <height>50</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="RECURSOS.qrc">:/IMAGENES/IMAGENES/LOGOS/Logo con fondo gris.png</pixmap>
-         </property>
-         <property name="scaledContents">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="UsuarioActual">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item row="4" column="0">
+     <item row="3" column="0">
       <layout class="QGridLayout" name="gridLayout_2" columnstretch="4,5,2,5,4">
        <property name="topMargin">
         <number>25</number>
@@ -252,9 +216,7 @@
   <tabstop>ACEPTAR</tabstop>
   <tabstop>CANCELAR</tabstop>
  </tabstops>
- <resources>
-  <include location="RECURSOS.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>Nombre</sender>

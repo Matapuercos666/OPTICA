@@ -7,6 +7,7 @@
 #include <QLabel>
 #include <QStack>
 #include <QMap>
+#include <QListWidget>
 
 class MainShell : public QMainWindow
 {
@@ -33,10 +34,12 @@ private slots:
     void onCloseClicked();
     void onPerfilClicked();      // Acción del menú de usuario
     void onCerrarSesionClicked();
+    void onNavItemClicked(int row);
 
 private:
     void setupUI();
     void updateTitleBar();
+    void upDateNavBar();
 
     // Widgets de la barra superior
     QWidget *m_topBar;
@@ -47,11 +50,15 @@ private:
     QToolButton *m_btnUserMenu;
     QToolButton *m_btnMinimize, *m_btnMaximize, *m_btnClose;
 
+    //barra lateral
+    QListWidget *m_navList;
+
     QStackedWidget *m_stackedWidget;
 
     // Historial de navegación (pilas)
     QStack<int> m_historyStack;
     QMap<int, QString> m_viewTitles;
+    QMap<int, int> m_navMap;
 };
 
 #endif // MAINSHELL_H

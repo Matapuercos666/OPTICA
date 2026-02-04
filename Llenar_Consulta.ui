@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>Llenar_Consulta</class>
- <widget class="QDialog" name="Llenar_Consulta">
+ <widget class="QWidget" name="Llenar_Consulta">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -28,7 +28,7 @@
         <x>0</x>
         <y>0</y>
         <width>664</width>
-        <height>813</height>
+        <height>809</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_3">
@@ -320,7 +320,7 @@
          <item row="2" column="1">
           <layout class="QGridLayout" name="gridLayout">
            <item row="0" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_16" stretch="3,1,1,2">
+            <layout class="QHBoxLayout" name="horizontalLayout_16" stretch="3,1,1,1,1">
              <property name="topMargin">
               <number>15</number>
              </property>
@@ -328,22 +328,20 @@
               <number>15</number>
              </property>
              <item>
-              <widget class="QLabel" name="Titulo2">
-               <property name="font">
-                <font>
-                 <pointsize>14</pointsize>
-                </font>
+              <spacer name="horizontalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
                </property>
-               <property name="text">
-                <string>CONSULTA</string>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
                </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
+              </spacer>
              </item>
              <item>
-              <widget class="QLabel" name="label">
+              <widget class="QLabel" name="Titulo5">
                <property name="text">
                 <string>Fecha</string>
                </property>
@@ -356,12 +354,19 @@
               <widget class="QDateEdit" name="FECHA"/>
              </item>
              <item>
-              <widget class="QLabel" name="IdConsulta">
+              <widget class="QLabel" name="Titulo5_2">
                <property name="text">
                 <string>ID consulta</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="IdConsulta">
+               <property name="text">
+                <string/>
                </property>
               </widget>
              </item>

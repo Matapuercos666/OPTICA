@@ -4,6 +4,7 @@
 #include "Lista_Clientes.h"
 #include "Agregar_Paciente.h"
 #include "Agregar_Usuario.h"
+#include "Eliminar_Usuarios.h"
 #include "Cambiar_Nombre.h"
 #include "Cambiar_Password.h"
 #include "Info_paciente.h"
@@ -11,6 +12,7 @@
 #include "Llenar_Consulta.h"
 #include "PuntoVenta.h"
 #include "USUARIOS.h"
+#include "Validacion.h"
 
 
 #include <QApplication>
@@ -92,10 +94,10 @@ int main(int argc, char *argv[]) {
     Cambiar_Nombre *cambiarNombreView = new Cambiar_Nombre(&shell);
     Cambiar_Password *cambiarPasswordView = new Cambiar_Password(&shell);
     Eliminar_Usuarios *eliminarUsuariosView = new Eliminar_Usuarios(&shell);
-    Info_paciente *infoPacienteView = new Info_paciente(&shell);
+    Info_paciente *infoPacienteView = new Info_paciente(0, &shell);
     Inventario *inventarioView = new Inventario(&shell);
     Lista_Clientes *listaClientesView = new Lista_Clientes(&shell);
-    Llenar_Consulta *llenarConsultaView = new Llenar_Consulta(&shell);
+    Llenar_Consulta *llenarConsultaView = new Llenar_Consulta(0, &shell);
     PuntoVenta *puntoVentaView = new PuntoVenta(&shell);
     USUARIOS *usuariosView = new USUARIOS(&shell);
 
@@ -126,16 +128,10 @@ int main(int argc, char *argv[]) {
     QObject::connect(menuView, &Menu::goToUsuarios, &shell, [&shell](){ shell.pushView(12);});
     QObject::connect(menuView, &Menu::goToInventario, &shell, [&shell](){ shell.pushView(8);});
 
-    QObject::connect(listaClientesView, &Lista_Clientes::agregarPaciente, &shell, [&shell](){ shell.pushView(2);});
-
-
-
-    QObject::connect(agregarPacienteView, &Agregar_Paciente::goToLLenarConsulta, &shell, [&shell, llenarConsultaView](int idPaciente){ llenarConsultaView->setIdPaciente(idPaciente);
-    shell.pushView(10);
-    });
-
-    QObject::connect(agregarPacienteView, &Agregar_Paciente::pacienteAgregado, &shell, &MainShell::popView);
-
+    QObject::connect(usuariosView, &USUARIOS::agregarUsuario, &shell, [&shell](){ shell.pushView(3);});
+    QObject::connect(usuariosView, &USUARIOS::cambiarNombre, &shell, [&shell](){ shell.pushView(4);});
+    QObject::connect(usuariosView, &USUARIOS::cambiarPassword, &shell, [&shell](){ shell.pushView(5);});
+    QObject::connect(usuariosView, &USUARIOS::eliminarUsuario, &shell, [&shell](){ shell.pushView(6);});
 
 
     shell.show();

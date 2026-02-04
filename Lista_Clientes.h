@@ -3,10 +3,7 @@
 
 #include <QWidget>
 #include "Usuario_Actual.h"
-#include "Agregar_Paciente.h"
-#include "Info_paciente.h"
 #include <QFile>
-#include <QMessageBox>
 
 namespace Ui {
 
@@ -28,6 +25,7 @@ private slots:
 signals:
 
     void agregarPaciente();
+    void verInfo(int id);
 
 private:
     Ui::Lista_Clientes *ui;

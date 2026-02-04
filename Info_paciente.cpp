@@ -1,6 +1,5 @@
 #include "Info_paciente.h"
 #include "ui_Info_paciente.h"
-#include "VentanaBase.h"
 #include "Llenar_Consulta.h"
 #include <QSqlDatabase>
 #include <QSqlQuery>
@@ -8,10 +7,9 @@
 #include <QTableWidget>
 #include <QMessageBox>
 
-Info_paciente::Info_paciente(int PACIENTEID,QWidget *parent)
+Info_paciente::Info_paciente(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Info_paciente)
-    , ID(PACIENTEID)
 {
 
     ui->setupUi(this);
@@ -35,7 +33,7 @@ Info_paciente::Info_paciente(int PACIENTEID,QWidget *parent)
 }
 
 
-void Info_paciente::LLenarDatos()
+void Info_paciente::LLenarDatos(int id)
 {
     QSqlQuery q;
     q.clear();
@@ -48,7 +46,7 @@ void Info_paciente::LLenarDatos()
         ui->NOMBRE->setText(q.value(1).toString());
         ui->APELLIDO_P->setText(q.value(2).toString());
         ui->APELLIDO_M->setText(q.value(3).toString());
-        ui->NACIMIENTO->setText(q.value(4).toString());
+        ui->NACIMIENTO->setDate(q.value(4).toDate());
         ui->EDAD->setText(q.value(7).toString());
         ui->TELEFONO->setText(q.value(5).toString());
         ui->EMAIL->setText(q.value(6).toString());
@@ -189,8 +187,6 @@ void Info_paciente::DobleClick(int row, int /*COLUMN*/)
 void Info_paciente::Boton_Agregar()
 {
     Llenar_Consulta ConsultaDialog(ID, this);
-    this->hide();
-    ConsultaDialog.exec();
 }
 
 void Info_paciente::Boton_Cancelar()
@@ -279,6 +275,14 @@ void Info_paciente::Boton_Guardar()
     ui->scrollAreaWidgetContents->style()->unpolish(ui->scrollAreaWidgetContents);
     ui->scrollAreaWidgetContents->style()->polish(ui->scrollAreaWidgetContents);
 }
+
+void Info_paciente::LLENAR_TODO(int idpaciente)
+{
+    LLenarDatos();
+    LlenarConsultas();
+    LlenarDetalles();
+}
+
 Info_paciente::~Info_paciente()
 {
     delete ui;
