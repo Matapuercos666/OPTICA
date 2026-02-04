@@ -40,7 +40,6 @@ void VentanaBaseMain::setupIconMenu(){
     m_Icon->setMenu(m_IconMenu);
     m_Icon->setPopupMode(QToolButton::InstantPopup);
 
-    m_Icon->setStyleSheet("QToolButton { border: none; background: transparent; }");
 
     qDebug() << "Menu del logo configurado correctamente en" << this ->metaObject()->className();
 }
