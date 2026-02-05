@@ -1,12 +1,11 @@
 #include "Lista_Clientes.h"
 #include "ui_Lista_Clientes.h"
-#include "VentanaBaseMain.h"
-
 #include "ESTILOS.h"
 #include <QTableWidget>
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
+
 
 struct Paciente
 {
@@ -24,7 +23,7 @@ struct Paciente
 }aux;
 
 Lista_Clientes::Lista_Clientes(QWidget *parent)
-    : VentanaBaseMain(parent)
+    : QWidget(parent)
     , ui(new Ui::Lista_Clientes)
     , Agregar_PacienteWindow(nullptr)
 {
@@ -32,10 +31,7 @@ Lista_Clientes::Lista_Clientes(QWidget *parent)
     ui->Datos_Clientes->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->Datos_Clientes->setAlternatingRowColors(true);
     Fuente::AplicarTodas(this);
-    connect(this, &VentanaBaseMain::perfilClicked, this, &Lista_Clientes::abrirPerfil);
-    connect(this, &VentanaBaseMain::cerrarSesionClicked, this, &Lista_Clientes::cerrarSesion);
     connect(ui->Datos_Clientes, &QTableWidget::cellDoubleClicked, this, &Lista_Clientes::INFO);
-    connect(ui->Regresar, &QPushButton::clicked, this, &Lista_Clientes::Boton_Regresar);
     connect(ui->ELIMINAR, &QPushButton::clicked, this, &Lista_Clientes::Boton_Eliminar);
     connect(ui->Agregar, &QPushButton::clicked, this, &Lista_Clientes::Boton_Agregar);
 
@@ -45,17 +41,8 @@ Lista_Clientes::Lista_Clientes(QWidget *parent)
 Lista_Clientes::~Lista_Clientes()
 {
     delete ui;
-    if (parentWidget())
-        parentWidget()->show();
 }
 
-void Lista_Clientes::Boton_Regresar()
-{
-    if (parentWidget()) {
-        parentWidget()->show();
-    }
-    this->close();
-}
 
 void Lista_Clientes::Boton_Eliminar()
 {
@@ -159,11 +146,4 @@ void Lista_Clientes::INFO(int row, int column)
     INFOWINDOW->show();
 }
 
-void Lista_Clientes::abrirPerfil(){
-    qDebug() << "Abrir perfil desde ICON";
-}
 
-void Lista_Clientes::cerrarSesion(){
-    qDebug() << "Cerrar sesion desde ICON";
-    this->close();
-}

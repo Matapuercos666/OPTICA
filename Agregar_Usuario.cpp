@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include "VentanaBase.h"
 
+
 Agregar_Usuario::Agregar_Usuario(QWidget *parent)
     : VentanaBase(parent)
     , ui(new Ui::Agregar_Usuario)

@@ -4,6 +4,9 @@
 #include <QMessageBox>
 #include <QFile>
 #include "VentanaBase.h"
+#include "ESTILOS.h"
+
+
 
 Cambiar_Password::Cambiar_Password(QWidget *parent)
     : VentanaBase(parent)

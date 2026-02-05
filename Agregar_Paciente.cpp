@@ -6,10 +6,8 @@
 #include <QSqlQuery>
 #include <QSqlDatabase>
 #include <QSqlError>
-
-
-//tamaño ventana
 #include "VentanaBase.h"
+
 
 Agregar_Paciente::Agregar_Paciente(QWidget *parent)
     : VentanaBase(parent)

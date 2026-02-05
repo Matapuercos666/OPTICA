@@ -1,5 +1,12 @@
 #include "ManejoDeData.h"
 #include "LOGIN.h"
+#include "Menu.h"
+#include "Lista_Clientes.h"
+#include "Inventario.h"
+#include "Llenar_Consulta.h"
+#include "PuntoVenta.h"
+#include "Validacion.h"
+
 
 #include <QApplication>
 #include "ESTILOS.h"
@@ -9,6 +16,7 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QIcon>
+#include "MainShell.h"
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
@@ -65,11 +73,42 @@ int main(int argc, char *argv[]) {
         qWarning() << "[ERROR] No se pudo abrir el archivo Estilos.qss para lectura.";
         qWarning() << "Motivo:" << archivoEstilos.errorString();
     }
-    LOGIN w;
-    w.show();
+
+    //crear ventana unica
+
+    MainShell shell;
+
+    //vistas de los widgets
+
+    LOGIN *loginView = new LOGIN(&shell);
+    Menu *menuView = new Menu(&shell);
+    Inventario *inventarioView = new Inventario(&shell);
+    Lista_Clientes *listaClientesView = new Lista_Clientes(&shell);
+    PuntoVenta *puntoVentaView = new PuntoVenta(&shell);
+
+    //agregar las vistas a la ventana principal
+
+    shell.addView(loginView, "Iniciar sesión");                  //indice 0
+    shell.addView(menuView, "Menú");                             //indice 1
+    shell.addView(inventarioView, "Inventario");                 //indice 2
+    shell.addView(listaClientesView, "Pacientes");               //indice 3
+    shell.addView(puntoVentaView, "Venta");                      //indice 4
+
+
+    //señales de navegacion por indice
+
+    QObject::connect(loginView, &LOGIN::loginSuccessful, &shell, [&shell](){
+        shell.pushView(1);
+    });
+
+    QObject::connect(menuView, &Menu::goToLista, &shell, [&shell](){ shell.pushView(3);});
+    QObject::connect(menuView, &Menu::goToVenta, &shell, [&shell](){ shell.pushView(4);});
+    QObject::connect(menuView, &Menu::goToInventario, &shell, [&shell](){ shell.pushView(2);});
+
+
+    shell.show();
 
     int ret = a.exec();
     ManejoDeData::instance().cerrar();
     return ret;
 }
-

@@ -8,6 +8,7 @@
 #include <QTableWidget>
 #include <QMessageBox>
 
+
 Info_paciente::Info_paciente(int PACIENTEID,QWidget *parent)
     : VentanaBase(parent)
     , ui(new Ui::Info_paciente)

@@ -13,19 +13,20 @@ SOURCES += \
     Agregar_Usuario.cpp \
     Cambiar_Nombre.cpp \
     Cambiar_Password.cpp \
-    Eliminar_Usuarios.cpp \
+    Historial_Caja.cpp \
     Info_paciente.cpp \
     Inventario.cpp \
     Lista_Clientes.cpp \
+    Lista_Usuarios.cpp \
     Llenar_Consulta.cpp \
+    MainShell.cpp \
     ManejoDeData.cpp \
     Menu.cpp \
+    Perfil_Usuario.cpp \
     PuntoVenta.cpp \
-    USUARIOS.cpp \
     Usuario_Actual.cpp \
     Validacion.cpp \
     VentanaBase.cpp \
-    VentanaBaseMain.cpp \
     main.cpp \
     LOGIN.cpp
 
@@ -35,36 +36,38 @@ HEADERS += \
     Cambiar_Nombre.h \
     Cambiar_Password.h \
     ESTILOS.h \
-    Eliminar_Usuarios.h \
+    Historial_Caja.h \
     Info_paciente.h \
     Inventario.h \
     LOGIN.h \
     Lista_Clientes.h \
+    Lista_Usuarios.h \
     Llenar_Consulta.h \
+    MainShell.h \
     ManejoDeData.h \
     Menu.h \
+    Perfil_Usuario.h \
     PuntoVenta.h \
-    USUARIOS.h \
     Usuario_Actual.h \
     Utils.h \
     Validacion.h \
-    VentanaBase.h \
-    VentanaBaseMain.h
+    VentanaBase.h
 
 FORMS += \
     Agregar_Paciente.ui \
     Agregar_Usuario.ui \
     Cambiar_Nombre.ui \
     Cambiar_Password.ui \
-    Eliminar_Usuarios.ui \
+    Historial_Caja.ui \
     Info_paciente.ui \
     Inventario.ui \
     LOGIN.ui \
     Lista_Clientes.ui \
+    Lista_Usuarios.ui \
     Llenar_Consulta.ui \
     Menu.ui \
+    Perfil_Usuario.ui \
     PuntoVenta.ui \
-    USUARIOS.ui \
     Validacion.ui
 
 # Default rules for deployment.
