@@ -3,6 +3,7 @@
 #include <QScreen>
 #include <QGuiApplication>
 
+QPoint VentanaBase::ultimaPosicion = QPoint(-1, -1);
 
 VentanaBase::VentanaBase(QWidget *parent)
     :QDialog(parent)
@@ -25,6 +26,10 @@ void VentanaBase::showEvent(QShowEvent *event) {
 
     resize(m_ancho, m_alto);
 
+    if (ultimaPosicion.x() != -1 && ultimaPosicion.y() != -1){
+        move(ultimaPosicion);
+    } else {
+
     QScreen *screen = QGuiApplication::primaryScreen();
 
     if (screen){
@@ -32,8 +37,12 @@ void VentanaBase::showEvent(QShowEvent *event) {
         int x = available.x() + (available.width() - width()) / 2;
         int y = available.y() + (available.height() - height()) / 2;
         move(x, y);
+        }
     }
 }
-
+void VentanaBase::moveEvent(QMoveEvent *event){
+    ultimaPosicion = pos();
+    QDialog::moveEvent(event);
+}
 
 

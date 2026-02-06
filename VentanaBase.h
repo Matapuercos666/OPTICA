@@ -14,10 +14,12 @@ public:
 
    protected:
     void showEvent(QShowEvent *event) override;
+       void moveEvent(QMoveEvent *event) override;
 
    private:
     int m_ancho;
     int m_alto;
+    static QPoint ultimaPosicion;
 
 };
 

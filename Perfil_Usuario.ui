@@ -40,6 +40,12 @@
          </property>
          <item row="1" column="1">
           <widget class="QPushButton" name="pushButton_3">
+           <property name="minimumSize">
+            <size>
+             <width>250</width>
+             <height>50</height>
+            </size>
+           </property>
            <property name="text">
             <string>Historial Inventario</string>
            </property>
@@ -47,6 +53,12 @@
          </item>
          <item row="2" column="1">
           <widget class="QPushButton" name="pushButton_4">
+           <property name="minimumSize">
+            <size>
+             <width>250</width>
+             <height>50</height>
+            </size>
+           </property>
            <property name="text">
             <string>Cambiar Nombre</string>
            </property>
@@ -67,6 +79,12 @@
          </item>
          <item row="3" column="1">
           <widget class="QPushButton" name="pushButton">
+           <property name="minimumSize">
+            <size>
+             <width>250</width>
+             <height>50</height>
+            </size>
+           </property>
            <property name="text">
             <string>Cambiar Contraseña</string>
            </property>
@@ -74,6 +92,12 @@
          </item>
          <item row="0" column="1">
           <widget class="QPushButton" name="pushButton_2">
+           <property name="minimumSize">
+            <size>
+             <width>250</width>
+             <height>50</height>
+            </size>
+           </property>
            <property name="text">
             <string>Historial Caja</string>
            </property>

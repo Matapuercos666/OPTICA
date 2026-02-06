@@ -8,7 +8,6 @@
 #include <QTextStream>
 #include <QMessageBox>
 #include <QDir>
-#include <Menu.h>
 #include "Usuario_Actual.h"
 #include <QSqlQuery>
 #include <QSqlDatabase>

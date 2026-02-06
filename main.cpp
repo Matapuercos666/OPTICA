@@ -1,12 +1,12 @@
 #include "ManejoDeData.h"
 #include "LOGIN.h"
-#include "Menu.h"
 #include "Lista_Clientes.h"
 #include "Inventario.h"
 #include "Llenar_Consulta.h"
 #include "PuntoVenta.h"
 #include "Validacion.h"
-
+#include "Lista_Usuarios.h"
+#include "Home.h"
 
 #include <QApplication>
 #include "ESTILOS.h"
@@ -81,18 +81,20 @@ int main(int argc, char *argv[]) {
     //vistas de los widgets
 
     LOGIN *loginView = new LOGIN(&shell);
-    Menu *menuView = new Menu(&shell);
+    Home *homeView = new Home(&shell);
     Inventario *inventarioView = new Inventario(&shell);
     Lista_Clientes *listaClientesView = new Lista_Clientes(&shell);
     PuntoVenta *puntoVentaView = new PuntoVenta(&shell);
+    Lista_Usuarios *usuariosView = new Lista_Usuarios(&shell);
 
     //agregar las vistas a la ventana principal
 
     shell.addView(loginView, "Iniciar sesión");                  //indice 0
-    shell.addView(menuView, "Menú");                             //indice 1
+    shell.addView(homeView, "Inicio");                           // índice 1
     shell.addView(inventarioView, "Inventario");                 //indice 2
     shell.addView(listaClientesView, "Pacientes");               //indice 3
     shell.addView(puntoVentaView, "Venta");                      //indice 4
+    shell.addView(usuariosView, "Usuarios");                     // índice 5
 
 
     //señales de navegacion por indice
@@ -100,11 +102,6 @@ int main(int argc, char *argv[]) {
     QObject::connect(loginView, &LOGIN::loginSuccessful, &shell, [&shell](){
         shell.pushView(1);
     });
-
-    QObject::connect(menuView, &Menu::goToLista, &shell, [&shell](){ shell.pushView(3);});
-    QObject::connect(menuView, &Menu::goToVenta, &shell, [&shell](){ shell.pushView(4);});
-    QObject::connect(menuView, &Menu::goToInventario, &shell, [&shell](){ shell.pushView(2);});
-
 
     shell.show();
 

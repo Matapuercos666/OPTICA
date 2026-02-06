@@ -35,7 +35,7 @@
       <number>15</number>
      </property>
      <item row="1" column="0">
-      <layout class="QGridLayout" name="gridLayout_5" columnstretch="3,7,3">
+      <layout class="QGridLayout" name="gridLayout_5" columnstretch="2,7,2">
        <property name="verticalSpacing">
         <number>15</number>
        </property>
@@ -43,13 +43,6 @@
         <widget class="QLabel" name="Titulo3">
          <property name="text">
           <string>Usuario Nuevo</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QLabel" name="UsuarioActual">
-         <property name="text">
-          <string/>
          </property>
         </widget>
        </item>
@@ -119,6 +112,33 @@
          </property>
         </widget>
        </item>
+       <item row="5" column="2">
+        <layout class="QGridLayout" name="gridLayout_10">
+         <item row="0" column="0">
+          <widget class="QLabel" name="UsuarioActual">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="5" column="0">
+        <spacer name="horizontalSpacer_8">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
       </layout>
      </item>
      <item row="4" column="0">
@@ -128,6 +148,12 @@
        </property>
        <item row="0" column="1">
         <widget class="QPushButton" name="AGREGAR">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="contextMenuPolicy">
           <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
          </property>
@@ -154,6 +180,12 @@
        </item>
        <item row="0" column="3">
         <widget class="QPushButton" name="CANCELAR">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="text">
           <string>CANCELAR</string>
          </property>

@@ -141,6 +141,12 @@
        </item>
        <item row="0" column="1">
         <widget class="QPushButton" name="ACEPTAR">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="text">
           <string>ACEPTAR</string>
          </property>
@@ -148,6 +154,12 @@
        </item>
        <item row="0" column="3">
         <widget class="QPushButton" name="CANCELAR">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="text">
           <string>CANCELAR</string>
          </property>

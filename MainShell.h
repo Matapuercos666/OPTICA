@@ -8,6 +8,7 @@
 #include <QStack>
 #include <QMap>
 #include <QListWidget>
+#include "Perfil_Usuario.h"
 
 class MainShell : public QMainWindow
 {
@@ -17,11 +18,8 @@ public:
     explicit MainShell(QWidget *parent = nullptr);
     ~MainShell();
 
-    // Agrega una vista al QStackedWidget con su título
     void addView(QWidget *view, const QString &title);
-    // Navega a una vista (apila la actual)
     void pushView(int index);
-    // Regresa a la vista anterior
     void popView();
 
 protected:
@@ -32,16 +30,19 @@ private slots:
     void onMinimizeClicked();
     void onMaximizeClicked();
     void onCloseClicked();
-    void onPerfilClicked();      // Acción del menú de usuario
+    void onPerfilClicked();
     void onCerrarSesionClicked();
     void onNavItemClicked(int row);
 
 private:
     void setupUI();
     void updateTitleBar();
-    void upDateNavBar();
+    void updateNavBar();
+    void updateTopBarVisibility();   // nuevo método
+    Perfil_Usuario *PerfilWindow();
 
-    // Widgets de la barra superior
+
+    // Barra superior
     QWidget *m_topBar;
     QLabel *m_logoLabel;
     QLabel *m_appTitleLabel;
@@ -50,16 +51,14 @@ private:
     QToolButton *m_btnUserMenu;
     QToolButton *m_btnMinimize, *m_btnMaximize, *m_btnClose;
 
-    //barra lateral
+    // Barra lateral
     QListWidget *m_navList;
+    int m_usuarioItemIndex;   // índice del ítem "USUARIOS"
 
+    // Contenido
     QStackedWidget *m_stackedWidget;
-
-    // Historial de navegación (pilas)
     QStack<int> m_historyStack;
     QMap<int, QString> m_viewTitles;
-    QMap<int, int> m_navMap;
 };
-
 
 #endif // MAINSHELL_H

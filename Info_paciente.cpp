@@ -49,7 +49,7 @@ void Info_paciente::LLenarDatos()
         ui->NOMBRE->setText(q.value(1).toString());
         ui->APELLIDO_P->setText(q.value(2).toString());
         ui->APELLIDO_M->setText(q.value(3).toString());
-        ui->NACIMIENTO->setText(q.value(4).toString());
+        ui->NACIMIENTO->setDate(q.value(4).toDate());
         ui->EDAD->setText(q.value(7).toString());
         ui->TELEFONO->setText(q.value(5).toString());
         ui->EMAIL->setText(q.value(6).toString());
@@ -190,7 +190,6 @@ void Info_paciente::DobleClick(int row, int /*COLUMN*/)
 void Info_paciente::Boton_Agregar()
 {
     Llenar_Consulta ConsultaDialog(ID, this);
-    this->hide();
     ConsultaDialog.exec();
 }
 

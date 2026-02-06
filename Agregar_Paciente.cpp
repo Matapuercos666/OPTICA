@@ -78,7 +78,6 @@ void Agregar_Paciente::Boton_Agregar()
         if(respuesta == QMessageBox::Yes)
         {
             Llenar_Consulta ConsultaDialog(NuevoId, this);
-            this->hide();
             ConsultaDialog.exec();
         }
         QMessageBox::information(this, "EXITO", "Agregado con exito, el paciente con ID: " + QString::number(NuevoId));

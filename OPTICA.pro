@@ -14,14 +14,15 @@ SOURCES += \
     Cambiar_Nombre.cpp \
     Cambiar_Password.cpp \
     Historial_Caja.cpp \
+    Home.cpp \
     Info_paciente.cpp \
     Inventario.cpp \
+    Inventario_Usuario.cpp \
     Lista_Clientes.cpp \
     Lista_Usuarios.cpp \
     Llenar_Consulta.cpp \
     MainShell.cpp \
     ManejoDeData.cpp \
-    Menu.cpp \
     Perfil_Usuario.cpp \
     PuntoVenta.cpp \
     Usuario_Actual.cpp \
@@ -37,15 +38,16 @@ HEADERS += \
     Cambiar_Password.h \
     ESTILOS.h \
     Historial_Caja.h \
+    Home.h \
     Info_paciente.h \
     Inventario.h \
+    Inventario_Usuario.h \
     LOGIN.h \
     Lista_Clientes.h \
     Lista_Usuarios.h \
     Llenar_Consulta.h \
     MainShell.h \
     ManejoDeData.h \
-    Menu.h \
     Perfil_Usuario.h \
     PuntoVenta.h \
     Usuario_Actual.h \
@@ -59,13 +61,14 @@ FORMS += \
     Cambiar_Nombre.ui \
     Cambiar_Password.ui \
     Historial_Caja.ui \
+    Home.ui \
     Info_paciente.ui \
     Inventario.ui \
+    Inventario_Usuario.ui \
     LOGIN.ui \
     Lista_Clientes.ui \
     Lista_Usuarios.ui \
     Llenar_Consulta.ui \
-    Menu.ui \
     Perfil_Usuario.ui \
     PuntoVenta.ui \
     Validacion.ui

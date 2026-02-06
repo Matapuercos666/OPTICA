@@ -26,9 +26,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>-33</y>
         <width>664</width>
-        <height>813</height>
+        <height>817</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_3">
@@ -353,7 +353,14 @@
               </widget>
              </item>
              <item>
-              <widget class="QDateEdit" name="FECHA"/>
+              <widget class="QDateEdit" name="FECHA">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+              </widget>
              </item>
              <item>
               <widget class="QLabel" name="IdConsulta">
@@ -552,6 +559,12 @@
            </item>
            <item row="1" column="1">
             <widget class="QPushButton" name="AGREGAR">
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>0</height>
+              </size>
+             </property>
              <property name="contextMenuPolicy">
               <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
              </property>
@@ -578,8 +591,14 @@
            </item>
            <item row="1" column="3">
             <widget class="QPushButton" name="CERRAR">
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>0</height>
+              </size>
+             </property>
              <property name="text">
-              <string>SALIR</string>
+              <string>CANCELAR</string>
              </property>
              <property name="autoDefault">
               <bool>false</bool>
